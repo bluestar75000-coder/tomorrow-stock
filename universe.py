@@ -9,7 +9,7 @@ import pandas as pd
 import FinanceDataReader as fdr
 
 
-def get_top_n_by_marketcap(market: str = "KOSPI", n: int = 100) -> pd.DataFrame:
+def get_top_n_by_marketcap(market: str = "KOSPI", n: int = 200) -> pd.DataFrame:
     """시가총액 상위 N개 종목을 반환한다.
 
     FinanceDataReader 버전에 따라 시가총액 컬럼명이 'Marcap'이 아닐 수 있어서,
@@ -33,7 +33,7 @@ def get_top_n_by_marketcap(market: str = "KOSPI", n: int = 100) -> pd.DataFrame:
     return listing.head(n).reset_index(drop=True)
 
 
-def get_combined_universe(n_per_market: int = 100) -> pd.DataFrame:
+def get_combined_universe(n_per_market: int = 200) -> pd.DataFrame:
     """코스피 + 코스닥 시가총액 상위 N개씩을 합쳐서 반환한다. 'Market' 컬럼 추가."""
     frames = []
     for market in ["KOSPI", "KOSDAQ"]:
@@ -46,6 +46,6 @@ def get_combined_universe(n_per_market: int = 100) -> pd.DataFrame:
 
 if __name__ == "__main__":
     # 단독 실행 시 확인용 출력
-    combined = get_combined_universe(100)
-    print(f"총 {len(combined)}개 종목 (코스피+코스닥 각 상위 100개)")
+    combined = get_combined_universe(200)
+    print(f"총 {len(combined)}개 종목 (코스피+코스닥 각 상위 200개)")
     print(combined[["Code", "Name", "Market"]].head(10))

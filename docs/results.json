@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17 09:29:05",
+  "generated_at": "2026-08-18 09:08:21",
   "scanned_count": 200,
   "conditions": {
     "volume_surge_ratio": 2.0,
@@ -7,36 +7,44 @@
   },
   "results": [
     {
-      "code": "319400",
-      "name": "현대무벡스",
+      "code": "067310",
+      "name": "하나마이크론",
       "market": "KOSDAQ",
-      "volume_ratio": 4.21,
-      "price_change_pct": 10.67,
-      "score": 9.54
+      "volume_ratio": 4.13,
+      "price_change_pct": 7.1,
+      "score": 7.68
     },
     {
-      "code": "083650",
-      "name": "비에이치아이",
-      "market": "KOSDAQ",
-      "volume_ratio": 3.82,
-      "price_change_pct": 8.5,
-      "score": 8.06
-    },
-    {
-      "code": "307950",
-      "name": "현대오토에버",
+      "code": "011200",
+      "name": "HMM",
       "market": "KOSPI",
-      "volume_ratio": 2.34,
-      "price_change_pct": 9.02,
-      "score": 6.85
+      "volume_ratio": 4.27,
+      "price_change_pct": 6.59,
+      "score": 7.56
+    },
+    {
+      "code": "007660",
+      "name": "이수페타시스",
+      "market": "KOSPI",
+      "volume_ratio": 2.09,
+      "price_change_pct": 7.64,
+      "score": 5.91
+    },
+    {
+      "code": "403870",
+      "name": "HPSP",
+      "market": "KOSDAQ",
+      "volume_ratio": 2.93,
+      "price_change_pct": 5.57,
+      "score": 5.72
     },
     {
       "code": "257720",
       "name": "실리콘투",
       "market": "KOSDAQ",
-      "volume_ratio": 2.79,
-      "price_change_pct": 5.02,
-      "score": 5.31
+      "volume_ratio": 2.71,
+      "price_change_pct": 3.85,
+      "score": 4.64
     }
   ]
 }

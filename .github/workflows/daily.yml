@@ -25,6 +25,9 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run screener
+        env:
+          KRX_ID: ${{ secrets.KRX_ID }}
+          KRX_PW: ${{ secrets.KRX_PW }}
         run: python daily_screener.py
 
       - name: Commit and push results

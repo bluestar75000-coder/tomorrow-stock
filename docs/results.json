@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19 07:17:02",
+  "generated_at": "2026-08-19 08:04:22",
   "scanned_count": 400,
   "momentum_conditions": {
     "volume_surge_ratio": 2.0,
@@ -8,6 +8,10 @@
   "value_conditions": {
     "volume_ratio_min": 1.5,
     "per_max": 10.0
+  },
+  "crash_conditions": {
+    "volume_surge_ratio": 2.0,
+    "price_drop_min_pct": 3.0
   },
   "momentum_results": [
     {
@@ -35,5 +39,103 @@
       "score": 5.3
     }
   ],
-  "value_results": []
+  "value_results": [
+    {
+      "code": "039490",
+      "name": "키움증권",
+      "market": "KOSPI",
+      "volume_ratio": 2.64,
+      "per": 5.98,
+      "pbr": 1.05,
+      "score": 4.41
+    },
+    {
+      "code": "001450",
+      "name": "현대해상",
+      "market": "KOSPI",
+      "volume_ratio": 1.56,
+      "per": 3.84,
+      "pbr": 0.76,
+      "score": 4.05
+    },
+    {
+      "code": "071050",
+      "name": "한국금융지주",
+      "market": "KOSPI",
+      "volume_ratio": 1.89,
+      "per": 5.29,
+      "pbr": 0.89,
+      "score": 3.57
+    },
+    {
+      "code": "005830",
+      "name": "DB손해보험",
+      "market": "KOSPI",
+      "volume_ratio": 1.65,
+      "per": 6.34,
+      "pbr": 1.05,
+      "score": 2.6
+    },
+    {
+      "code": "005850",
+      "name": "에스엘",
+      "market": "KOSPI",
+      "volume_ratio": 2.08,
+      "per": 8.12,
+      "pbr": 0.99,
+      "score": 2.56
+    },
+    {
+      "code": "016360",
+      "name": "삼성증권",
+      "market": "KOSPI",
+      "volume_ratio": 1.82,
+      "per": 7.54,
+      "pbr": 0.94,
+      "score": 2.41
+    },
+    {
+      "code": "007340",
+      "name": "DN오토모티브",
+      "market": "KOSPI",
+      "volume_ratio": 2.24,
+      "per": 9.94,
+      "pbr": 1.4,
+      "score": 2.25
+    }
+  ],
+  "crash_results": [
+    {
+      "code": "007340",
+      "name": "DN오토모티브",
+      "market": "KOSPI",
+      "volume_ratio": 2.24,
+      "price_change_pct": -13.85,
+      "score": 9.16
+    },
+    {
+      "code": "039490",
+      "name": "키움증권",
+      "market": "KOSPI",
+      "volume_ratio": 2.64,
+      "price_change_pct": -6.35,
+      "score": 5.81
+    },
+    {
+      "code": "214150",
+      "name": "클래시스",
+      "market": "KOSDAQ",
+      "volume_ratio": 3.88,
+      "price_change_pct": -3.75,
+      "score": 5.75
+    },
+    {
+      "code": "005850",
+      "name": "에스엘",
+      "market": "KOSPI",
+      "volume_ratio": 2.08,
+      "price_change_pct": -6.0,
+      "score": 5.08
+    }
+  ]
 }

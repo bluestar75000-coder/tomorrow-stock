@@ -89,13 +89,13 @@
   <div class="section-desc" id="momentum-desc"></div>
   <div id="momentum-list"></div>
 
-  <div class="section-title">💰 밸류 (거래량 증가 + 저PER)</div>
-  <div class="section-desc" id="value-desc"></div>
-  <div id="value-list"></div>
-
   <div class="section-title">⚠️ 급락 경고 (거래량 급증 + 급락)</div>
   <div class="section-desc" id="crash-desc"></div>
   <div id="crash-list"></div>
+
+  <div class="section-title">💰 밸류 (업종별 거래량 증가 + 저PER)</div>
+  <div class="section-desc" id="value-desc"></div>
+  <div id="value-list"></div>
 
   <button class="refresh" onclick="load()">새로고침</button>
 
@@ -121,10 +121,11 @@ function renderCards(containerId, items, kind) {
           <div class="sub">거래량 ${r.volume_ratio}배 · 점수 ${r.score}</div>
         </div>`;
     } else if (kind === 'value') {
+      const growthTag = r.is_growth ? ' · 성장주' : '';
       card.innerHTML = `
         <div>
           <div class="name">${r.name}<span class="market">${r.market}</span></div>
-          <div class="code">${r.code}</div>
+          <div class="code">${r.code} · ${r.sector}${growthTag}</div>
         </div>
         <div class="metrics">
           <div class="primary blue">PER ${r.per}</div>
@@ -158,7 +159,7 @@ async function load() {
     document.getElementById('momentum-desc').textContent =
       `거래량 ${data.momentum_conditions.volume_surge_ratio}배↑, 등락률 ${data.momentum_conditions.price_change_min_pct}%↑`;
     document.getElementById('value-desc').textContent =
-      `거래량 ${data.value_conditions.volume_ratio_min}배↑, PER ${data.value_conditions.per_max}↓ (0 초과)`;
+      `거래량 ${data.value_conditions.volume_ratio_min}배↑, PER 일반 ${data.value_conditions.per_max_default}↓/성장주 ${data.value_conditions.per_max_growth}↓ · 업종당 상위 ${data.value_conditions.top_n_per_sector}개`;
     document.getElementById('crash-desc').textContent =
       `거래량 ${data.crash_conditions.volume_surge_ratio}배↑, 하락률 ${data.crash_conditions.price_drop_min_pct}%↓`;
 

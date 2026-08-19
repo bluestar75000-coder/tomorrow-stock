@@ -17,6 +17,7 @@
 import json
 import time
 import os
+from collections import defaultdict
 from dataclasses import dataclass, asdict
 from datetime import datetime
 
@@ -24,6 +25,7 @@ import pandas as pd
 
 from universe import get_combined_universe
 from fundamentals import get_latest_fundamental
+from sectors import get_sector_map
 
 
 # ----------------------------
@@ -36,9 +38,17 @@ LOOKBACK_DAYS = 60
 VOLUME_SURGE_RATIO = 2.0
 PRICE_CHANGE_MIN = 3.0
 
-# 밸류 스크리닝 조건 (거래량 증가 + 저PER)
+# 밸류 스크리닝 조건 (거래량 증가 + 저PER, 업종별 상위 N개)
 VALUE_VOLUME_RATIO_MIN = 1.5   # 최근 거래량이 자기 20일 평균 대비 이 배수 이상이면 "거래량 증가"로 간주
-PER_MAX_THRESHOLD = 10.0       # 이 값 이하의 PER만 "저PER"로 간주 (0 이하 = 적자기업은 제외)
+PER_MAX_DEFAULT = 10.0         # 일반 업종 PER 상한
+PER_MAX_GROWTH = 20.0          # 성장주 업종 PER 상한 (더 완화된 기준)
+VALUE_TOP_N_PER_SECTOR = 2     # 업종(테마)당 뽑을 종목 수
+
+# "성장주"로 간주할 업종 키워드 (KRX 공식 분류가 아닌 임의 기준, 필요시 조정)
+GROWTH_SECTOR_KEYWORDS = [
+    "반도체", "전자", "IT", "소프트웨어", "인터넷", "게임",
+    "바이오", "제약", "생물", "2차전지", "전지", "로봇", "통신장비", "우주항공",
+]
 
 # 급락 경고 스크리닝 조건 (거래량 급증 + 급락)
 CRASH_VOLUME_SURGE_RATIO = 2.0  # 거래량 급증 기준 (모멘텀과 동일 기준 사용)
@@ -63,6 +73,8 @@ class ValueResult:
     code: str
     name: str
     market: str
+    sector: str
+    is_growth: bool
     volume_ratio: float
     per: float
     pbr: float
@@ -86,7 +98,7 @@ def get_daily_price(code: str, days: int = LOOKBACK_DAYS):
     return df.tail(days)
 
 
-def analyze_stock(code: str, name: str, market: str, fundamental_row):
+def analyze_stock(code: str, name: str, market: str, fundamental_row, sector: str):
     """한 종목에 대해 시세를 한 번만 조회해서 모멘텀/밸류/급락 세 스크리닝을 동시에 계산한다."""
     momentum = None
     value = None
@@ -113,14 +125,18 @@ def analyze_stock(code: str, name: str, market: str, fundamental_row):
                 round(volume_ratio, 2), round(price_change_pct, 2), round(m_score, 2)
             )
 
-        # 2) 밸류 조건 (거래량 증가 + 저PER)
+        # 2) 밸류 조건 (거래량 증가 + 저PER, 업종별 PER 기준 차등 적용)
         if fundamental_row is not None:
             per = fundamental_row.get("PER", 0)
             pbr = fundamental_row.get("PBR", 0)
-            if per and per > 0 and per <= PER_MAX_THRESHOLD and volume_ratio >= VALUE_VOLUME_RATIO_MIN:
+            sector_name = sector or "기타"
+            is_growth = any(kw in sector_name for kw in GROWTH_SECTOR_KEYWORDS)
+            per_threshold = PER_MAX_GROWTH if is_growth else PER_MAX_DEFAULT
+
+            if per and per > 0 and per <= per_threshold and volume_ratio >= VALUE_VOLUME_RATIO_MIN:
                 v_score = round(volume_ratio * (10 / per), 2)
                 value = ValueResult(
-                    code, name, market,
+                    code, name, market, sector_name, is_growth,
                     round(volume_ratio, 2), round(per, 2), round(pbr, 2), v_score
                 )
 
@@ -138,6 +154,21 @@ def analyze_stock(code: str, name: str, market: str, fundamental_row):
     return momentum, value, crash
 
 
+def limit_top_n_per_sector(results: list, n: int = VALUE_TOP_N_PER_SECTOR) -> list:
+    """업종(테마)별로 점수 상위 N개만 남긴다. 결과는 업종명 -> 점수 내림차순으로 정렬."""
+    grouped = defaultdict(list)
+    for r in results:
+        grouped[r.sector].append(r)
+
+    limited = []
+    for sector_name, items in grouped.items():
+        items.sort(key=lambda r: r.score, reverse=True)
+        limited.extend(items[:n])
+
+    limited.sort(key=lambda r: (r.sector, -r.score))
+    return limited
+
+
 def main():
     print(f"코스피/코스닥 시가총액 상위 {N_PER_MARKET}개씩 유니버스 조회 중...")
     universe = get_combined_universe(N_PER_MARKET)
@@ -149,8 +180,11 @@ def main():
         "KOSDAQ": get_latest_fundamental("KOSDAQ"),
     }
 
+    print("업종(테마) 정보 조회 중...")
+    sector_map = get_sector_map()
+
     momentum_results = []
-    value_results = []
+    value_candidates = []
     crash_results = []
 
     for i, row in universe.iterrows():
@@ -161,11 +195,13 @@ def main():
         if fdf is not None and code in fdf.index:
             fundamental_row = fdf.loc[code]
 
-        m, v, c = analyze_stock(code, name, market, fundamental_row)
+        sector = sector_map.get(code, "기타")
+
+        m, v, c = analyze_stock(code, name, market, fundamental_row, sector)
         if m:
             momentum_results.append(m)
         if v:
-            value_results.append(v)
+            value_candidates.append(v)
         if c:
             crash_results.append(c)
 
@@ -175,16 +211,17 @@ def main():
         time.sleep(0.05)
 
     momentum_results.sort(key=lambda r: r.score, reverse=True)
-    value_results.sort(key=lambda r: r.score, reverse=True)
     crash_results.sort(key=lambda r: r.score, reverse=True)
+    value_results = limit_top_n_per_sector(value_candidates, VALUE_TOP_N_PER_SECTOR)
 
     print(f"\n=== 모멘텀 스크리닝 결과: {len(momentum_results)}건 ===")
     for r in momentum_results:
         print(f"[{r.market}] {r.name}({r.code}) | 거래량 {r.volume_ratio}배 | 등락률 {r.price_change_pct}% | 점수 {r.score}")
 
-    print(f"\n=== 밸류(저PER+거래량증가) 스크리닝 결과: {len(value_results)}건 ===")
+    print(f"\n=== 밸류(업종별 저PER+거래량증가 상위 {VALUE_TOP_N_PER_SECTOR}개) 스크리닝 결과: {len(value_results)}건 ===")
     for r in value_results:
-        print(f"[{r.market}] {r.name}({r.code}) | 거래량 {r.volume_ratio}배 | PER {r.per} | PBR {r.pbr} | 점수 {r.score}")
+        tag = "성장주" if r.is_growth else "일반"
+        print(f"[{r.market}][{r.sector}/{tag}] {r.name}({r.code}) | 거래량 {r.volume_ratio}배 | PER {r.per} | PBR {r.pbr} | 점수 {r.score}")
 
     print(f"\n=== 급락 경고 스크리닝 결과: {len(crash_results)}건 ===")
     for r in crash_results:
@@ -201,7 +238,10 @@ def main():
         },
         "value_conditions": {
             "volume_ratio_min": VALUE_VOLUME_RATIO_MIN,
-            "per_max": PER_MAX_THRESHOLD,
+            "per_max_default": PER_MAX_DEFAULT,
+            "per_max_growth": PER_MAX_GROWTH,
+            "top_n_per_sector": VALUE_TOP_N_PER_SECTOR,
+            "growth_sector_keywords": GROWTH_SECTOR_KEYWORDS,
         },
         "crash_conditions": {
             "volume_surge_ratio": CRASH_VOLUME_SURGE_RATIO,

@@ -6,6 +6,10 @@ on:
     - cron: '10 7 * * 1-5'
   workflow_dispatch: {}
 
+concurrency:
+  group: daily-stock-screening
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -36,4 +40,5 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add docs/results.json history/ || true
           git diff --staged --quiet || git commit -m "Update results $(date +'%Y-%m-%d %H:%M')"
+          git pull --rebase origin main
           git push

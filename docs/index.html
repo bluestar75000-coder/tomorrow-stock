@@ -30,11 +30,17 @@
     padding: 10px 12px;
     line-height: 1.5;
   }
+  .section-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 24px 0 4px;
+  }
+  .section-desc { font-size: 12px; color: #8a8f98; margin-bottom: 8px; }
   .card {
     background: #1a1d24;
     border-radius: 12px;
     padding: 14px 16px;
-    margin-top: 12px;
+    margin-top: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,13 +57,15 @@
     margin-left: 6px;
   }
   .metrics { text-align: right; }
-  .metrics .change { font-size: 16px; font-weight: 700; color: #ff5c5c; }
-  .metrics .volume { font-size: 12px; color: #8a8f98; margin-top: 2px; }
-  .empty { text-align: center; color: #8a8f98; padding: 60px 0; }
+  .metrics .primary { font-size: 16px; font-weight: 700; }
+  .primary.red { color: #ff5c5c; }
+  .primary.blue { color: #5c9dff; }
+  .metrics .sub { font-size: 12px; color: #8a8f98; margin-top: 2px; }
+  .empty { text-align: center; color: #8a8f98; padding: 24px 0; font-size: 13px; }
   .refresh {
     display: block;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 24px;
     padding: 12px;
     border-radius: 10px;
     border: none;
@@ -72,49 +80,74 @@
     <h1>📈 내일주식</h1>
     <div class="meta" id="meta">불러오는 중...</div>
     <div class="disclaimer">
-      ⚠️ 이 결과는 예측이 아니라 거래량·등락률 규칙 기반 스크리닝입니다.
+      ⚠️ 이 결과는 예측이 아니라 규칙 기반 스크리닝입니다.
       투자 판단의 근거로 단독 사용하지 마세요.
     </div>
   </header>
 
-  <div id="list"></div>
+  <div class="section-title">🚀 모멘텀 (거래량 급증 + 급등)</div>
+  <div class="section-desc" id="momentum-desc"></div>
+  <div id="momentum-list"></div>
+
+  <div class="section-title">💰 밸류 (거래량 증가 + 저PER)</div>
+  <div class="section-desc" id="value-desc"></div>
+  <div id="value-list"></div>
+
   <button class="refresh" onclick="load()">새로고침</button>
 
 <script>
-async function load() {
-  const listEl = document.getElementById('list');
-  const metaEl = document.getElementById('meta');
-  listEl.innerHTML = '';
-  metaEl.textContent = '불러오는 중...';
-
-  try {
-    const res = await fetch('results.json?t=' + Date.now());
-    const data = await res.json();
-
-    metaEl.textContent =
-      `업데이트: ${data.generated_at} · 스캔 ${data.scanned_count}개 종목 · ` +
-      `조건(거래량 ${data.conditions.volume_surge_ratio}배↑, 등락률 ${data.conditions.price_change_min_pct}%↑)`;
-
-    if (!data.results || data.results.length === 0) {
-      listEl.innerHTML = '<div class="empty">오늘은 조건을 만족하는 종목이 없습니다.</div>';
-      return;
-    }
-
-    data.results.forEach(r => {
-      const card = document.createElement('div');
-      card.className = 'card';
+function renderCards(containerId, items, kind) {
+  const el = document.getElementById(containerId);
+  el.innerHTML = '';
+  if (!items || items.length === 0) {
+    el.innerHTML = '<div class="empty">조건을 만족하는 종목이 없습니다.</div>';
+    return;
+  }
+  items.forEach(r => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    if (kind === 'momentum') {
       card.innerHTML = `
         <div>
           <div class="name">${r.name}<span class="market">${r.market}</span></div>
           <div class="code">${r.code}</div>
         </div>
         <div class="metrics">
-          <div class="change">+${r.price_change_pct}%</div>
-          <div class="volume">거래량 ${r.volume_ratio}배 · 점수 ${r.score}</div>
+          <div class="primary red">+${r.price_change_pct}%</div>
+          <div class="sub">거래량 ${r.volume_ratio}배 · 점수 ${r.score}</div>
+        </div>`;
+    } else {
+      card.innerHTML = `
+        <div>
+          <div class="name">${r.name}<span class="market">${r.market}</span></div>
+          <div class="code">${r.code}</div>
         </div>
-      `;
-      listEl.appendChild(card);
-    });
+        <div class="metrics">
+          <div class="primary blue">PER ${r.per}</div>
+          <div class="sub">거래량 ${r.volume_ratio}배 · PBR ${r.pbr} · 점수 ${r.score}</div>
+        </div>`;
+    }
+    el.appendChild(card);
+  });
+}
+
+async function load() {
+  const metaEl = document.getElementById('meta');
+  metaEl.textContent = '불러오는 중...';
+
+  try {
+    const res = await fetch('results.json?t=' + Date.now());
+    const data = await res.json();
+
+    metaEl.textContent = `업데이트: ${data.generated_at} · 스캔 ${data.scanned_count}개 종목`;
+
+    document.getElementById('momentum-desc').textContent =
+      `거래량 ${data.momentum_conditions.volume_surge_ratio}배↑, 등락률 ${data.momentum_conditions.price_change_min_pct}%↑`;
+    document.getElementById('value-desc').textContent =
+      `거래량 ${data.value_conditions.volume_ratio_min}배↑, PER ${data.value_conditions.per_max}↓ (0 초과)`;
+
+    renderCards('momentum-list', data.momentum_results, 'momentum');
+    renderCards('value-list', data.value_results, 'value');
   } catch (e) {
     metaEl.textContent = '결과를 아직 불러올 수 없습니다. 잠시 후 다시 시도하세요.';
   }

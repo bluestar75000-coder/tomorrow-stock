@@ -95,7 +95,7 @@ def analyze_stock(code: str, name: str, market: str, fundamental_row):
     try:
         df = get_daily_price(code)
         if len(df) < 21:
-            return None, None
+            return None, None, None
 
         avg_volume_20 = df["Volume"].iloc[-21:-1].mean()
         today_volume = df["Volume"].iloc[-1]

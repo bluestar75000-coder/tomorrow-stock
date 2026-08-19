@@ -93,6 +93,10 @@
   <div class="section-desc" id="value-desc"></div>
   <div id="value-list"></div>
 
+  <div class="section-title">⚠️ 급락 경고 (거래량 급증 + 급락)</div>
+  <div class="section-desc" id="crash-desc"></div>
+  <div id="crash-list"></div>
+
   <button class="refresh" onclick="load()">새로고침</button>
 
 <script>
@@ -116,7 +120,7 @@ function renderCards(containerId, items, kind) {
           <div class="primary red">+${r.price_change_pct}%</div>
           <div class="sub">거래량 ${r.volume_ratio}배 · 점수 ${r.score}</div>
         </div>`;
-    } else {
+    } else if (kind === 'value') {
       card.innerHTML = `
         <div>
           <div class="name">${r.name}<span class="market">${r.market}</span></div>
@@ -125,6 +129,16 @@ function renderCards(containerId, items, kind) {
         <div class="metrics">
           <div class="primary blue">PER ${r.per}</div>
           <div class="sub">거래량 ${r.volume_ratio}배 · PBR ${r.pbr} · 점수 ${r.score}</div>
+        </div>`;
+    } else {
+      card.innerHTML = `
+        <div>
+          <div class="name">${r.name}<span class="market">${r.market}</span></div>
+          <div class="code">${r.code}</div>
+        </div>
+        <div class="metrics">
+          <div class="primary red">${r.price_change_pct}%</div>
+          <div class="sub">거래량 ${r.volume_ratio}배 · 점수 ${r.score}</div>
         </div>`;
     }
     el.appendChild(card);
@@ -145,9 +159,12 @@ async function load() {
       `거래량 ${data.momentum_conditions.volume_surge_ratio}배↑, 등락률 ${data.momentum_conditions.price_change_min_pct}%↑`;
     document.getElementById('value-desc').textContent =
       `거래량 ${data.value_conditions.volume_ratio_min}배↑, PER ${data.value_conditions.per_max}↓ (0 초과)`;
+    document.getElementById('crash-desc').textContent =
+      `거래량 ${data.crash_conditions.volume_surge_ratio}배↑, 하락률 ${data.crash_conditions.price_drop_min_pct}%↓`;
 
     renderCards('momentum-list', data.momentum_results, 'momentum');
     renderCards('value-list', data.value_results, 'value');
+    renderCards('crash-list', data.crash_results, 'crash');
   } catch (e) {
     metaEl.textContent = '결과를 아직 불러올 수 없습니다. 잠시 후 다시 시도하세요.';
   }

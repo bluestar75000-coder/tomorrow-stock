@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20 11:23:55",
+  "generated_at": "2026-08-20 11:43:44",
   "scanned_count": 400,
   "momentum_conditions": {
     "volume_surge_ratio": 2.0,
@@ -40,7 +40,7 @@
       3.0
     ],
     "high_proximity_max_pct": 10.0,
-    "note": "AI 추천 종목은 실제 ML 모델이 아니라 정규화된 지표의 가중합(규칙 기반) 점수입니다."
+    "note": "AI 추천 종목은 실제 ML 모델이 아니라 정규화된 지표의 가중합(규칙 기반) 점수입니다. 백테스트 결과 당일/익일 단타보다 3~5일 관점에서 유효했습니다."
   },
   "momentum_results": [
     {

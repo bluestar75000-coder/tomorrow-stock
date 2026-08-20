@@ -16,12 +16,14 @@
 
 대상: 코스피/코스닥 시가총액 상위 200개씩, 총 최대 400개 종목
 
-결과는 docs/results.json에 저장되어 GitHub Pages 대시보드가 읽는다.
+결과는 docs/results.json(최신)과 docs/history/results_YYYYMMDD.json(날짜별 스냅샷)에
+저장되어 GitHub Pages 대시보드가 읽는다. 날짜 선택기로 과거 결과도 조회 가능하다.
 
 실행 (로컬/Actions 공통):
     python daily_screener.py
 """
 
+import glob
 import json
 import math
 import time
@@ -307,6 +309,27 @@ def sanitize_for_json(obj):
     return obj
 
 
+def update_history_index(history_dir: str) -> list:
+    """docs/history 폴더의 JSON 스냅샷 파일들을 스캔해서 조회 가능한 날짜 목록을 만든다.
+    별도 인덱스를 수동으로 관리하지 않고 매번 실제 파일 목록에서 다시 계산해서
+    (파일과 인덱스가 어긋나는 문제를 방지한다)."""
+    pattern = os.path.join(history_dir, "results_*.json")
+    dates = []
+    for path in sorted(glob.glob(pattern)):
+        base = os.path.basename(path)
+        date_part = base.replace("results_", "").replace(".json", "")
+        try:
+            iso_date = datetime.strptime(date_part, "%Y%m%d").strftime("%Y-%m-%d")
+            dates.append(iso_date)
+        except ValueError:
+            continue
+
+    dates = sorted(set(dates))
+    with open(os.path.join(history_dir, "index.json"), "w", encoding="utf-8") as f:
+        json.dump({"dates": dates}, f, ensure_ascii=False, indent=2)
+    return dates
+
+
 def main():
     print(f"코스피/코스닥 시가총액 상위 {N_PER_MARKET}개씩 유니버스 조회 중...")
     universe = get_combined_universe(N_PER_MARKET)
@@ -419,12 +442,23 @@ def main():
         "presurge_ai_recommended": [asdict(r) for r in presurge_views["ai_recommended"]],
     }
 
+    sanitized_output = sanitize_for_json(output)
+
     with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
-        json.dump(sanitize_for_json(output), f, ensure_ascii=False, indent=2)
+        json.dump(sanitized_output, f, ensure_ascii=False, indent=2)
 
     print(f"\n결과를 {OUTPUT_JSON} 에 저장했습니다.")
 
+    # 날짜별 스냅샷 저장 (대시보드 날짜 선택기가 조회하는 파일)
     today_str = datetime.today().strftime("%Y%m%d")
+    history_json_dir = os.path.join(OUTPUT_DIR, "history")
+    os.makedirs(history_json_dir, exist_ok=True)
+    history_json_path = os.path.join(history_json_dir, f"results_{today_str}.json")
+    with open(history_json_path, "w", encoding="utf-8") as f:
+        json.dump(sanitized_output, f, ensure_ascii=False, indent=2)
+
+    dates = update_history_index(history_json_dir)
+    print(f"날짜별 스냅샷을 {history_json_path} 에 저장했습니다. (조회 가능 날짜: {len(dates)}개)")
     os.makedirs("history", exist_ok=True)
     if momentum_results:
         pd.DataFrame([asdict(r) for r in momentum_results]).to_csv(

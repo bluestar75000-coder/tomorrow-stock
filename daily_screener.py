@@ -23,6 +23,7 @@
 """
 
 import json
+import math
 import time
 import os
 from collections import defaultdict
@@ -293,6 +294,19 @@ def limit_top_n_per_sector(results: list, n: int = VALUE_TOP_N_PER_SECTOR) -> li
     return limited
 
 
+def sanitize_for_json(obj):
+    """NaN/Infinity 값을 null로 바꿔서 표준 JSON으로 안전하게 저장되도록 정리한다.
+    (파이썬 json.dump는 NaN/Infinity를 그대로 써버리는데, 이건 표준 JSON이 아니라서
+    브라우저의 JSON.parse가 파일 전체를 파싱 실패시킨다.)"""
+    if isinstance(obj, dict):
+        return {k: sanitize_for_json(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [sanitize_for_json(v) for v in obj]
+    if isinstance(obj, float) and (math.isnan(obj) or math.isinf(obj)):
+        return None
+    return obj
+
+
 def main():
     print(f"코스피/코스닥 시가총액 상위 {N_PER_MARKET}개씩 유니버스 조회 중...")
     universe = get_combined_universe(N_PER_MARKET)
@@ -406,7 +420,7 @@ def main():
     }
 
     with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
+        json.dump(sanitize_for_json(output), f, ensure_ascii=False, indent=2)
 
     print(f"\n결과를 {OUTPUT_JSON} 에 저장했습니다.")
 

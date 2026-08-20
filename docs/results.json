@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20 09:14:35",
+  "generated_at": "2026-08-20 10:41:58",
   "scanned_count": 400,
   "momentum_conditions": {
     "volume_surge_ratio": 2.0,
@@ -30,6 +30,17 @@
   "crash_conditions": {
     "volume_surge_ratio": 2.0,
     "price_drop_min_pct": 3.0
+  },
+  "presurge_conditions": {
+    "price_change_max_pct": 3.0,
+    "volume_ratio_min": 1.5,
+    "value_ratio_min": 1.5,
+    "volatility_ratio_range": [
+      1.2,
+      3.0
+    ],
+    "high_proximity_max_pct": 10.0,
+    "note": "AI 추천 종목은 실제 ML 모델이 아니라 정규화된 지표의 가중합(규칙 기반) 점수입니다."
   },
   "momentum_results": [
     {
@@ -107,5 +118,10 @@
       "price_change_pct": -19.2,
       "score": 16.02
     }
-  ]
+  ],
+  "presurge_today_candidates": [],
+  "presurge_signal": [],
+  "presurge_volume_explosion": [],
+  "presurge_breakout_imminent": [],
+  "presurge_ai_recommended": []
 }

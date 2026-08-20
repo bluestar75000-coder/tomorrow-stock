@@ -263,14 +263,25 @@ function renderBacktestPanel(data) {
     el.innerHTML = '<div class="empty">아직 백테스트 결과가 없습니다. backtest_presurge.py를 실행하면 여기 표시됩니다.</div>';
     return;
   }
+  const renderRows = (rows) => (rows || []).map(row => `
+    <div style="display:flex;justify-content:space-between;padding:4px 0;border-top:1px solid #2a2d35;">
+      <span class="sub">${row.horizon}</span>
+      <span class="sub">평균 ${row.avg_return}% · 승률 ${row.win_rate}% · 베이스라인 ${row.baseline}%</span>
+    </div>`).join('');
+
+  const dedupBlock = (data.rows_deduped && data.rows_deduped.length > 0) ? `
+    <div class="sub" style="margin:14px 0 6px;font-weight:600;">
+      보정(종목당 비중복, 독립 신호 ${data.independent_signal_count || 0}건)
+    </div>
+    ${renderRows(data.rows_deduped)}
+  ` : '';
+
   el.innerHTML = `
     <div class="card" style="display:block;">
-      <div class="sub" style="margin-bottom:8px;">검증 기간: ${data.period || '-'} · 신호 발생 ${data.signal_count || 0}건</div>
-      ${(data.rows || []).map(row => `
-        <div style="display:flex;justify-content:space-between;padding:4px 0;border-top:1px solid #2a2d35;">
-          <span class="sub">${row.horizon}</span>
-          <span class="sub">평균 ${row.avg_return}% · 승률 ${row.win_rate}% · 베이스라인 ${row.baseline}%</span>
-        </div>`).join('')}
+      <div class="sub" style="margin-bottom:8px;">검증 기간: ${data.period || '-'} · 전체 신호 ${data.signal_count || 0}건</div>
+      <div class="sub" style="font-weight:600;">전체(중복 포함)</div>
+      ${renderRows(data.rows)}
+      ${dedupBlock}
     </div>`;
 }
 

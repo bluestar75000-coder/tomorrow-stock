@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20 03:41:40",
+  "generated_at": "2026-08-20 09:14:35",
   "scanned_count": 400,
   "momentum_conditions": {
     "volume_surge_ratio": 2.0,
@@ -36,33 +36,65 @@
       "code": "124500",
       "name": "아이티센글로벌",
       "market": "KOSDAQ",
-      "volume_ratio": 4.32,
-      "price_change_pct": 19.57,
-      "score": 14.1
-    },
-    {
-      "code": "476830",
-      "name": "알지노믹스",
-      "market": "KOSDAQ",
-      "volume_ratio": 4.02,
-      "price_change_pct": 19.3,
-      "score": 13.68
+      "volume_ratio": 5.39,
+      "price_change_pct": 22.7,
+      "score": 16.74
     },
     {
       "code": "237690",
       "name": "에스티팜",
       "market": "KOSDAQ",
-      "volume_ratio": 5.89,
-      "price_change_pct": 9.97,
-      "score": 10.87
+      "volume_ratio": 10.39,
+      "price_change_pct": 11.68,
+      "score": 16.23
+    },
+    {
+      "code": "476830",
+      "name": "알지노믹스",
+      "market": "KOSDAQ",
+      "volume_ratio": 5.43,
+      "price_change_pct": 16.61,
+      "score": 13.74
     },
     {
       "code": "085620",
       "name": "미래에셋생명",
       "market": "KOSPI",
-      "volume_ratio": 2.14,
-      "price_change_pct": 9.98,
-      "score": 7.13
+      "volume_ratio": 4.38,
+      "price_change_pct": 15.4,
+      "score": 12.08
+    },
+    {
+      "code": "016360",
+      "name": "삼성증권",
+      "market": "KOSPI",
+      "volume_ratio": 2.08,
+      "price_change_pct": 8.71,
+      "score": 6.44
+    },
+    {
+      "code": "010130",
+      "name": "고려아연",
+      "market": "KOSPI",
+      "volume_ratio": 2.07,
+      "price_change_pct": 8.12,
+      "score": 6.13
+    },
+    {
+      "code": "041960",
+      "name": "코미팜",
+      "market": "KOSDAQ",
+      "volume_ratio": 2.6,
+      "price_change_pct": 4.73,
+      "score": 4.97
+    },
+    {
+      "code": "302440",
+      "name": "SK바이오사이언스",
+      "market": "KOSPI",
+      "volume_ratio": 2.13,
+      "price_change_pct": 5.45,
+      "score": 4.85
     }
   ],
   "value_results": [],
@@ -71,9 +103,9 @@
       "code": "397030",
       "name": "에이프릴바이오",
       "market": "KOSDAQ",
-      "volume_ratio": 3.93,
-      "price_change_pct": -17.11,
-      "score": 12.48
+      "volume_ratio": 6.42,
+      "price_change_pct": -19.2,
+      "score": 16.02
     }
   ]
 }

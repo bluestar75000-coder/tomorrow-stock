@@ -407,7 +407,7 @@ def main():
             "value_ratio_min": PRESURGE_VALUE_RATIO_MIN,
             "volatility_ratio_range": list(PRESURGE_VOLATILITY_RATIO_RANGE),
             "high_proximity_max_pct": PRESURGE_HIGH_PROXIMITY_MAX,
-            "note": "AI 추천 종목은 실제 ML 모델이 아니라 정규화된 지표의 가중합(규칙 기반) 점수입니다.",
+            "note": "AI 추천 종목은 실제 ML 모델이 아니라 정규화된 지표의 가중합(규칙 기반) 점수입니다. 백테스트 결과 당일/익일 단타보다 3~5일 관점에서 유효했습니다.",
         },
         "momentum_results": [asdict(r) for r in momentum_results],
         "value_results": [asdict(r) for r in value_results],

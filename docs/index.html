@@ -20,6 +20,32 @@
     border-bottom: 1px solid #2a2d35;
   }
   h1 { font-size: 22px; margin: 0 0 4px; }
+  .date-picker-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0 8px;
+  }
+  .date-picker {
+    background: #1a1d24;
+    color: #e8e8ea;
+    border: 1px solid #2a2d35;
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 14px;
+    font-family: inherit;
+    flex: 1;
+  }
+  .date-picker::-webkit-calendar-picker-indicator { filter: invert(1); }
+  .today-btn {
+    background: #2a2d35;
+    color: #e8e8ea;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
   .meta { font-size: 13px; color: #8a8f98; }
   .disclaimer {
     margin-top: 12px;
@@ -107,6 +133,10 @@
 <body>
   <header>
     <h1>📈 내일주식</h1>
+    <div class="date-picker-row">
+      <input type="date" id="date-picker" class="date-picker">
+      <button class="today-btn" onclick="goToToday()">오늘</button>
+    </div>
     <div class="meta" id="meta">불러오는 중...</div>
     <div class="disclaimer">
       ⚠️ 이 결과는 예측이 아니라 규칙 기반 스크리닝입니다.
@@ -158,7 +188,7 @@
   <div class="section-desc">이 스크리닝 조건이 과거에 실제로 유효했는지 검증한 결과 (기간별 비교)</div>
   <div id="backtest-panel"></div>
 
-  <button class="refresh" onclick="load()">새로고침</button>
+  <button class="refresh" onclick="load(document.getElementById('date-picker').value)">새로고침</button>
 
 <script>
 function renderCards(containerId, items, kind) {
@@ -285,15 +315,60 @@ function renderBacktestPanel(data) {
     </div>`;
 }
 
-async function load() {
+let availableDates = [];
+
+function todayStr() {
+  const d = new Date();
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
+
+async function loadAvailableDates() {
+  try {
+    const res = await fetch('history/index.json?t=' + Date.now());
+    const data = await res.json();
+    availableDates = data.dates || [];
+  } catch (e) {
+    availableDates = [];
+  }
+}
+
+function goToToday() {
+  const picker = document.getElementById('date-picker');
+  picker.value = todayStr();
+  load(todayStr());
+}
+
+async function load(dateStr) {
   const metaEl = document.getElementById('meta');
   metaEl.textContent = '불러오는 중...';
 
+  const today = todayStr();
+  const targetDate = dateStr || today;
+  const isToday = targetDate === today;
+  const fileUrl = isToday
+    ? 'results.json'
+    : `history/results_${targetDate.replace(/-/g, '')}.json`;
+
+  const clearAll = () => {
+    ['momentum-desc', 'value-desc', 'crash-desc', 'presurge-desc'].forEach(id => {
+      document.getElementById(id).textContent = '';
+    });
+    ['momentum-list', 'value-list', 'crash-list', 'presurge-today-list',
+     'presurge-signal-list', 'presurge-volume-list', 'presurge-breakout-list',
+     'presurge-ai-list'].forEach(id => {
+      document.getElementById(id).innerHTML = '';
+    });
+  };
+
   try {
-    const res = await fetch('results.json?t=' + Date.now());
+    const res = await fetch(fileUrl + '?t=' + Date.now());
+    if (!res.ok) throw new Error('no data');
     const data = await res.json();
 
-    metaEl.textContent = `업데이트: ${data.generated_at} · 스캔 ${data.scanned_count}개 종목`;
+    metaEl.textContent = `${isToday ? '오늘' : targetDate} 기준 · 업데이트: ${data.generated_at} · 스캔 ${data.scanned_count}개 종목`;
 
     document.getElementById('momentum-desc').textContent =
       `거래량 ${data.momentum_conditions.volume_surge_ratio}배↑, 등락률 ${data.momentum_conditions.price_change_min_pct}%↑`;
@@ -313,9 +388,13 @@ async function load() {
     renderCards('presurge-breakout-list', data.presurge_breakout_imminent, 'presurge-breakout');
     renderCards('presurge-ai-list', data.presurge_ai_recommended, 'presurge-ai');
   } catch (e) {
-    metaEl.textContent = '결과를 아직 불러올 수 없습니다. 잠시 후 다시 시도하세요.';
+    clearAll();
+    metaEl.textContent = isToday
+      ? '결과를 아직 불러올 수 없습니다. 잠시 후 다시 시도하세요.'
+      : `${targetDate}에는 저장된 데이터가 없습니다 (휴장일이거나 아직 실행 전).`;
   }
 
+  // 백테스트 패널은 날짜와 무관하게 항상 최신 결과 표시
   try {
     const btRes = await fetch('backtest_results.json?t=' + Date.now());
     if (btRes.ok) {
@@ -327,7 +406,16 @@ async function load() {
     renderBacktestPanel(null);
   }
 }
-load();
+
+(async function init() {
+  const picker = document.getElementById('date-picker');
+  picker.value = todayStr();
+  picker.max = todayStr();
+  picker.addEventListener('change', () => load(picker.value));
+
+  await loadAvailableDates();
+  load(todayStr());
+})();
 </script>
 </body>
 </html>

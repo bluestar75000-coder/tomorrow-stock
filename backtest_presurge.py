@@ -17,10 +17,17 @@
     python backtest_presurge.py
 
 결과:
-    - 콘솔에 신호 그룹 vs 베이스라인 비교 출력
-    - presurge_signals.csv: 상세 신호 내역
+    - 콘솔에 신호 그룹(전체/중복제거) vs 베이스라인 비교 출력
+    - presurge_signals.csv: 상세 신호 내역 (is_independent 컬럼으로 중복 여부 표시)
     - docs/backtest_results.json: 대시보드 ⑥번 패널이 읽는 요약 결과
       (이 파일을 커밋하면 대시보드에 백테스트 결과가 표시됨)
+
+중복 신호 보정 방식:
+    같은 종목이 며칠 연속으로 조건을 만족하면 사실상 "같은 사건"을 여러 번
+    카운트하는 셈이라 통계가 부풀려질 수 있다. 이를 보정하기 위해, 한 종목에
+    신호가 발생하면 그 신호의 forward 수익률 관찰 기간(예: 5일 후까지)이 끝날
+    때까지는 같은 종목의 새 신호를 "독립 신호"로 카운트하지 않는다.
+    (관찰 기간이 겹치지 않아야 통계적으로 더 독립적인 표본이 된다.)
 """
 
 import json
@@ -59,6 +66,7 @@ def get_daily_price(code: str, days: int) -> pd.DataFrame:
 def find_presurge_signals(code: str, name: str, df: pd.DataFrame) -> list[dict]:
     signals = []
     vol_lo, vol_hi = VOLATILITY_RATIO_RANGE
+    next_independent_allowed = 0  # 이 인덱스 이전 신호는 직전 신호의 관찰기간과 겹침(=비독립)
 
     for i in range(60, len(df) - max(FORWARD_DAYS)):
         window = df.iloc[: i + 1]
@@ -92,18 +100,25 @@ def find_presurge_signals(code: str, name: str, df: pd.DataFrame) -> list[dict]:
         )
 
         if is_presurge:
+            is_independent = i >= next_independent_allowed
             row = {
                 "code": code,
                 "name": name,
                 "signal_date": df.index[i].strftime("%Y-%m-%d"),
                 "volume_ratio": round(volume_ratio, 2),
                 "pct_from_high": round(pct_from_high, 2),
+                "is_independent": is_independent,
             }
             for fwd in FORWARD_DAYS:
                 future_close = df["Close"].iloc[i + fwd]
                 fwd_return = (future_close - today_close) / today_close * 100
                 row[f"return_{fwd}d_pct"] = round(fwd_return, 2)
             signals.append(row)
+
+            if is_independent:
+                # 이 신호의 관찰기간(최대 forward일)이 끝나기 전까지는 같은 종목의
+                # 다음 신호를 "독립 신호"로 인정하지 않는다.
+                next_independent_allowed = i + max(FORWARD_DAYS) + 1
 
     return signals
 
@@ -162,36 +177,52 @@ def main():
     signals_df = pd.DataFrame(all_signals)
     signals_df.to_csv("presurge_signals.csv", index=False, encoding="utf-8-sig")
 
-    print(f"\n=== 총 신호 발생 횟수: {len(signals_df)}건 ===\n")
-    print("[신호 그룹 vs 전체 평균(베이스라인) 비교]")
-    print(f"{'기간':<8}{'신호그룹 평균%':<16}{'신호그룹 승률%':<16}{'베이스라인 평균%':<18}")
+    independent_df = signals_df[signals_df["is_independent"]]
 
-    result_rows = []
-    for fwd in FORWARD_DAYS:
-        col = f"return_{fwd}d_pct"
-        signal_mean = signals_df[col].mean()
-        win_rate = (signals_df[col] > 0).mean() * 100
-        baseline_mean = sum(baseline_accum[fwd]) / len(baseline_accum[fwd]) if baseline_accum[fwd] else float("nan")
-        print(f"{fwd}일후    {signal_mean:>8.2f}%       {win_rate:>8.1f}%        {baseline_mean:>8.2f}%")
-        result_rows.append({
-            "horizon": f"{fwd}일 후",
-            "avg_return": round(float(signal_mean), 2),
-            "win_rate": round(float(win_rate), 1),
-            "baseline": round(float(baseline_mean), 2),
-        })
+    print(f"\n=== 총 신호 발생 횟수: {len(signals_df)}건 (중복제거 후 독립 신호: {len(independent_df)}건) ===\n")
+
+    def build_rows(df_subset: pd.DataFrame, label: str) -> list:
+        print(f"[{label}] 신호 그룹 vs 전체 평균(베이스라인) 비교")
+        print(f"{'기간':<8}{'신호그룹 평균%':<16}{'신호그룹 승률%':<16}{'베이스라인 평균%':<18}")
+        rows = []
+        for fwd in FORWARD_DAYS:
+            col = f"return_{fwd}d_pct"
+            signal_mean = df_subset[col].mean()
+            win_rate = (df_subset[col] > 0).mean() * 100
+            baseline_mean = sum(baseline_accum[fwd]) / len(baseline_accum[fwd]) if baseline_accum[fwd] else float("nan")
+            print(f"{fwd}일후    {signal_mean:>8.2f}%       {win_rate:>8.1f}%        {baseline_mean:>8.2f}%")
+            rows.append({
+                "horizon": f"{fwd}일 후",
+                "avg_return": round(float(signal_mean), 2),
+                "win_rate": round(float(win_rate), 1),
+                "baseline": round(float(baseline_mean), 2),
+            })
+        print()
+        return rows
+
+    result_rows_raw = build_rows(signals_df, "전체(중복 포함)")
+    result_rows_dedup = (
+        build_rows(independent_df, "보정(종목당 비중복)")
+        if len(independent_df) > 0
+        else []
+    )
 
     os.makedirs("docs", exist_ok=True)
     output = {
         "generated_at": pd.Timestamp.today().strftime("%Y-%m-%d %H:%M:%S"),
         "period": f"최근 {BACKTEST_DAYS}일, 코스피/코스닥 상위 {N_PER_MARKET}개씩",
         "signal_count": len(signals_df),
-        "rows": result_rows,
-        "note": "수급(기관/외국인 순매수) 조건은 백테스트에서 제외됨 (계산량 문제)",
+        "independent_signal_count": len(independent_df),
+        "rows": result_rows_raw,
+        "rows_deduped": result_rows_dedup,
+        "note": "수급(기관/외국인 순매수) 조건은 백테스트에서 제외됨 (계산량 문제). "
+                "'전체'는 같은 종목의 연속 신호를 모두 카운트한 값이고, "
+                "'보정'은 관찰기간이 겹치지 않는 독립 신호만 카운트한 값입니다.",
     }
     with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
         json.dump(sanitize_for_json(output), f, ensure_ascii=False, indent=2)
 
-    print(f"\n요약 결과를 {OUTPUT_JSON} 에 저장했습니다. 이 파일을 커밋하면 대시보드에 표시됩니다.")
+    print(f"요약 결과를 {OUTPUT_JSON} 에 저장했습니다. 이 파일을 커밋하면 대시보드에 표시됩니다.")
 
 
 if __name__ == "__main__":

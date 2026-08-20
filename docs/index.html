@@ -43,6 +43,26 @@
     border-top: 2px solid #2a2d35;
   }
   .group-desc { font-size: 12px; color: #8a8f98; margin-bottom: 4px; line-height: 1.5; }
+  .timeframe-note {
+    font-size: 12px;
+    color: #4ade80;
+    background: #10241a;
+    border-radius: 8px;
+    padding: 10px 12px;
+    line-height: 1.6;
+    margin: 10px 0 4px;
+  }
+  .horizon-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: #10241a;
+    color: #4ade80;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
   .section-desc { font-size: 12px; color: #8a8f98; margin-bottom: 8px; }
   .card {
     background: #1a1d24;
@@ -108,29 +128,34 @@
 
   <div class="group-header">🔥 급등 전조 스크리닝</div>
   <div class="group-desc" id="presurge-desc"></div>
+  <div class="timeframe-note">
+    ⏳ 백테스트 결과, 이 조건은 <b>당일/익일 단타에는 효과가 없고</b>(1일 후 승률 47%, 베이스라인보다 낮음),
+    <b>3~5일 관점의 관심종목 발굴용</b>으로 볼 때 유효했습니다(5일 후 평균 2.36% vs 베이스라인 1.42%, 승률 55%).
+    당일 매매 근거로 쓰지 말고, 3~5일 지켜볼 후보 리스트로 활용하세요.
+  </div>
 
-  <div class="section-title">① 오늘의 급등 후보</div>
-  <div class="section-desc">종합 점수(거래량·거래대금·변동성·고점근접·수급) 상위</div>
+  <div class="section-title">① 오늘의 관심 후보 <span class="horizon-tag">3~5일 관점</span></div>
+  <div class="section-desc">종합 점수(거래량·거래대금·변동성·고점근접·수급) 상위 · 며칠에 걸쳐 지켜볼 후보</div>
   <div id="presurge-today-list"></div>
 
-  <div class="section-title">② 급등 전조 종목</div>
+  <div class="section-title">② 급등 전조 종목 <span class="horizon-tag">3~5일 관점</span></div>
   <div class="section-desc">기관+외국인 순매수가 최근 들어 개선된 종목 상위</div>
   <div id="presurge-signal-list"></div>
 
-  <div class="section-title">③ 거래량 폭발 종목</div>
+  <div class="section-title">③ 거래량 폭발 종목 <span class="horizon-tag">3~5일 관점</span></div>
   <div class="section-desc">거래량·거래대금 증가폭이 가장 큰 종목 상위</div>
   <div id="presurge-volume-list"></div>
 
-  <div class="section-title">④ 돌파 임박 종목</div>
+  <div class="section-title">④ 돌파 임박 종목 <span class="horizon-tag">3~5일 관점</span></div>
   <div class="section-desc">최근 60일 고점에 가장 가까이 다가간 종목 상위</div>
   <div id="presurge-breakout-list"></div>
 
-  <div class="section-title">⑤ AI 추천 종목</div>
+  <div class="section-title">⑤ AI 추천 종목 <span class="horizon-tag">3~5일 관점</span></div>
   <div class="section-desc">지표를 정규화해 가중합한 점수 상위 (⚠️ 실제 ML모델이 아닌 규칙 기반 점수)</div>
   <div id="presurge-ai-list"></div>
 
   <div class="section-title">⑥ 백테스트 / 모델 성적</div>
-  <div class="section-desc">이 스크리닝 조건이 과거에 실제로 유효했는지 검증한 결과</div>
+  <div class="section-desc">이 스크리닝 조건이 과거에 실제로 유효했는지 검증한 결과 (기간별 비교)</div>
   <div id="backtest-panel"></div>
 
   <button class="refresh" onclick="load()">새로고침</button>

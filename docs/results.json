@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19 09:34:59",
+  "generated_at": "2026-08-20 03:41:40",
   "scanned_count": 400,
   "momentum_conditions": {
     "volume_surge_ratio": 2.0,
@@ -33,39 +33,47 @@
   },
   "momentum_results": [
     {
-      "code": "025980",
-      "name": "아난티",
+      "code": "124500",
+      "name": "아이티센글로벌",
       "market": "KOSDAQ",
-      "volume_ratio": 29.53,
-      "price_change_pct": 18.89,
-      "score": 38.98
+      "volume_ratio": 4.32,
+      "price_change_pct": 19.57,
+      "score": 14.1
     },
     {
-      "code": "403870",
-      "name": "HPSP",
+      "code": "476830",
+      "name": "알지노믹스",
       "market": "KOSDAQ",
-      "volume_ratio": 2.57,
-      "price_change_pct": 7.15,
-      "score": 6.14
+      "volume_ratio": 4.02,
+      "price_change_pct": 19.3,
+      "score": 13.68
+    },
+    {
+      "code": "237690",
+      "name": "에스티팜",
+      "market": "KOSDAQ",
+      "volume_ratio": 5.89,
+      "price_change_pct": 9.97,
+      "score": 10.87
     },
     {
       "code": "085620",
       "name": "미래에셋생명",
       "market": "KOSPI",
-      "volume_ratio": 2.43,
-      "price_change_pct": 5.73,
-      "score": 5.3
+      "volume_ratio": 2.14,
+      "price_change_pct": 9.98,
+      "score": 7.13
     }
   ],
   "value_results": [],
   "crash_results": [
     {
-      "code": "214150",
-      "name": "클래시스",
+      "code": "397030",
+      "name": "에이프릴바이오",
       "market": "KOSDAQ",
-      "volume_ratio": 3.88,
-      "price_change_pct": -3.75,
-      "score": 5.75
+      "volume_ratio": 3.93,
+      "price_change_pct": -17.11,
+      "score": 12.48
     }
   ]
 }

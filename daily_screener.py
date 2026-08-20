@@ -1,10 +1,18 @@
 """
-내일주식 - 일일 스크리닝 서비스 (GitHub Actions 자동 실행용, v0.5)
+내일주식 - 일일 스크리닝 서비스 (GitHub Actions 자동 실행용, v0.6)
 
-세 가지 스크리닝을 함께 수행한다.
-1. 모멘텀 스크리닝: 거래량 급증 + 당일 급등 종목
+네 가지 스크리닝을 함께 수행한다.
+1. 모멘텀 스크리닝: 거래량 급증 + 당일 급등 종목 (이미 급등한 종목)
 2. 밸류 스크리닝: 최근 거래량이 늘었지만 PER이 낮은(저평가 가능성) 종목
 3. 급락 경고 스크리닝: 거래량 급증 + 당일 급락 종목 (보유 종목 매도 판단 참고용)
+4. 급등 전조(pre-surge) 스크리닝: "아직 크게 오르지 않았지만" 거래량/거래대금/수급이
+   개선되며 고점에 근접해가는 종목 — 이미 오른 종목이 아니라 "오르기 시작하는" 종목을 찾는다.
+   아래 5개 하위 뷰로 나눠서 보여준다.
+   ① 오늘의 급등 후보 (종합 점수 상위)
+   ② 급등 전조 종목 (수급 개선 상위)
+   ③ 거래량 폭발 종목 (거래량+거래대금 증가 상위)
+   ④ 돌파 임박 종목 (고점 근접도 상위)
+   ⑤ AI 추천 종목 (정규화 가중합 스코어 — 실제 ML모델이 아닌 규칙 기반 스코어링)
 
 대상: 코스피/코스닥 시가총액 상위 200개씩, 총 최대 400개 종목
 
@@ -26,6 +34,7 @@ import pandas as pd
 from universe import get_combined_universe
 from fundamentals import get_latest_fundamental
 from sectors import get_sector_map
+from supply_demand import get_supply_demand_improvement_map
 
 
 # ----------------------------
@@ -53,6 +62,15 @@ GROWTH_SECTOR_KEYWORDS = [
 # 급락 경고 스크리닝 조건 (거래량 급증 + 급락)
 CRASH_VOLUME_SURGE_RATIO = 2.0  # 거래량 급증 기준 (모멘텀과 동일 기준 사용)
 PRICE_DROP_MIN = 3.0            # 당일 하락률(%) 최소 기준. 예: 3.0 => -3% 이하 하락 시 포착
+
+# 급등 전조(pre-surge) 스크리닝 조건
+# 핵심: "이미 급등한 종목"이 아니라 "지금 막 오르기 시작하는 종목"을 찾는다.
+PRESURGE_PRICE_CHANGE_MAX = PRICE_CHANGE_MIN   # 상승률: 이 값 미만이어야 함(=아직 안 터짐). 음수도 제외.
+PRESURGE_VOLUME_RATIO_MIN = 1.5                # 거래량: 20일 평균 대비 이 배수 이상 (높음)
+PRESURGE_VALUE_RATIO_MIN = 1.5                 # 거래대금: 20일 평균 대비 이 배수 이상 (높음)
+PRESURGE_VOLATILITY_RATIO_RANGE = (1.2, 3.0)   # 변동성: 20일 평균 대비 이 범위 안이어야 함 (중간 정도 증가)
+PRESURGE_HIGH_PROXIMITY_MAX = 10.0             # 고점 거리: 최근 60일 고점 대비 이 %(하락폭) 이내면 "근접"
+PRESURGE_TOP_N = 20                            # 각 뷰(리스트)마다 상위 몇 개를 보여줄지
 
 OUTPUT_DIR = "docs"
 OUTPUT_JSON = os.path.join(OUTPUT_DIR, "results.json")
@@ -91,6 +109,22 @@ class CrashResult:
     score: float
 
 
+@dataclass
+class PresurgeResult:
+    code: str
+    name: str
+    market: str
+    sector: str
+    price_change_pct: float
+    volume_ratio: float
+    value_ratio: float
+    volatility_ratio: float
+    pct_from_high: float
+    supply_demand_score: float  # 억원 단위, 최근5일-이전5일 순매수 증가분
+    composite_score: float
+    ai_score: float = 0.0
+
+
 def get_daily_price(code: str, days: int = LOOKBACK_DAYS):
     import FinanceDataReader as fdr
     start_date = (pd.Timestamp.today() - pd.Timedelta(days=days * 2)).strftime("%Y-%m-%d")
@@ -98,16 +132,17 @@ def get_daily_price(code: str, days: int = LOOKBACK_DAYS):
     return df.tail(days)
 
 
-def analyze_stock(code: str, name: str, market: str, fundamental_row, sector: str):
-    """한 종목에 대해 시세를 한 번만 조회해서 모멘텀/밸류/급락 세 스크리닝을 동시에 계산한다."""
+def analyze_stock(code: str, name: str, market: str, fundamental_row, sector: str, supply_demand_map: dict):
+    """한 종목에 대해 시세를 한 번만 조회해서 모멘텀/밸류/급락/급등전조 네 스크리닝을 동시에 계산한다."""
     momentum = None
     value = None
     crash = None
+    presurge = None
 
     try:
         df = get_daily_price(code)
         if len(df) < 21:
-            return None, None, None
+            return None, None, None, None
 
         avg_volume_20 = df["Volume"].iloc[-21:-1].mean()
         today_volume = df["Volume"].iloc[-1]
@@ -148,10 +183,99 @@ def analyze_stock(code: str, name: str, market: str, fundamental_row, sector: st
                 round(volume_ratio, 2), round(price_change_pct, 2), round(c_score, 2)
             )
 
+        # 4) 급등 전조 조건 ("아직 안 올랐지만" 거래량/거래대금/변동성/고점근접이 함께 개선)
+        today_value = today_close * today_volume
+        avg_value_20 = (df["Close"] * df["Volume"]).iloc[-21:-1].mean()
+        value_ratio = today_value / avg_value_20 if avg_value_20 > 0 else 0
+
+        daily_range = (df["High"] - df["Low"]) / df["Close"]
+        avg_range_20 = daily_range.iloc[-21:-1].mean()
+        today_range = daily_range.iloc[-1]
+        volatility_ratio = today_range / avg_range_20 if avg_range_20 > 0 else 0
+
+        recent_high = df["High"].iloc[-60:].max()
+        pct_from_high = (recent_high - today_close) / recent_high * 100 if recent_high > 0 else 100
+
+        vol_lo, vol_hi = PRESURGE_VOLATILITY_RATIO_RANGE
+        is_presurge = (
+            0 <= price_change_pct < PRESURGE_PRICE_CHANGE_MAX and
+            volume_ratio >= PRESURGE_VOLUME_RATIO_MIN and
+            value_ratio >= PRESURGE_VALUE_RATIO_MIN and
+            vol_lo <= volatility_ratio <= vol_hi and
+            pct_from_high <= PRESURGE_HIGH_PROXIMITY_MAX
+        )
+
+        if is_presurge:
+            supply_demand_score = supply_demand_map.get(code, 0.0)
+            composite_score = round(
+                volume_ratio * 2.0 +
+                value_ratio * 2.0 +
+                max(0.0, 3.0 - abs(volatility_ratio - 1.8)) * 1.0 +
+                max(0.0, PRESURGE_HIGH_PROXIMITY_MAX - pct_from_high) * 1.0 +
+                max(0.0, supply_demand_score) * 0.5,
+                2
+            )
+            presurge = PresurgeResult(
+                code, name, market, sector or "기타",
+                round(price_change_pct, 2), round(volume_ratio, 2), round(value_ratio, 2),
+                round(volatility_ratio, 2), round(pct_from_high, 2), round(supply_demand_score, 2),
+                composite_score
+            )
+
     except Exception as e:
         print(f"  [skip] {code} {name}: {e}")
 
-    return momentum, value, crash
+    return momentum, value, crash, presurge
+
+
+def compute_ai_scores(candidates: list) -> list:
+    """급등 전조 후보군에 대해 정규화된 가중합 점수를 계산한다 (규칙 기반, ML 모델 아님).
+    각 지표를 0~1로 min-max 정규화한 뒤 가중합해서 0~100 스케일로 변환한다."""
+    if not candidates:
+        return candidates
+
+    def normalize(values: list) -> list:
+        lo, hi = min(values), max(values)
+        if hi - lo < 1e-9:
+            return [0.0] * len(values)
+        return [(v - lo) / (hi - lo) for v in values]
+
+    volume_n = normalize([c.volume_ratio for c in candidates])
+    value_n = normalize([c.value_ratio for c in candidates])
+    high_prox_n = normalize([-c.pct_from_high for c in candidates])       # 고점에 가까울수록 높은 점수
+    supply_n = normalize([c.supply_demand_score for c in candidates])
+    vol_ideal_n = normalize([-abs(c.volatility_ratio - 1.8) for c in candidates])  # 이상적 변동성(1.8배)에 가까울수록 높은 점수
+
+    for i, c in enumerate(candidates):
+        raw = (
+            volume_n[i] * 0.25 +
+            value_n[i] * 0.25 +
+            high_prox_n[i] * 0.20 +
+            supply_n[i] * 0.20 +
+            vol_ideal_n[i] * 0.10
+        )
+        c.ai_score = round(raw * 100, 1)
+
+    return candidates
+
+
+def build_presurge_views(candidates: list, top_n: int = PRESURGE_TOP_N) -> dict:
+    """급등 전조 후보군을 5개 관점으로 나눠서 반환한다."""
+    candidates = compute_ai_scores(candidates)
+
+    today_candidates = sorted(candidates, key=lambda r: r.composite_score, reverse=True)[:top_n]
+    presage_signal = sorted(candidates, key=lambda r: r.supply_demand_score, reverse=True)[:top_n]
+    volume_explosion = sorted(candidates, key=lambda r: (r.volume_ratio + r.value_ratio), reverse=True)[:top_n]
+    breakout_imminent = sorted(candidates, key=lambda r: r.pct_from_high)[:top_n]
+    ai_recommended = sorted(candidates, key=lambda r: r.ai_score, reverse=True)[:top_n]
+
+    return {
+        "today_candidates": today_candidates,
+        "presage_signal": presage_signal,
+        "volume_explosion": volume_explosion,
+        "breakout_imminent": breakout_imminent,
+        "ai_recommended": ai_recommended,
+    }
 
 
 def limit_top_n_per_sector(results: list, n: int = VALUE_TOP_N_PER_SECTOR) -> list:
@@ -183,9 +307,15 @@ def main():
     print("업종(테마) 정보 조회 중...")
     sector_map = get_sector_map()
 
+    print("수급(기관/외국인 순매수) 데이터 조회 중...")
+    supply_demand_map = {}
+    for market in ["KOSPI", "KOSDAQ"]:
+        supply_demand_map.update(get_supply_demand_improvement_map(market))
+
     momentum_results = []
     value_candidates = []
     crash_results = []
+    presurge_candidates = []
 
     for i, row in universe.iterrows():
         code, name, market = row["Code"], row["Name"], row["Market"]
@@ -197,13 +327,15 @@ def main():
 
         sector = sector_map.get(code, "기타")
 
-        m, v, c = analyze_stock(code, name, market, fundamental_row, sector)
+        m, v, c, p = analyze_stock(code, name, market, fundamental_row, sector, supply_demand_map)
         if m:
             momentum_results.append(m)
         if v:
             value_candidates.append(v)
         if c:
             crash_results.append(c)
+        if p:
+            presurge_candidates.append(p)
 
         if (i + 1) % 40 == 0:
             print(f"  진행: {i + 1}/{len(universe)}")
@@ -213,6 +345,7 @@ def main():
     momentum_results.sort(key=lambda r: r.score, reverse=True)
     crash_results.sort(key=lambda r: r.score, reverse=True)
     value_results = limit_top_n_per_sector(value_candidates, VALUE_TOP_N_PER_SECTOR)
+    presurge_views = build_presurge_views(presurge_candidates)
 
     print(f"\n=== 모멘텀 스크리닝 결과: {len(momentum_results)}건 ===")
     for r in momentum_results:
@@ -226,6 +359,13 @@ def main():
     print(f"\n=== 급락 경고 스크리닝 결과: {len(crash_results)}건 ===")
     for r in crash_results:
         print(f"[{r.market}] {r.name}({r.code}) | 거래량 {r.volume_ratio}배 | 등락률 {r.price_change_pct}% | 점수 {r.score}")
+
+    print(f"\n=== 급등 전조 후보군: {len(presurge_candidates)}건 (조건 통과 종목 전체) ===")
+    print(f"  ① 오늘의 급등 후보: {len(presurge_views['today_candidates'])}건")
+    print(f"  ② 급등 전조 종목: {len(presurge_views['presage_signal'])}건")
+    print(f"  ③ 거래량 폭발 종목: {len(presurge_views['volume_explosion'])}건")
+    print(f"  ④ 돌파 임박 종목: {len(presurge_views['breakout_imminent'])}건")
+    print(f"  ⑤ AI 추천 종목: {len(presurge_views['ai_recommended'])}건")
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -247,9 +387,22 @@ def main():
             "volume_surge_ratio": CRASH_VOLUME_SURGE_RATIO,
             "price_drop_min_pct": PRICE_DROP_MIN,
         },
+        "presurge_conditions": {
+            "price_change_max_pct": PRESURGE_PRICE_CHANGE_MAX,
+            "volume_ratio_min": PRESURGE_VOLUME_RATIO_MIN,
+            "value_ratio_min": PRESURGE_VALUE_RATIO_MIN,
+            "volatility_ratio_range": list(PRESURGE_VOLATILITY_RATIO_RANGE),
+            "high_proximity_max_pct": PRESURGE_HIGH_PROXIMITY_MAX,
+            "note": "AI 추천 종목은 실제 ML 모델이 아니라 정규화된 지표의 가중합(규칙 기반) 점수입니다.",
+        },
         "momentum_results": [asdict(r) for r in momentum_results],
         "value_results": [asdict(r) for r in value_results],
         "crash_results": [asdict(r) for r in crash_results],
+        "presurge_today_candidates": [asdict(r) for r in presurge_views["today_candidates"]],
+        "presurge_signal": [asdict(r) for r in presurge_views["presage_signal"]],
+        "presurge_volume_explosion": [asdict(r) for r in presurge_views["volume_explosion"]],
+        "presurge_breakout_imminent": [asdict(r) for r in presurge_views["breakout_imminent"]],
+        "presurge_ai_recommended": [asdict(r) for r in presurge_views["ai_recommended"]],
     }
 
     with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
@@ -270,6 +423,10 @@ def main():
     if crash_results:
         pd.DataFrame([asdict(r) for r in crash_results]).to_csv(
             f"history/crash_{today_str}.csv", index=False, encoding="utf-8-sig"
+        )
+    if presurge_candidates:
+        pd.DataFrame([asdict(r) for r in presurge_candidates]).to_csv(
+            f"history/presurge_{today_str}.csv", index=False, encoding="utf-8-sig"
         )
 
 

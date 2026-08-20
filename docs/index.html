@@ -35,6 +35,14 @@
     font-weight: 700;
     margin: 24px 0 4px;
   }
+  .group-header {
+    font-size: 17px;
+    font-weight: 800;
+    margin: 32px 0 4px;
+    padding-top: 16px;
+    border-top: 2px solid #2a2d35;
+  }
+  .group-desc { font-size: 12px; color: #8a8f98; margin-bottom: 4px; line-height: 1.5; }
   .section-desc { font-size: 12px; color: #8a8f98; margin-bottom: 8px; }
   .card {
     background: #1a1d24;
@@ -60,6 +68,7 @@
   .metrics .primary { font-size: 16px; font-weight: 700; }
   .primary.red { color: #ff5c5c; }
   .primary.blue { color: #5c9dff; }
+  .primary.green { color: #4ade80; }
   .metrics .sub { font-size: 12px; color: #8a8f98; margin-top: 2px; }
   .empty { text-align: center; color: #8a8f98; padding: 24px 0; font-size: 13px; }
   .refresh {
@@ -97,6 +106,33 @@
   <div class="section-desc" id="value-desc"></div>
   <div id="value-list"></div>
 
+  <div class="group-header">🔥 급등 전조 스크리닝</div>
+  <div class="group-desc" id="presurge-desc"></div>
+
+  <div class="section-title">① 오늘의 급등 후보</div>
+  <div class="section-desc">종합 점수(거래량·거래대금·변동성·고점근접·수급) 상위</div>
+  <div id="presurge-today-list"></div>
+
+  <div class="section-title">② 급등 전조 종목</div>
+  <div class="section-desc">기관+외국인 순매수가 최근 들어 개선된 종목 상위</div>
+  <div id="presurge-signal-list"></div>
+
+  <div class="section-title">③ 거래량 폭발 종목</div>
+  <div class="section-desc">거래량·거래대금 증가폭이 가장 큰 종목 상위</div>
+  <div id="presurge-volume-list"></div>
+
+  <div class="section-title">④ 돌파 임박 종목</div>
+  <div class="section-desc">최근 60일 고점에 가장 가까이 다가간 종목 상위</div>
+  <div id="presurge-breakout-list"></div>
+
+  <div class="section-title">⑤ AI 추천 종목</div>
+  <div class="section-desc">지표를 정규화해 가중합한 점수 상위 (⚠️ 실제 ML모델이 아닌 규칙 기반 점수)</div>
+  <div id="presurge-ai-list"></div>
+
+  <div class="section-title">⑥ 백테스트 / 모델 성적</div>
+  <div class="section-desc">이 스크리닝 조건이 과거에 실제로 유효했는지 검증한 결과</div>
+  <div id="backtest-panel"></div>
+
   <button class="refresh" onclick="load()">새로고침</button>
 
 <script>
@@ -131,7 +167,7 @@ function renderCards(containerId, items, kind) {
           <div class="primary blue">PER ${r.per}</div>
           <div class="sub">거래량 ${r.volume_ratio}배 · PBR ${r.pbr} · 점수 ${r.score}</div>
         </div>`;
-    } else {
+    } else if (kind === 'crash') {
       card.innerHTML = `
         <div>
           <div class="name">${r.name}<span class="market">${r.market}</span></div>
@@ -141,9 +177,76 @@ function renderCards(containerId, items, kind) {
           <div class="primary red">${r.price_change_pct}%</div>
           <div class="sub">거래량 ${r.volume_ratio}배 · 점수 ${r.score}</div>
         </div>`;
+    } else if (kind === 'presurge-today') {
+      card.innerHTML = `
+        <div>
+          <div class="name">${r.name}<span class="market">${r.market}</span></div>
+          <div class="code">${r.code} · ${r.sector}</div>
+        </div>
+        <div class="metrics">
+          <div class="primary green">${r.composite_score}점</div>
+          <div class="sub">등락률 ${r.price_change_pct}% · 거래량 ${r.volume_ratio}배 · 고점거리 ${r.pct_from_high}%</div>
+        </div>`;
+    } else if (kind === 'presurge-signal') {
+      card.innerHTML = `
+        <div>
+          <div class="name">${r.name}<span class="market">${r.market}</span></div>
+          <div class="code">${r.code} · ${r.sector}</div>
+        </div>
+        <div class="metrics">
+          <div class="primary green">${r.supply_demand_score > 0 ? '+' : ''}${r.supply_demand_score}억</div>
+          <div class="sub">수급 개선 · 거래량 ${r.volume_ratio}배 · 등락률 ${r.price_change_pct}%</div>
+        </div>`;
+    } else if (kind === 'presurge-volume') {
+      card.innerHTML = `
+        <div>
+          <div class="name">${r.name}<span class="market">${r.market}</span></div>
+          <div class="code">${r.code} · ${r.sector}</div>
+        </div>
+        <div class="metrics">
+          <div class="primary green">${r.volume_ratio}배</div>
+          <div class="sub">거래대금 ${r.value_ratio}배 · 등락률 ${r.price_change_pct}%</div>
+        </div>`;
+    } else if (kind === 'presurge-breakout') {
+      card.innerHTML = `
+        <div>
+          <div class="name">${r.name}<span class="market">${r.market}</span></div>
+          <div class="code">${r.code} · ${r.sector}</div>
+        </div>
+        <div class="metrics">
+          <div class="primary green">-${r.pct_from_high}%</div>
+          <div class="sub">60일 고점 대비 · 거래량 ${r.volume_ratio}배</div>
+        </div>`;
+    } else if (kind === 'presurge-ai') {
+      card.innerHTML = `
+        <div>
+          <div class="name">${r.name}<span class="market">${r.market}</span></div>
+          <div class="code">${r.code} · ${r.sector}</div>
+        </div>
+        <div class="metrics">
+          <div class="primary green">${r.ai_score}점</div>
+          <div class="sub">거래량 ${r.volume_ratio}배 · 수급 ${r.supply_demand_score > 0 ? '+' : ''}${r.supply_demand_score}억</div>
+        </div>`;
     }
     el.appendChild(card);
   });
+}
+
+function renderBacktestPanel(data) {
+  const el = document.getElementById('backtest-panel');
+  if (!data) {
+    el.innerHTML = '<div class="empty">아직 백테스트 결과가 없습니다. backtest_presurge.py를 실행하면 여기 표시됩니다.</div>';
+    return;
+  }
+  el.innerHTML = `
+    <div class="card" style="display:block;">
+      <div class="sub" style="margin-bottom:8px;">검증 기간: ${data.period || '-'} · 신호 발생 ${data.signal_count || 0}건</div>
+      ${(data.rows || []).map(row => `
+        <div style="display:flex;justify-content:space-between;padding:4px 0;border-top:1px solid #2a2d35;">
+          <span class="sub">${row.horizon}</span>
+          <span class="sub">평균 ${row.avg_return}% · 승률 ${row.win_rate}% · 베이스라인 ${row.baseline}%</span>
+        </div>`).join('')}
+    </div>`;
 }
 
 async function load() {
@@ -162,12 +265,30 @@ async function load() {
       `거래량 ${data.value_conditions.volume_ratio_min}배↑, PER 일반 ${data.value_conditions.per_max_default}↓/성장주 ${data.value_conditions.per_max_growth}↓ · 업종당 상위 ${data.value_conditions.top_n_per_sector}개`;
     document.getElementById('crash-desc').textContent =
       `거래량 ${data.crash_conditions.volume_surge_ratio}배↑, 하락률 ${data.crash_conditions.price_drop_min_pct}%↓`;
+    document.getElementById('presurge-desc').textContent =
+      `"이미 오른 종목"이 아니라 "지금 막 오르기 시작하는 종목"을 찾는 스크리닝입니다. 등락률 ${data.presurge_conditions.price_change_max_pct}% 미만 + 거래량/거래대금 ${data.presurge_conditions.volume_ratio_min}배↑ + 고점과의 거리 ${data.presurge_conditions.high_proximity_max_pct}% 이내인 종목만 대상으로 합니다.`;
 
     renderCards('momentum-list', data.momentum_results, 'momentum');
     renderCards('value-list', data.value_results, 'value');
     renderCards('crash-list', data.crash_results, 'crash');
+    renderCards('presurge-today-list', data.presurge_today_candidates, 'presurge-today');
+    renderCards('presurge-signal-list', data.presurge_signal, 'presurge-signal');
+    renderCards('presurge-volume-list', data.presurge_volume_explosion, 'presurge-volume');
+    renderCards('presurge-breakout-list', data.presurge_breakout_imminent, 'presurge-breakout');
+    renderCards('presurge-ai-list', data.presurge_ai_recommended, 'presurge-ai');
   } catch (e) {
     metaEl.textContent = '결과를 아직 불러올 수 없습니다. 잠시 후 다시 시도하세요.';
+  }
+
+  try {
+    const btRes = await fetch('backtest_results.json?t=' + Date.now());
+    if (btRes.ok) {
+      renderBacktestPanel(await btRes.json());
+    } else {
+      renderBacktestPanel(null);
+    }
+  } catch (e) {
+    renderBacktestPanel(null);
   }
 }
 load();

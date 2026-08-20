@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-08-20 10:26:09",
+  "period": "최근 365일, 코스피/코스닥 상위 100개씩",
+  "signal_count": 597,
+  "rows": [
+    {
+      "horizon": "1일 후",
+      "avg_return": 0.17,
+      "win_rate": 47.2,
+      "baseline": 0.28
+    },
+    {
+      "horizon": "3일 후",
+      "avg_return": 1.35,
+      "win_rate": 53.4,
+      "baseline": 0.84
+    },
+    {
+      "horizon": "5일 후",
+      "avg_return": 2.36,
+      "win_rate": 55.4,
+      "baseline": 1.42
+    }
+  ],
+  "note": "수급(기관/외국인 순매수) 조건은 백테스트에서 제외됨 (계산량 문제)"
+}

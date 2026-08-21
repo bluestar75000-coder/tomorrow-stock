@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-21 00:10:18",
+  "generated_at": "2026-08-21 08:34:03",
   "scanned_count": 400,
   "momentum_conditions": {
     "volume_surge_ratio": 2.0,
@@ -44,16 +44,85 @@
   },
   "momentum_results": [
     {
+      "code": "041190",
+      "name": "우리기술투자",
+      "market": "KOSDAQ",
+      "volume_ratio": 41.43,
+      "price_change_pct": 19.96,
+      "score": 51.41
+    },
+    {
       "code": "183300",
       "name": "코미코",
       "market": "KOSDAQ",
-      "volume_ratio": 3.0,
-      "price_change_pct": 26.61,
-      "score": 16.3
+      "volume_ratio": 17.24,
+      "price_change_pct": 27.06,
+      "score": 30.77
+    },
+    {
+      "code": "025980",
+      "name": "아난티",
+      "market": "KOSDAQ",
+      "volume_ratio": 5.74,
+      "price_change_pct": 5.56,
+      "score": 8.52
+    },
+    {
+      "code": "032830",
+      "name": "삼성생명",
+      "market": "KOSPI",
+      "volume_ratio": 2.33,
+      "price_change_pct": 10.61,
+      "score": 7.63
+    },
+    {
+      "code": "005935",
+      "name": "삼성전자우",
+      "market": "KOSPI",
+      "volume_ratio": 2.64,
+      "price_change_pct": 8.26,
+      "score": 6.77
+    },
+    {
+      "code": "124500",
+      "name": "아이티센글로벌",
+      "market": "KOSDAQ",
+      "volume_ratio": 3.4,
+      "price_change_pct": 3.83,
+      "score": 5.31
     }
   ],
-  "value_results": [],
-  "crash_results": [],
+  "value_results": [
+    {
+      "code": "041190",
+      "name": "우리기술투자",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "is_growth": false,
+      "volume_ratio": 41.43,
+      "per": 4.17,
+      "pbr": 0.59,
+      "score": 99.35
+    }
+  ],
+  "crash_results": [
+    {
+      "code": "237690",
+      "name": "에스티팜",
+      "market": "KOSDAQ",
+      "volume_ratio": 2.06,
+      "price_change_pct": -10.1,
+      "score": 7.11
+    },
+    {
+      "code": "397030",
+      "name": "에이프릴바이오",
+      "market": "KOSDAQ",
+      "volume_ratio": 2.36,
+      "price_change_pct": -6.64,
+      "score": 5.68
+    }
+  ],
   "presurge_today_candidates": [],
   "presurge_signal": [],
   "presurge_volume_explosion": [],

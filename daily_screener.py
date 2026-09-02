@@ -84,6 +84,7 @@ class MomentumResult:
     code: str
     name: str
     market: str
+    price: float
     volume_ratio: float
     price_change_pct: float
     score: float
@@ -96,6 +97,7 @@ class ValueResult:
     market: str
     sector: str
     is_growth: bool
+    price: float
     volume_ratio: float
     per: float
     pbr: float
@@ -107,6 +109,7 @@ class CrashResult:
     code: str
     name: str
     market: str
+    price: float
     volume_ratio: float
     price_change_pct: float  # 음수 값 (하락률)
     score: float
@@ -118,6 +121,7 @@ class PresurgeResult:
     name: str
     market: str
     sector: str
+    price: float
     price_change_pct: float
     volume_ratio: float
     value_ratio: float
@@ -159,7 +163,7 @@ def analyze_stock(code: str, name: str, market: str, fundamental_row, sector: st
         if volume_ratio >= VOLUME_SURGE_RATIO and price_change_pct >= PRICE_CHANGE_MIN:
             m_score = volume_ratio * 1.0 + price_change_pct * 0.5
             momentum = MomentumResult(
-                code, name, market,
+                code, name, market, round(float(today_close)),
                 round(volume_ratio, 2), round(price_change_pct, 2), round(m_score, 2)
             )
 
@@ -174,7 +178,7 @@ def analyze_stock(code: str, name: str, market: str, fundamental_row, sector: st
             if per and per > 0 and per <= per_threshold and volume_ratio >= VALUE_VOLUME_RATIO_MIN:
                 v_score = round(volume_ratio * (10 / per), 2)
                 value = ValueResult(
-                    code, name, market, sector_name, is_growth,
+                    code, name, market, sector_name, is_growth, round(float(today_close)),
                     round(volume_ratio, 2), round(per, 2), round(pbr, 2), v_score
                 )
 
@@ -182,7 +186,7 @@ def analyze_stock(code: str, name: str, market: str, fundamental_row, sector: st
         if volume_ratio >= CRASH_VOLUME_SURGE_RATIO and price_change_pct <= -PRICE_DROP_MIN:
             c_score = volume_ratio * 1.0 + abs(price_change_pct) * 0.5
             crash = CrashResult(
-                code, name, market,
+                code, name, market, round(float(today_close)),
                 round(volume_ratio, 2), round(price_change_pct, 2), round(c_score, 2)
             )
 
@@ -219,7 +223,7 @@ def analyze_stock(code: str, name: str, market: str, fundamental_row, sector: st
                 2
             )
             presurge = PresurgeResult(
-                code, name, market, sector or "기타",
+                code, name, market, sector or "기타", round(float(today_close)),
                 round(price_change_pct, 2), round(volume_ratio, 2), round(value_ratio, 2),
                 round(volatility_ratio, 2), round(pct_from_high, 2), round(supply_demand_score, 2),
                 composite_score

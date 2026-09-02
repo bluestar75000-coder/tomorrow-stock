@@ -191,6 +191,11 @@
   <button class="refresh" onclick="load(document.getElementById('date-picker').value)">새로고침</button>
 
 <script>
+function formatPrice(price) {
+  if (price === null || price === undefined) return '-';
+  return Number(price).toLocaleString('ko-KR');
+}
+
 function renderCards(containerId, items, kind) {
   const el = document.getElementById(containerId);
   el.innerHTML = '';
@@ -205,7 +210,7 @@ function renderCards(containerId, items, kind) {
       card.innerHTML = `
         <div>
           <div class="name">${r.name}<span class="market">${r.market}</span></div>
-          <div class="code">${r.code}</div>
+          <div class="code">${r.code} · ${formatPrice(r.price)}원</div>
         </div>
         <div class="metrics">
           <div class="primary red">+${r.price_change_pct}%</div>
@@ -216,7 +221,7 @@ function renderCards(containerId, items, kind) {
       card.innerHTML = `
         <div>
           <div class="name">${r.name}<span class="market">${r.market}</span></div>
-          <div class="code">${r.code} · ${r.sector}${growthTag}</div>
+          <div class="code">${r.code} · ${formatPrice(r.price)}원 · ${r.sector}${growthTag}</div>
         </div>
         <div class="metrics">
           <div class="primary blue">PER ${r.per}</div>
@@ -226,7 +231,7 @@ function renderCards(containerId, items, kind) {
       card.innerHTML = `
         <div>
           <div class="name">${r.name}<span class="market">${r.market}</span></div>
-          <div class="code">${r.code}</div>
+          <div class="code">${r.code} · ${formatPrice(r.price)}원</div>
         </div>
         <div class="metrics">
           <div class="primary red">${r.price_change_pct}%</div>
@@ -236,7 +241,7 @@ function renderCards(containerId, items, kind) {
       card.innerHTML = `
         <div>
           <div class="name">${r.name}<span class="market">${r.market}</span></div>
-          <div class="code">${r.code} · ${r.sector}</div>
+          <div class="code">${r.code} · ${formatPrice(r.price)}원 · ${r.sector}</div>
         </div>
         <div class="metrics">
           <div class="primary green">${r.composite_score}점</div>
@@ -246,7 +251,7 @@ function renderCards(containerId, items, kind) {
       card.innerHTML = `
         <div>
           <div class="name">${r.name}<span class="market">${r.market}</span></div>
-          <div class="code">${r.code} · ${r.sector}</div>
+          <div class="code">${r.code} · ${formatPrice(r.price)}원 · ${r.sector}</div>
         </div>
         <div class="metrics">
           <div class="primary green">${r.supply_demand_score > 0 ? '+' : ''}${r.supply_demand_score}억</div>
@@ -256,7 +261,7 @@ function renderCards(containerId, items, kind) {
       card.innerHTML = `
         <div>
           <div class="name">${r.name}<span class="market">${r.market}</span></div>
-          <div class="code">${r.code} · ${r.sector}</div>
+          <div class="code">${r.code} · ${formatPrice(r.price)}원 · ${r.sector}</div>
         </div>
         <div class="metrics">
           <div class="primary green">${r.volume_ratio}배</div>
@@ -266,7 +271,7 @@ function renderCards(containerId, items, kind) {
       card.innerHTML = `
         <div>
           <div class="name">${r.name}<span class="market">${r.market}</span></div>
-          <div class="code">${r.code} · ${r.sector}</div>
+          <div class="code">${r.code} · ${formatPrice(r.price)}원 · ${r.sector}</div>
         </div>
         <div class="metrics">
           <div class="primary green">-${r.pct_from_high}%</div>
@@ -276,7 +281,7 @@ function renderCards(containerId, items, kind) {
       card.innerHTML = `
         <div>
           <div class="name">${r.name}<span class="market">${r.market}</span></div>
-          <div class="code">${r.code} · ${r.sector}</div>
+          <div class="code">${r.code} · ${formatPrice(r.price)}원 · ${r.sector}</div>
         </div>
         <div class="metrics">
           <div class="primary green">${r.ai_score}점</div>

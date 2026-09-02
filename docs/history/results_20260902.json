@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-02 07:33:21",
+  "generated_at": "2026-09-02 09:28:25",
   "scanned_count": 400,
   "momentum_conditions": {
     "volume_surge_ratio": 2.0,
@@ -47,6 +47,7 @@
       "code": "044490",
       "name": "태웅",
       "market": "KOSDAQ",
+      "price": 37250,
       "volume_ratio": 6.91,
       "price_change_pct": 11.69,
       "score": 12.75
@@ -55,6 +56,7 @@
       "code": "024850",
       "name": "HLB이노베이션",
       "market": "KOSDAQ",
+      "price": 15690,
       "volume_ratio": 3.55,
       "price_change_pct": 13.61,
       "score": 10.35
@@ -63,6 +65,7 @@
       "code": "092870",
       "name": "엑시콘",
       "market": "KOSDAQ",
+      "price": 31050,
       "volume_ratio": 3.56,
       "price_change_pct": 11.69,
       "score": 9.41
@@ -71,6 +74,7 @@
       "code": "232140",
       "name": "와이씨",
       "market": "KOSDAQ",
+      "price": 12050,
       "volume_ratio": 3.61,
       "price_change_pct": 7.88,
       "score": 7.55
@@ -79,6 +83,7 @@
       "code": "253590",
       "name": "네오셈",
       "market": "KOSDAQ",
+      "price": 11550,
       "volume_ratio": 2.73,
       "price_change_pct": 7.44,
       "score": 6.46
@@ -87,6 +92,7 @@
       "code": "175330",
       "name": "JB금융지주",
       "market": "KOSPI",
+      "price": 30550,
       "volume_ratio": 2.3,
       "price_change_pct": 4.44,
       "score": 4.52
@@ -95,6 +101,7 @@
       "code": "138040",
       "name": "메리츠금융지주",
       "market": "KOSPI",
+      "price": 129800,
       "volume_ratio": 2.42,
       "price_change_pct": 3.51,
       "score": 4.17
@@ -106,6 +113,7 @@
       "code": "094170",
       "name": "동운아나텍",
       "market": "KOSDAQ",
+      "price": 31000,
       "volume_ratio": 2.96,
       "price_change_pct": -13.29,
       "score": 9.61
@@ -114,6 +122,7 @@
       "code": "041960",
       "name": "코미팜",
       "market": "KOSDAQ",
+      "price": 8680,
       "volume_ratio": 3.24,
       "price_change_pct": -6.77,
       "score": 6.62
@@ -122,6 +131,7 @@
       "code": "033790",
       "name": "피노",
       "market": "KOSDAQ",
+      "price": 7850,
       "volume_ratio": 2.15,
       "price_change_pct": -5.19,
       "score": 4.74

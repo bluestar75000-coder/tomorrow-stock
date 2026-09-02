@@ -1,4 +1,4 @@
-﻿code,name,market,volume_ratio,price_change_pct,score
-094170,동운아나텍,KOSDAQ,2.96,-13.29,9.61
-041960,코미팜,KOSDAQ,3.24,-6.77,6.62
-033790,피노,KOSDAQ,2.15,-5.19,4.74
+﻿code,name,market,price,volume_ratio,price_change_pct,score
+094170,동운아나텍,KOSDAQ,31000,2.96,-13.29,9.61
+041960,코미팜,KOSDAQ,8680,3.24,-6.77,6.62
+033790,피노,KOSDAQ,7850,2.15,-5.19,4.74

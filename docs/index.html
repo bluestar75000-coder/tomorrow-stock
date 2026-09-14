@@ -117,6 +117,28 @@
   .primary.green { color: #4ade80; }
   .metrics .sub { font-size: 12px; color: #8a8f98; margin-top: 2px; }
   .empty { text-align: center; color: #8a8f98; padding: 24px 0; font-size: 13px; }
+  .treemap-container {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #05070a;
+  }
+  .treemap-tile {
+    position: absolute;
+    box-sizing: border-box;
+    border: 1px solid #0f1115;
+    padding: 6px 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .treemap-tile .t-symbol { font-size: 13px; font-weight: 700; color: #fff; line-height: 1.3; }
+  .treemap-tile .t-change { font-size: 12px; font-weight: 600; color: #fff; margin-top: 2px; }
+  .treemap-tile .t-price { font-size: 10px; color: rgba(255,255,255,0.75); margin-top: 1px; }
   .refresh {
     display: block;
     width: 100%;
@@ -188,7 +210,11 @@
   <div class="section-desc">이 스크리닝 조건이 과거에 실제로 유효했는지 검증한 결과 (기간별 비교)</div>
   <div id="backtest-panel"></div>
 
-  <button class="refresh" onclick="load(document.getElementById('date-picker').value)">새로고침</button>
+  <div class="group-header">📊 내 포트폴리오 시장지도</div>
+  <div class="group-desc" id="portfolio-desc"></div>
+  <div id="portfolio-treemap" class="treemap-container"></div>
+
+  <button class="refresh" onclick="load(document.getElementById('date-picker').value); loadPortfolio();">새로고침</button>
 
 <script>
 function formatPrice(price) {
@@ -412,6 +438,99 @@ async function load(dateStr) {
   }
 }
 
+// ---- 포트폴리오 시장지도(트리맵) ----
+
+function buildTreemap(items, x, y, w, h, horizontal) {
+  if (items.length === 0) return [];
+  if (items.length === 1) {
+    return [{ x, y, w, h, item: items[0] }];
+  }
+  const total = items.reduce((s, d) => s + d.value, 0);
+  let bestIdx = 1, bestDiff = Infinity, cum = 0;
+  for (let i = 0; i < items.length - 1; i++) {
+    cum += items[i].value;
+    const diff = Math.abs(cum - (total - cum));
+    if (diff < bestDiff) { bestDiff = diff; bestIdx = i + 1; }
+  }
+  const left = items.slice(0, bestIdx);
+  const right = items.slice(bestIdx);
+  const leftSum = left.reduce((s, d) => s + d.value, 0);
+  const frac = leftSum / total;
+
+  if (horizontal) {
+    const leftW = w * frac;
+    return [
+      ...buildTreemap(left, x, y, leftW, h, false),
+      ...buildTreemap(right, x + leftW, y, w - leftW, h, false),
+    ];
+  } else {
+    const leftH = h * frac;
+    return [
+      ...buildTreemap(left, x, y, w, leftH, true),
+      ...buildTreemap(right, x, y + leftH, w, h - leftH, true),
+    ];
+  }
+}
+
+function changeColor(pct) {
+  // 핀비즈 스타일: 상승은 초록, 하락은 빨강, 변동폭이 클수록 진하게
+  const clamped = Math.max(-5, Math.min(5, pct));
+  const intensity = Math.abs(clamped) / 5; // 0~1
+  if (pct >= 0) {
+    const g = Math.round(90 + intensity * 80);
+    return `rgb(20, ${g}, 70)`;
+  } else {
+    const r = Math.round(120 + intensity * 100);
+    return `rgb(${r}, 40, 45)`;
+  }
+}
+
+async function loadPortfolio() {
+  const container = document.getElementById('portfolio-treemap');
+  const descEl = document.getElementById('portfolio-desc');
+  try {
+    const res = await fetch('portfolio.json?t=' + Date.now());
+    if (!res.ok) throw new Error('no data');
+    const data = await res.json();
+
+    if (!data.items || data.items.length === 0) {
+      container.innerHTML = '<div class="empty">포트폴리오 데이터가 없습니다.</div>';
+      return;
+    }
+
+    descEl.textContent = `업데이트: ${data.generated_at} · 총 평가금액 ${formatPrice(data.total_value)}원 (보유 비중대로 박스 크기가 정해집니다)`;
+
+    const rect = container.getBoundingClientRect();
+    const W = rect.width || container.offsetWidth || 340;
+    const H = rect.height || 420;
+
+    const sorted = data.items.slice().sort((a, b) => b.value - a.value);
+    const tiles = buildTreemap(sorted, 0, 0, W, H, W >= H);
+
+    container.innerHTML = '';
+    tiles.forEach(t => {
+      const el = document.createElement('div');
+      el.className = 'treemap-tile';
+      el.style.left = t.x + 'px';
+      el.style.top = t.y + 'px';
+      el.style.width = t.w + 'px';
+      el.style.height = t.h + 'px';
+      el.style.background = changeColor(t.item.change_pct);
+
+      const showDetails = t.w > 60 && t.h > 36;
+      el.innerHTML = showDetails ? `
+        <div class="t-symbol">${t.item.name}</div>
+        <div class="t-change">${t.item.change_pct >= 0 ? '+' : ''}${t.item.change_pct}%</div>
+        <div class="t-price">${formatPrice(t.item.price)}${t.item.type === 'crypto' ? '' : '원'}</div>
+      ` : `<div class="t-symbol" style="font-size:11px;">${t.item.name}</div>`;
+
+      container.appendChild(el);
+    });
+  } catch (e) {
+    container.innerHTML = '<div class="empty">포트폴리오 데이터를 아직 불러올 수 없습니다.</div>';
+  }
+}
+
 (async function init() {
   const picker = document.getElementById('date-picker');
   picker.value = todayStr();
@@ -420,6 +539,7 @@ async function load(dateStr) {
 
   await loadAvailableDates();
   load(todayStr());
+  loadPortfolio();
 })();
 </script>
 </body>

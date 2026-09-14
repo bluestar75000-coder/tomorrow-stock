@@ -1,0 +1,78 @@
+{
+  "generated_at": "2026-09-14 11:10:33",
+  "items": [
+    {
+      "symbol": "028260",
+      "name": "삼성물산",
+      "type": "stock",
+      "price": 353000.0,
+      "change_pct": -3.81,
+      "qty": 2,
+      "value": 706000.0
+    },
+    {
+      "symbol": "326030",
+      "name": "SK바이오팜",
+      "type": "stock",
+      "price": 78000.0,
+      "change_pct": -1.76,
+      "qty": 23,
+      "value": 1794000.0
+    },
+    {
+      "symbol": "035420",
+      "name": "NAVER",
+      "type": "stock",
+      "price": 203000.0,
+      "change_pct": -1.69,
+      "qty": 8,
+      "value": 1624000.0
+    },
+    {
+      "symbol": "005380",
+      "name": "현대차",
+      "type": "stock",
+      "price": 367500.0,
+      "change_pct": -3.92,
+      "qty": 2,
+      "value": 735000.0
+    },
+    {
+      "symbol": "042660",
+      "name": "한화오션",
+      "type": "stock",
+      "price": 85200.0,
+      "change_pct": -0.47,
+      "qty": 10,
+      "value": 852000.0
+    },
+    {
+      "symbol": "062040",
+      "name": "산일전기",
+      "type": "stock",
+      "price": 194700.0,
+      "change_pct": -1.96,
+      "qty": 7,
+      "value": 1362900.0
+    },
+    {
+      "symbol": "BTC",
+      "name": "비트코인",
+      "type": "crypto",
+      "price": 104635773,
+      "change_pct": 1.85,
+      "qty": 0.0059,
+      "value": 617351.0
+    },
+    {
+      "symbol": "ETH",
+      "name": "이더리움",
+      "type": "crypto",
+      "price": 3377552,
+      "change_pct": 1.81,
+      "qty": 0.11439,
+      "value": 386358.0
+    }
+  ],
+  "total_value": 8077609.0
+}

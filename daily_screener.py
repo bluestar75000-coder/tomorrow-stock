@@ -38,6 +38,7 @@ from universe import get_combined_universe
 from fundamentals import get_latest_fundamental
 from sectors import get_sector_map
 from supply_demand import get_supply_demand_improvement_map
+from portfolio import build_portfolio
 
 
 # ----------------------------
@@ -480,6 +481,17 @@ def main():
         pd.DataFrame([asdict(r) for r in presurge_candidates]).to_csv(
             f"history/presurge_{today_str}.csv", index=False, encoding="utf-8-sig"
         )
+
+    print("\n포트폴리오(보유 종목) 시장지도 데이터 생성 중...")
+    try:
+        portfolio_output = build_portfolio()
+        portfolio_path = os.path.join(OUTPUT_DIR, "portfolio.json")
+        with open(portfolio_path, "w", encoding="utf-8") as f:
+            json.dump(sanitize_for_json(portfolio_output), f, ensure_ascii=False, indent=2)
+        print(f"포트폴리오 데이터를 {portfolio_path} 에 저장했습니다. "
+              f"총 평가금액: {portfolio_output['total_value']:,.0f}원")
+    except Exception as e:
+        print(f"[경고] 포트폴리오 데이터 생성 실패: {e}")
 
 
 if __name__ == "__main__":

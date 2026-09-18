@@ -1,0 +1,5 @@
+﻿code,name,market,sector,price,price_change_pct,volume_ratio,value_ratio,volatility_ratio,pct_from_high,supply_demand_score,composite_score,ai_score
+272210,한화시스템,KOSPI,기타,79900,0.38,3.14,3.44,1.27,9.1,0.0,16.53,37.0
+028050,삼성E&A,KOSPI,기타,52100,1.36,3.72,4.0,1.52,5.62,0.0,22.54,70.9
+056190,SFA,KOSDAQ,기타,28150,2.74,1.58,1.74,1.33,3.76,0.0,15.41,21.3
+053800,안랩,KOSDAQ,기타,67300,2.75,2.75,3.01,1.57,3.58,0.0,20.72,57.7

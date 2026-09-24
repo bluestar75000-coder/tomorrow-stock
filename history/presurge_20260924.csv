@@ -1,0 +1,4 @@
+﻿code,name,market,sector,price,price_change_pct,volume_ratio,value_ratio,volatility_ratio,pct_from_high,supply_demand_score,composite_score,ai_score
+024110,기업은행,KOSPI,기타,20450,2.0,1.75,1.74,1.87,7.67,0.0,12.23,10.0
+053800,안랩,KOSDAQ,기타,73600,2.51,2.03,2.34,1.46,2.52,0.0,18.87,70.0
+041960,코미팜,KOSDAQ,기타,9930,0.81,1.94,2.04,1.59,7.11,0.0,13.64,36.5

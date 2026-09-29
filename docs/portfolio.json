@@ -1,78 +1,60 @@
 {
-  "generated_at": "2026-09-28 15:30:19",
+  "generated_at": "2026-09-29 14:11:22",
   "items": [
     {
       "symbol": "028260",
       "name": "삼성물산",
       "type": "stock",
-      "price": 345500.0,
-      "change_pct": -6.24,
+      "price": 347500.0,
+      "change_pct": 0.58,
       "qty": 2,
-      "value": 691000.0
+      "value": 695000.0
     },
     {
       "symbol": "326030",
       "name": "SK바이오팜",
       "type": "stock",
-      "price": 76000.0,
-      "change_pct": -0.26,
+      "price": 74900.0,
+      "change_pct": -1.45,
       "qty": 23,
-      "value": 1748000.0
+      "value": 1722700.0
     },
     {
       "symbol": "035420",
       "name": "NAVER",
       "type": "stock",
-      "price": 196300.0,
-      "change_pct": 0.15,
+      "price": 194900.0,
+      "change_pct": -0.71,
       "qty": 8,
-      "value": 1570400.0
+      "value": 1559200.0
     },
     {
       "symbol": "005380",
       "name": "현대차",
       "type": "stock",
-      "price": 354000.0,
-      "change_pct": -0.84,
+      "price": 350500.0,
+      "change_pct": -0.99,
       "qty": 2,
-      "value": 708000.0
+      "value": 701000.0
     },
     {
       "symbol": "042660",
       "name": "한화오션",
       "type": "stock",
-      "price": 80500.0,
-      "change_pct": -0.25,
+      "price": 79100.0,
+      "change_pct": -1.74,
       "qty": 10,
-      "value": 805000.0
+      "value": 791000.0
     },
     {
       "symbol": "062040",
       "name": "산일전기",
       "type": "stock",
-      "price": 199900.0,
-      "change_pct": -2.49,
+      "price": 208000.0,
+      "change_pct": 4.05,
       "qty": 7,
-      "value": 1399300.0
-    },
-    {
-      "symbol": "BTC",
-      "name": "비트코인",
-      "type": "crypto",
-      "price": 113027723,
-      "change_pct": -1.32,
-      "qty": 0.0059,
-      "value": 666864.0
-    },
-    {
-      "symbol": "ETH",
-      "name": "이더리움",
-      "type": "crypto",
-      "price": 3629753,
-      "change_pct": -0.33,
-      "qty": 0.11439,
-      "value": 415207.0
+      "value": 1456000.0
     }
   ],
-  "total_value": 8003771.0
+  "total_value": 6924900.0
 }

@@ -1,0 +1,6 @@
+﻿code,name,market,sector,price,price_change_pct,volume_ratio,value_ratio,volatility_ratio,pct_from_high,supply_demand_score,composite_score,ai_score
+018880,한온시스템,KOSPI,기타,3945,2.73,2.7,3.0,1.57,1.99,0.0,22.17,64.3
+140860,파크시스템스,KOSDAQ,기타,307500,2.84,1.66,1.93,1.21,0.81,0.0,18.79,20.8
+100790,미래에셋벤처투자,KOSDAQ,기타,18400,1.94,1.71,1.88,1.29,9.36,0.0,10.32,3.1
+099320,쎄트렉아이,KOSDAQ,기타,83400,1.09,2.89,3.16,1.42,8.05,0.0,16.67,52.0
+189300,인텔리안테크,KOSDAQ,기타,75200,2.17,3.04,3.42,1.42,7.27,0.0,18.28,60.7

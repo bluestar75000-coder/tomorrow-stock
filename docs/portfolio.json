@@ -1,78 +1,78 @@
 {
-  "generated_at": "2026-10-07 14:36:56",
+  "generated_at": "2026-10-08 14:40:17",
   "items": [
     {
       "symbol": "028260",
       "name": "삼성물산",
       "type": "stock",
-      "price": 335500.0,
-      "change_pct": -2.33,
+      "price": 320000.0,
+      "change_pct": -4.62,
       "qty": 2,
-      "value": 671000.0
+      "value": 640000.0
     },
     {
       "symbol": "326030",
       "name": "SK바이오팜",
       "type": "stock",
-      "price": 75300.0,
-      "change_pct": -2.59,
+      "price": 72700.0,
+      "change_pct": -3.45,
       "qty": 23,
-      "value": 1731900.0
+      "value": 1672100.0
     },
     {
       "symbol": "035420",
       "name": "NAVER",
       "type": "stock",
-      "price": 188100.0,
-      "change_pct": -1.98,
+      "price": 183200.0,
+      "change_pct": -2.6,
       "qty": 8,
-      "value": 1504800.0
+      "value": 1465600.0
     },
     {
       "symbol": "005380",
       "name": "현대차",
       "type": "stock",
-      "price": 336500.0,
-      "change_pct": -3.44,
+      "price": 324500.0,
+      "change_pct": -3.57,
       "qty": 2,
-      "value": 673000.0
+      "value": 649000.0
     },
     {
       "symbol": "042660",
       "name": "한화오션",
       "type": "stock",
-      "price": 74100.0,
-      "change_pct": -4.51,
+      "price": 71800.0,
+      "change_pct": -3.1,
       "qty": 10,
-      "value": 741000.0
+      "value": 718000.0
     },
     {
       "symbol": "062040",
       "name": "산일전기",
       "type": "stock",
-      "price": 229000.0,
-      "change_pct": -2.76,
+      "price": 222000.0,
+      "change_pct": -3.06,
       "qty": 7,
-      "value": 1603000.0
+      "value": 1554000.0
     },
     {
       "symbol": "BTC",
       "name": "비트코인",
       "type": "crypto",
-      "price": 111324348,
-      "change_pct": -3.43,
+      "price": 110717457,
+      "change_pct": -0.45,
       "qty": 0.0059,
-      "value": 656814.0
+      "value": 653233.0
     },
     {
       "symbol": "ETH",
       "name": "이더리움",
       "type": "crypto",
-      "price": 3434015,
-      "change_pct": -5.36,
+      "price": 3391954,
+      "change_pct": -1.1,
       "qty": 0.11439,
-      "value": 392817.0
+      "value": 388006.0
     }
   ],
-  "total_value": 7974331.0
+  "total_value": 7739939.0
 }

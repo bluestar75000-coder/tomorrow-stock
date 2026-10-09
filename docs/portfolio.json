@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08 14:40:17",
+  "generated_at": "2026-10-09 14:28:25",
   "items": [
     {
       "symbol": "028260",
@@ -59,20 +59,20 @@
       "symbol": "BTC",
       "name": "비트코인",
       "type": "crypto",
-      "price": 110717457,
-      "change_pct": -0.45,
+      "price": 111467987,
+      "change_pct": 0.62,
       "qty": 0.0059,
-      "value": 653233.0
+      "value": 657661.0
     },
     {
       "symbol": "ETH",
       "name": "이더리움",
       "type": "crypto",
-      "price": 3391954,
-      "change_pct": -1.1,
+      "price": 3341126,
+      "change_pct": -1.57,
       "qty": 0.11439,
-      "value": 388006.0
+      "value": 382191.0
     }
   ],
-  "total_value": 7739939.0
+  "total_value": 7738552.0
 }

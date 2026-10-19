@@ -1,48 +1,48 @@
 {
-  "generated_at": "2026-10-16 12:31:29",
+  "generated_at": "2026-10-19 14:44:46",
   "items": [
     {
       "symbol": "028260",
       "name": "삼성물산",
       "type": "stock",
-      "price": 284000.0,
-      "change_pct": 7.78,
+      "price": 288500.0,
+      "change_pct": 1.58,
       "qty": 2,
-      "value": 568000.0
+      "value": 577000.0
     },
     {
       "symbol": "326030",
       "name": "SK바이오팜",
       "type": "stock",
-      "price": 73400.0,
-      "change_pct": 6.69,
+      "price": 75400.0,
+      "change_pct": 2.72,
       "qty": 23,
-      "value": 1688200.0
+      "value": 1734200.0
     },
     {
       "symbol": "035420",
       "name": "NAVER",
       "type": "stock",
-      "price": 180300.0,
-      "change_pct": 5.19,
+      "price": 182600.0,
+      "change_pct": 1.28,
       "qty": 8,
-      "value": 1442400.0
+      "value": 1460800.0
     },
     {
       "symbol": "005380",
       "name": "현대차",
       "type": "stock",
-      "price": 314000.0,
-      "change_pct": 8.46,
+      "price": 324500.0,
+      "change_pct": 3.34,
       "qty": 2,
-      "value": 628000.0
+      "value": 649000.0
     },
     {
       "symbol": "042660",
       "name": "한화오션",
       "type": "stock",
       "price": 64600.0,
-      "change_pct": 5.56,
+      "change_pct": 0.0,
       "qty": 10,
       "value": 646000.0
     },
@@ -50,29 +50,29 @@
       "symbol": "062040",
       "name": "산일전기",
       "type": "stock",
-      "price": 181700.0,
-      "change_pct": 5.76,
+      "price": 190600.0,
+      "change_pct": 4.9,
       "qty": 7,
-      "value": 1271900.0
+      "value": 1334200.0
     },
     {
       "symbol": "BTC",
       "name": "비트코인",
       "type": "crypto",
-      "price": 109568151,
-      "change_pct": 0.81,
+      "price": 109043259,
+      "change_pct": 0.82,
       "qty": 0.0059,
-      "value": 646452.0
+      "value": 643355.0
     },
     {
       "symbol": "ETH",
       "name": "이더리움",
       "type": "crypto",
-      "price": 3293013,
-      "change_pct": 3.89,
+      "price": 3186983,
+      "change_pct": 0.59,
       "qty": 0.11439,
-      "value": 376688.0
+      "value": 364559.0
     }
   ],
-  "total_value": 7267640.0
+  "total_value": 7409114.0
 }

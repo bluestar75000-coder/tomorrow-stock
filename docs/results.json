@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16 12:31:21",
+  "generated_at": "2026-10-19 14:44:40",
   "scanned_count": 400,
   "momentum_conditions": {
     "volume_surge_ratio": 2.0,
@@ -44,184 +44,76 @@
   },
   "momentum_results": [
     {
-      "code": "491000",
-      "name": "리브스메드",
-      "market": "KOSDAQ",
-      "price": 44200,
-      "volume_ratio": 5.63,
-      "price_change_pct": 32.93,
-      "score": 22.1
-    },
-    {
-      "code": "290650",
-      "name": "엘앤씨바이오",
-      "market": "KOSDAQ",
-      "price": 68500,
-      "volume_ratio": 2.86,
-      "price_change_pct": 22.98,
-      "score": 14.35
-    },
-    {
-      "code": "445680",
-      "name": "큐리옥스바이오시스템즈",
-      "market": "KOSDAQ",
-      "price": 68100,
-      "volume_ratio": 2.86,
-      "price_change_pct": 18.23,
-      "score": 11.97
-    },
-    {
-      "code": "039440",
-      "name": "에스티아이",
-      "market": "KOSDAQ",
-      "price": 30250,
-      "volume_ratio": 3.27,
-      "price_change_pct": 16.12,
-      "score": 11.33
-    },
-    {
-      "code": "171090",
-      "name": "선익시스템",
-      "market": "KOSDAQ",
-      "price": 82600,
-      "volume_ratio": 2.72,
-      "price_change_pct": 13.93,
-      "score": 9.69
-    },
-    {
-      "code": "458870",
-      "name": "씨어스",
-      "market": "KOSDAQ",
-      "price": 23500,
-      "volume_ratio": 2.59,
-      "price_change_pct": 14.08,
-      "score": 9.63
-    },
-    {
-      "code": "006730",
-      "name": "서부T&D",
-      "market": "KOSDAQ",
-      "price": 12780,
-      "volume_ratio": 4.33,
-      "price_change_pct": 8.95,
-      "score": 8.81
-    },
-    {
-      "code": "144960",
-      "name": "뉴파워프라즈마",
-      "market": "KOSDAQ",
-      "price": 11780,
-      "volume_ratio": 2.32,
-      "price_change_pct": 12.84,
-      "score": 8.74
-    },
-    {
-      "code": "253450",
-      "name": "스튜디오드래곤",
-      "market": "KOSDAQ",
-      "price": 23650,
-      "volume_ratio": 4.07,
-      "price_change_pct": 8.24,
-      "score": 8.19
-    },
-    {
-      "code": "251970",
-      "name": "펌텍코리아",
-      "market": "KOSDAQ",
-      "price": 73000,
-      "volume_ratio": 2.04,
-      "price_change_pct": 11.11,
-      "score": 7.59
-    },
-    {
-      "code": "352820",
-      "name": "하이브",
+      "code": "020150",
+      "name": "롯데에너지머티리얼즈",
       "market": "KOSPI",
-      "price": 177500,
-      "volume_ratio": 2.55,
-      "price_change_pct": 8.23,
-      "score": 6.66
+      "price": 58700,
+      "volume_ratio": 2.25,
+      "price_change_pct": 17.75,
+      "score": 11.12
     },
     {
-      "code": "376300",
-      "name": "디어유",
+      "code": "107640",
+      "name": "한중엔시에스",
       "market": "KOSDAQ",
-      "price": 20400,
-      "volume_ratio": 2.11,
-      "price_change_pct": 9.09,
-      "score": 6.66
+      "price": 48700,
+      "volume_ratio": 2.76,
+      "price_change_pct": 13.92,
+      "score": 9.72
     },
     {
-      "code": "068270",
-      "name": "셀트리온",
+      "code": "000100",
+      "name": "유한양행",
       "market": "KOSPI",
-      "price": 193900,
-      "volume_ratio": 2.89,
-      "price_change_pct": 6.77,
-      "score": 6.27
+      "price": 86900,
+      "volume_ratio": 4.39,
+      "price_change_pct": 7.82,
+      "score": 8.3
     },
     {
-      "code": "053800",
-      "name": "안랩",
-      "market": "KOSDAQ",
-      "price": 88200,
-      "volume_ratio": 2.96,
-      "price_change_pct": 6.27,
-      "score": 6.1
-    },
-    {
-      "code": "293490",
-      "name": "카카오게임즈",
-      "market": "KOSDAQ",
-      "price": 10250,
-      "volume_ratio": 2.95,
-      "price_change_pct": 5.78,
-      "score": 5.84
-    },
-    {
-      "code": "101160",
-      "name": "월덱스",
-      "market": "KOSDAQ",
-      "price": 26850,
-      "volume_ratio": 3.66,
-      "price_change_pct": 4.07,
-      "score": 5.69
-    },
-    {
-      "code": "139480",
-      "name": "이마트",
+      "code": "006400",
+      "name": "삼성SDI",
       "market": "KOSPI",
-      "price": 73100,
-      "volume_ratio": 2.48,
-      "price_change_pct": 5.79,
-      "score": 5.38
+      "price": 591000,
+      "volume_ratio": 2.39,
+      "price_change_pct": 11.51,
+      "score": 8.14
     },
     {
-      "code": "462870",
-      "name": "시프트업",
+      "code": "011210",
+      "name": "현대위아",
       "market": "KOSPI",
-      "price": 31600,
-      "volume_ratio": 2.54,
-      "price_change_pct": 5.33,
-      "score": 5.2
+      "price": 51800,
+      "volume_ratio": 2.79,
+      "price_change_pct": 7.25,
+      "score": 6.41
     },
     {
-      "code": "086450",
-      "name": "동국제약",
+      "code": "281740",
+      "name": "레이크머티리얼즈",
       "market": "KOSDAQ",
-      "price": 25250,
-      "volume_ratio": 2.89,
-      "price_change_pct": 4.34,
-      "score": 5.06
+      "price": 13100,
+      "volume_ratio": 2.69,
+      "price_change_pct": 6.68,
+      "score": 6.03
     },
     {
       "code": "207940",
       "name": "삼성바이오로직스",
       "market": "KOSPI",
-      "price": 1291000,
-      "volume_ratio": 3.01,
-      "price_change_pct": 4.03,
-      "score": 5.02
+      "price": 1386000,
+      "volume_ratio": 2.27,
+      "price_change_pct": 7.36,
+      "score": 5.95
+    },
+    {
+      "code": "373220",
+      "name": "LG에너지솔루션",
+      "market": "KOSPI",
+      "price": 428500,
+      "volume_ratio": 2.03,
+      "price_change_pct": 6.2,
+      "score": 5.13
     }
   ],
   "value_results": [
@@ -231,29 +123,172 @@
       "market": "KOSDAQ",
       "sector": "우량기업부",
       "is_growth": false,
-      "price": 82600,
-      "volume_ratio": 2.72,
-      "per": 7.57,
-      "pbr": 5.09,
-      "score": 3.59
-    },
-    {
-      "code": "003380",
-      "name": "하림지주",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "is_growth": false,
-      "price": 11920,
-      "volume_ratio": 1.75,
-      "per": 5.05,
-      "pbr": 0.37,
-      "score": 3.47
+      "price": 83900,
+      "volume_ratio": 2.28,
+      "per": 7.66,
+      "pbr": 5.15,
+      "score": 2.97
     }
   ],
   "crash_results": [],
-  "presurge_today_candidates": [],
-  "presurge_signal": [],
-  "presurge_volume_explosion": [],
-  "presurge_breakout_imminent": [],
-  "presurge_ai_recommended": []
+  "presurge_today_candidates": [
+    {
+      "code": "171090",
+      "name": "선익시스템",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 83900,
+      "price_change_pct": 1.57,
+      "volume_ratio": 2.28,
+      "value_ratio": 2.53,
+      "volatility_ratio": 1.4,
+      "pct_from_high": 4.44,
+      "supply_demand_score": 0.0,
+      "composite_score": 17.77,
+      "ai_score": 20.0
+    },
+    {
+      "code": "376300",
+      "name": "디어유",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 20650,
+      "price_change_pct": 1.23,
+      "volume_ratio": 2.78,
+      "value_ratio": 3.08,
+      "volatility_ratio": 1.59,
+      "pct_from_high": 7.19,
+      "supply_demand_score": 0.0,
+      "composite_score": 17.34,
+      "ai_score": 60.0
+    }
+  ],
+  "presurge_signal": [
+    {
+      "code": "171090",
+      "name": "선익시스템",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 83900,
+      "price_change_pct": 1.57,
+      "volume_ratio": 2.28,
+      "value_ratio": 2.53,
+      "volatility_ratio": 1.4,
+      "pct_from_high": 4.44,
+      "supply_demand_score": 0.0,
+      "composite_score": 17.77,
+      "ai_score": 20.0
+    },
+    {
+      "code": "376300",
+      "name": "디어유",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 20650,
+      "price_change_pct": 1.23,
+      "volume_ratio": 2.78,
+      "value_ratio": 3.08,
+      "volatility_ratio": 1.59,
+      "pct_from_high": 7.19,
+      "supply_demand_score": 0.0,
+      "composite_score": 17.34,
+      "ai_score": 60.0
+    }
+  ],
+  "presurge_volume_explosion": [
+    {
+      "code": "376300",
+      "name": "디어유",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 20650,
+      "price_change_pct": 1.23,
+      "volume_ratio": 2.78,
+      "value_ratio": 3.08,
+      "volatility_ratio": 1.59,
+      "pct_from_high": 7.19,
+      "supply_demand_score": 0.0,
+      "composite_score": 17.34,
+      "ai_score": 60.0
+    },
+    {
+      "code": "171090",
+      "name": "선익시스템",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 83900,
+      "price_change_pct": 1.57,
+      "volume_ratio": 2.28,
+      "value_ratio": 2.53,
+      "volatility_ratio": 1.4,
+      "pct_from_high": 4.44,
+      "supply_demand_score": 0.0,
+      "composite_score": 17.77,
+      "ai_score": 20.0
+    }
+  ],
+  "presurge_breakout_imminent": [
+    {
+      "code": "171090",
+      "name": "선익시스템",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 83900,
+      "price_change_pct": 1.57,
+      "volume_ratio": 2.28,
+      "value_ratio": 2.53,
+      "volatility_ratio": 1.4,
+      "pct_from_high": 4.44,
+      "supply_demand_score": 0.0,
+      "composite_score": 17.77,
+      "ai_score": 20.0
+    },
+    {
+      "code": "376300",
+      "name": "디어유",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 20650,
+      "price_change_pct": 1.23,
+      "volume_ratio": 2.78,
+      "value_ratio": 3.08,
+      "volatility_ratio": 1.59,
+      "pct_from_high": 7.19,
+      "supply_demand_score": 0.0,
+      "composite_score": 17.34,
+      "ai_score": 60.0
+    }
+  ],
+  "presurge_ai_recommended": [
+    {
+      "code": "376300",
+      "name": "디어유",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 20650,
+      "price_change_pct": 1.23,
+      "volume_ratio": 2.78,
+      "value_ratio": 3.08,
+      "volatility_ratio": 1.59,
+      "pct_from_high": 7.19,
+      "supply_demand_score": 0.0,
+      "composite_score": 17.34,
+      "ai_score": 60.0
+    },
+    {
+      "code": "171090",
+      "name": "선익시스템",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 83900,
+      "price_change_pct": 1.57,
+      "volume_ratio": 2.28,
+      "value_ratio": 2.53,
+      "volatility_ratio": 1.4,
+      "pct_from_high": 4.44,
+      "supply_demand_score": 0.0,
+      "composite_score": 17.77,
+      "ai_score": 20.0
+    }
+  ]
 }

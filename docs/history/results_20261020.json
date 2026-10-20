@@ -1,0 +1,205 @@
+{
+  "generated_at": "2026-10-20 12:49:18",
+  "scanned_count": 400,
+  "momentum_conditions": {
+    "volume_surge_ratio": 2.0,
+    "price_change_min_pct": 3.0
+  },
+  "value_conditions": {
+    "volume_ratio_min": 1.5,
+    "per_max_default": 10.0,
+    "per_max_growth": 20.0,
+    "top_n_per_sector": 2,
+    "growth_sector_keywords": [
+      "반도체",
+      "전자",
+      "IT",
+      "소프트웨어",
+      "인터넷",
+      "게임",
+      "바이오",
+      "제약",
+      "생물",
+      "2차전지",
+      "전지",
+      "로봇",
+      "통신장비",
+      "우주항공"
+    ]
+  },
+  "crash_conditions": {
+    "volume_surge_ratio": 2.0,
+    "price_drop_min_pct": 3.0
+  },
+  "presurge_conditions": {
+    "price_change_max_pct": 3.0,
+    "volume_ratio_min": 1.5,
+    "value_ratio_min": 1.5,
+    "volatility_ratio_range": [
+      1.2,
+      3.0
+    ],
+    "high_proximity_max_pct": 10.0,
+    "note": "AI 추천 종목은 실제 ML 모델이 아니라 정규화된 지표의 가중합(규칙 기반) 점수입니다. 백테스트 결과 당일/익일 단타보다 3~5일 관점에서 유효했습니다."
+  },
+  "momentum_results": [
+    {
+      "code": "126340",
+      "name": "비나텍",
+      "market": "KOSDAQ",
+      "price": 88400,
+      "volume_ratio": 3.14,
+      "price_change_pct": 7.8,
+      "score": 7.04
+    },
+    {
+      "code": "007810",
+      "name": "코리아써키트",
+      "market": "KOSPI",
+      "price": 70600,
+      "volume_ratio": 3.07,
+      "price_change_pct": 5.53,
+      "score": 5.83
+    }
+  ],
+  "value_results": [
+    {
+      "code": "171090",
+      "name": "선익시스템",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "is_growth": false,
+      "price": 77500,
+      "volume_ratio": 1.67,
+      "per": 7.16,
+      "pbr": 4.82,
+      "score": 2.33
+    },
+    {
+      "code": "031330",
+      "name": "에스에이엠티",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "is_growth": false,
+      "price": 6800,
+      "volume_ratio": 1.55,
+      "per": 8.94,
+      "pbr": 1.39,
+      "score": 1.74
+    }
+  ],
+  "crash_results": [
+    {
+      "code": "445680",
+      "name": "큐리옥스바이오시스템즈",
+      "market": "KOSDAQ",
+      "price": 52700,
+      "volume_ratio": 9.62,
+      "price_change_pct": -21.69,
+      "score": 20.47
+    },
+    {
+      "code": "456160",
+      "name": "지투지바이오",
+      "market": "KOSDAQ",
+      "price": 36050,
+      "volume_ratio": 3.16,
+      "price_change_pct": -7.45,
+      "score": 6.88
+    },
+    {
+      "code": "039200",
+      "name": "오스코텍",
+      "market": "KOSDAQ",
+      "price": 37350,
+      "volume_ratio": 2.3,
+      "price_change_pct": -3.36,
+      "score": 3.99
+    }
+  ],
+  "presurge_today_candidates": [
+    {
+      "code": "376300",
+      "name": "디어유",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 20750,
+      "price_change_pct": 0.48,
+      "volume_ratio": 1.65,
+      "value_ratio": 1.81,
+      "volatility_ratio": 1.29,
+      "pct_from_high": 6.74,
+      "supply_demand_score": 0.0,
+      "composite_score": 12.69,
+      "ai_score": 0.0
+    }
+  ],
+  "presurge_signal": [
+    {
+      "code": "376300",
+      "name": "디어유",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 20750,
+      "price_change_pct": 0.48,
+      "volume_ratio": 1.65,
+      "value_ratio": 1.81,
+      "volatility_ratio": 1.29,
+      "pct_from_high": 6.74,
+      "supply_demand_score": 0.0,
+      "composite_score": 12.69,
+      "ai_score": 0.0
+    }
+  ],
+  "presurge_volume_explosion": [
+    {
+      "code": "376300",
+      "name": "디어유",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 20750,
+      "price_change_pct": 0.48,
+      "volume_ratio": 1.65,
+      "value_ratio": 1.81,
+      "volatility_ratio": 1.29,
+      "pct_from_high": 6.74,
+      "supply_demand_score": 0.0,
+      "composite_score": 12.69,
+      "ai_score": 0.0
+    }
+  ],
+  "presurge_breakout_imminent": [
+    {
+      "code": "376300",
+      "name": "디어유",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 20750,
+      "price_change_pct": 0.48,
+      "volume_ratio": 1.65,
+      "value_ratio": 1.81,
+      "volatility_ratio": 1.29,
+      "pct_from_high": 6.74,
+      "supply_demand_score": 0.0,
+      "composite_score": 12.69,
+      "ai_score": 0.0
+    }
+  ],
+  "presurge_ai_recommended": [
+    {
+      "code": "376300",
+      "name": "디어유",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 20750,
+      "price_change_pct": 0.48,
+      "volume_ratio": 1.65,
+      "value_ratio": 1.81,
+      "volatility_ratio": 1.29,
+      "pct_from_high": 6.74,
+      "supply_demand_score": 0.0,
+      "composite_score": 12.69,
+      "ai_score": 0.0
+    }
+  ]
+}

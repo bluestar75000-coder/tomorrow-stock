@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20 12:49:18",
+  "generated_at": "2026-10-21 13:02:41",
   "scanned_count": 400,
   "momentum_conditions": {
     "volume_surge_ratio": 2.0,
@@ -44,162 +44,237 @@
   },
   "momentum_results": [
     {
-      "code": "126340",
-      "name": "비나텍",
+      "code": "456160",
+      "name": "지투지바이오",
       "market": "KOSDAQ",
-      "price": 88400,
-      "volume_ratio": 3.14,
-      "price_change_pct": 7.8,
-      "score": 7.04
+      "price": 42500,
+      "volume_ratio": 4.89,
+      "price_change_pct": 17.89,
+      "score": 13.84
     },
     {
-      "code": "007810",
-      "name": "코리아써키트",
-      "market": "KOSPI",
-      "price": 70600,
-      "volume_ratio": 3.07,
-      "price_change_pct": 5.53,
-      "score": 5.83
+      "code": "122640",
+      "name": "예스티",
+      "market": "KOSDAQ",
+      "price": 30800,
+      "volume_ratio": 2.51,
+      "price_change_pct": 11.59,
+      "score": 8.31
+    },
+    {
+      "code": "144960",
+      "name": "뉴파워프라즈마",
+      "market": "KOSDAQ",
+      "price": 13890,
+      "volume_ratio": 2.16,
+      "price_change_pct": 8.86,
+      "score": 6.59
+    },
+    {
+      "code": "107640",
+      "name": "한중엔시에스",
+      "market": "KOSDAQ",
+      "price": 50400,
+      "volume_ratio": 2.46,
+      "price_change_pct": 5.88,
+      "score": 5.41
     }
   ],
   "value_results": [
     {
-      "code": "171090",
-      "name": "선익시스템",
+      "code": "215200",
+      "name": "메가스터디교육",
       "market": "KOSDAQ",
       "sector": "우량기업부",
       "is_growth": false,
-      "price": 77500,
-      "volume_ratio": 1.67,
-      "per": 7.16,
-      "pbr": 4.82,
-      "score": 2.33
+      "price": 40500,
+      "volume_ratio": 1.94,
+      "per": 5.04,
+      "pbr": 0.85,
+      "score": 3.85
     },
     {
-      "code": "031330",
-      "name": "에스에이엠티",
+      "code": "041510",
+      "name": "에스엠",
       "market": "KOSDAQ",
       "sector": "우량기업부",
       "is_growth": false,
-      "price": 6800,
-      "volume_ratio": 1.55,
-      "per": 8.94,
-      "pbr": 1.39,
-      "score": 1.74
+      "price": 86100,
+      "volume_ratio": 1.64,
+      "per": 5.66,
+      "pbr": 1.96,
+      "score": 2.89
     }
   ],
   "crash_results": [
     {
-      "code": "445680",
-      "name": "큐리옥스바이오시스템즈",
+      "code": "214430",
+      "name": "아이쓰리시스템",
       "market": "KOSDAQ",
-      "price": 52700,
-      "volume_ratio": 9.62,
-      "price_change_pct": -21.69,
-      "score": 20.47
-    },
-    {
-      "code": "456160",
-      "name": "지투지바이오",
-      "market": "KOSDAQ",
-      "price": 36050,
-      "volume_ratio": 3.16,
-      "price_change_pct": -7.45,
-      "score": 6.88
-    },
-    {
-      "code": "039200",
-      "name": "오스코텍",
-      "market": "KOSDAQ",
-      "price": 37350,
-      "volume_ratio": 2.3,
-      "price_change_pct": -3.36,
-      "score": 3.99
+      "price": 65700,
+      "volume_ratio": 2.28,
+      "price_change_pct": -3.24,
+      "score": 3.9
     }
   ],
   "presurge_today_candidates": [
     {
-      "code": "376300",
-      "name": "디어유",
+      "code": "215200",
+      "name": "메가스터디교육",
       "market": "KOSDAQ",
       "sector": "우량기업부",
-      "price": 20750,
-      "price_change_pct": 0.48,
-      "volume_ratio": 1.65,
-      "value_ratio": 1.81,
-      "volatility_ratio": 1.29,
-      "pct_from_high": 6.74,
+      "price": 40500,
+      "price_change_pct": 2.92,
+      "volume_ratio": 1.94,
+      "value_ratio": 2.1,
+      "volatility_ratio": 2.48,
+      "pct_from_high": 4.71,
       "supply_demand_score": 0.0,
-      "composite_score": 12.69,
-      "ai_score": 0.0
+      "composite_score": 15.69,
+      "ai_score": 70.0
+    },
+    {
+      "code": "041510",
+      "name": "에스엠",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 86100,
+      "price_change_pct": 1.65,
+      "volume_ratio": 1.64,
+      "value_ratio": 1.73,
+      "volatility_ratio": 1.23,
+      "pct_from_high": 5.38,
+      "supply_demand_score": 0.0,
+      "composite_score": 13.79,
+      "ai_score": 10.0
     }
   ],
   "presurge_signal": [
     {
-      "code": "376300",
-      "name": "디어유",
+      "code": "041510",
+      "name": "에스엠",
       "market": "KOSDAQ",
       "sector": "우량기업부",
-      "price": 20750,
-      "price_change_pct": 0.48,
-      "volume_ratio": 1.65,
-      "value_ratio": 1.81,
-      "volatility_ratio": 1.29,
-      "pct_from_high": 6.74,
+      "price": 86100,
+      "price_change_pct": 1.65,
+      "volume_ratio": 1.64,
+      "value_ratio": 1.73,
+      "volatility_ratio": 1.23,
+      "pct_from_high": 5.38,
       "supply_demand_score": 0.0,
-      "composite_score": 12.69,
-      "ai_score": 0.0
+      "composite_score": 13.79,
+      "ai_score": 10.0
+    },
+    {
+      "code": "215200",
+      "name": "메가스터디교육",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 40500,
+      "price_change_pct": 2.92,
+      "volume_ratio": 1.94,
+      "value_ratio": 2.1,
+      "volatility_ratio": 2.48,
+      "pct_from_high": 4.71,
+      "supply_demand_score": 0.0,
+      "composite_score": 15.69,
+      "ai_score": 70.0
     }
   ],
   "presurge_volume_explosion": [
     {
-      "code": "376300",
-      "name": "디어유",
+      "code": "215200",
+      "name": "메가스터디교육",
       "market": "KOSDAQ",
       "sector": "우량기업부",
-      "price": 20750,
-      "price_change_pct": 0.48,
-      "volume_ratio": 1.65,
-      "value_ratio": 1.81,
-      "volatility_ratio": 1.29,
-      "pct_from_high": 6.74,
+      "price": 40500,
+      "price_change_pct": 2.92,
+      "volume_ratio": 1.94,
+      "value_ratio": 2.1,
+      "volatility_ratio": 2.48,
+      "pct_from_high": 4.71,
       "supply_demand_score": 0.0,
-      "composite_score": 12.69,
-      "ai_score": 0.0
+      "composite_score": 15.69,
+      "ai_score": 70.0
+    },
+    {
+      "code": "041510",
+      "name": "에스엠",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 86100,
+      "price_change_pct": 1.65,
+      "volume_ratio": 1.64,
+      "value_ratio": 1.73,
+      "volatility_ratio": 1.23,
+      "pct_from_high": 5.38,
+      "supply_demand_score": 0.0,
+      "composite_score": 13.79,
+      "ai_score": 10.0
     }
   ],
   "presurge_breakout_imminent": [
     {
-      "code": "376300",
-      "name": "디어유",
+      "code": "215200",
+      "name": "메가스터디교육",
       "market": "KOSDAQ",
       "sector": "우량기업부",
-      "price": 20750,
-      "price_change_pct": 0.48,
-      "volume_ratio": 1.65,
-      "value_ratio": 1.81,
-      "volatility_ratio": 1.29,
-      "pct_from_high": 6.74,
+      "price": 40500,
+      "price_change_pct": 2.92,
+      "volume_ratio": 1.94,
+      "value_ratio": 2.1,
+      "volatility_ratio": 2.48,
+      "pct_from_high": 4.71,
       "supply_demand_score": 0.0,
-      "composite_score": 12.69,
-      "ai_score": 0.0
+      "composite_score": 15.69,
+      "ai_score": 70.0
+    },
+    {
+      "code": "041510",
+      "name": "에스엠",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 86100,
+      "price_change_pct": 1.65,
+      "volume_ratio": 1.64,
+      "value_ratio": 1.73,
+      "volatility_ratio": 1.23,
+      "pct_from_high": 5.38,
+      "supply_demand_score": 0.0,
+      "composite_score": 13.79,
+      "ai_score": 10.0
     }
   ],
   "presurge_ai_recommended": [
     {
-      "code": "376300",
-      "name": "디어유",
+      "code": "215200",
+      "name": "메가스터디교육",
       "market": "KOSDAQ",
       "sector": "우량기업부",
-      "price": 20750,
-      "price_change_pct": 0.48,
-      "volume_ratio": 1.65,
-      "value_ratio": 1.81,
-      "volatility_ratio": 1.29,
-      "pct_from_high": 6.74,
+      "price": 40500,
+      "price_change_pct": 2.92,
+      "volume_ratio": 1.94,
+      "value_ratio": 2.1,
+      "volatility_ratio": 2.48,
+      "pct_from_high": 4.71,
       "supply_demand_score": 0.0,
-      "composite_score": 12.69,
-      "ai_score": 0.0
+      "composite_score": 15.69,
+      "ai_score": 70.0
+    },
+    {
+      "code": "041510",
+      "name": "에스엠",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 86100,
+      "price_change_pct": 1.65,
+      "volume_ratio": 1.64,
+      "value_ratio": 1.73,
+      "volatility_ratio": 1.23,
+      "pct_from_high": 5.38,
+      "supply_demand_score": 0.0,
+      "composite_score": 13.79,
+      "ai_score": 10.0
     }
   ]
 }

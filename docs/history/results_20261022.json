@@ -1,0 +1,151 @@
+{
+  "generated_at": "2026-10-22 13:05:42",
+  "scanned_count": 400,
+  "momentum_conditions": {
+    "volume_surge_ratio": 2.0,
+    "price_change_min_pct": 3.0
+  },
+  "value_conditions": {
+    "volume_ratio_min": 1.5,
+    "per_max_default": 10.0,
+    "per_max_growth": 20.0,
+    "top_n_per_sector": 2,
+    "growth_sector_keywords": [
+      "반도체",
+      "전자",
+      "IT",
+      "소프트웨어",
+      "인터넷",
+      "게임",
+      "바이오",
+      "제약",
+      "생물",
+      "2차전지",
+      "전지",
+      "로봇",
+      "통신장비",
+      "우주항공"
+    ]
+  },
+  "crash_conditions": {
+    "volume_surge_ratio": 2.0,
+    "price_drop_min_pct": 3.0
+  },
+  "presurge_conditions": {
+    "price_change_max_pct": 3.0,
+    "volume_ratio_min": 1.5,
+    "value_ratio_min": 1.5,
+    "volatility_ratio_range": [
+      1.2,
+      3.0
+    ],
+    "high_proximity_max_pct": 10.0,
+    "note": "AI 추천 종목은 실제 ML 모델이 아니라 정규화된 지표의 가중합(규칙 기반) 점수입니다. 백테스트 결과 당일/익일 단타보다 3~5일 관점에서 유효했습니다."
+  },
+  "momentum_results": [
+    {
+      "code": "028050",
+      "name": "삼성E&A",
+      "market": "KOSPI",
+      "price": 56100,
+      "volume_ratio": 7.18,
+      "price_change_pct": 17.36,
+      "score": 15.87
+    },
+    {
+      "code": "126340",
+      "name": "비나텍",
+      "market": "KOSDAQ",
+      "price": 108700,
+      "volume_ratio": 4.38,
+      "price_change_pct": 14.78,
+      "score": 11.77
+    },
+    {
+      "code": "089890",
+      "name": "코세스",
+      "market": "KOSDAQ",
+      "price": 38550,
+      "volume_ratio": 3.23,
+      "price_change_pct": 9.99,
+      "score": 8.22
+    },
+    {
+      "code": "293490",
+      "name": "카카오게임즈",
+      "market": "KOSDAQ",
+      "price": 10900,
+      "volume_ratio": 4.19,
+      "price_change_pct": 7.18,
+      "score": 7.78
+    },
+    {
+      "code": "354320",
+      "name": "알멕",
+      "market": "KOSDAQ",
+      "price": 70800,
+      "volume_ratio": 2.53,
+      "price_change_pct": 9.09,
+      "score": 7.08
+    },
+    {
+      "code": "290550",
+      "name": "디케이티",
+      "market": "KOSDAQ",
+      "price": 23400,
+      "volume_ratio": 2.14,
+      "price_change_pct": 7.09,
+      "score": 5.69
+    },
+    {
+      "code": "441270",
+      "name": "파인엠텍",
+      "market": "KOSDAQ",
+      "price": 9960,
+      "volume_ratio": 2.92,
+      "price_change_pct": 4.84,
+      "score": 5.34
+    },
+    {
+      "code": "018260",
+      "name": "삼성에스디에스",
+      "market": "KOSPI",
+      "price": 209000,
+      "volume_ratio": 3.03,
+      "price_change_pct": 4.5,
+      "score": 5.28
+    }
+  ],
+  "value_results": [
+    {
+      "code": "035900",
+      "name": "JYP Ent.",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "is_growth": false,
+      "price": 38050,
+      "volume_ratio": 1.64,
+      "per": 7.86,
+      "pbr": 2.03,
+      "score": 2.09
+    },
+    {
+      "code": "171090",
+      "name": "선익시스템",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "is_growth": false,
+      "price": 80800,
+      "volume_ratio": 1.53,
+      "per": 7.41,
+      "pbr": 4.98,
+      "score": 2.07
+    }
+  ],
+  "crash_results": [],
+  "presurge_today_candidates": [],
+  "presurge_signal": [],
+  "presurge_volume_explosion": [],
+  "presurge_breakout_imminent": [],
+  "presurge_ai_recommended": []
+}

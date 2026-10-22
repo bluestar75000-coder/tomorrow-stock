@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21 13:02:41",
+  "generated_at": "2026-10-22 13:05:42",
   "scanned_count": 400,
   "momentum_conditions": {
     "volume_surge_ratio": 2.0,
@@ -44,237 +44,108 @@
   },
   "momentum_results": [
     {
-      "code": "456160",
-      "name": "지투지바이오",
-      "market": "KOSDAQ",
-      "price": 42500,
-      "volume_ratio": 4.89,
-      "price_change_pct": 17.89,
-      "score": 13.84
+      "code": "028050",
+      "name": "삼성E&A",
+      "market": "KOSPI",
+      "price": 56100,
+      "volume_ratio": 7.18,
+      "price_change_pct": 17.36,
+      "score": 15.87
     },
     {
-      "code": "122640",
-      "name": "예스티",
+      "code": "126340",
+      "name": "비나텍",
       "market": "KOSDAQ",
-      "price": 30800,
-      "volume_ratio": 2.51,
-      "price_change_pct": 11.59,
-      "score": 8.31
+      "price": 108700,
+      "volume_ratio": 4.38,
+      "price_change_pct": 14.78,
+      "score": 11.77
     },
     {
-      "code": "144960",
-      "name": "뉴파워프라즈마",
+      "code": "089890",
+      "name": "코세스",
       "market": "KOSDAQ",
-      "price": 13890,
-      "volume_ratio": 2.16,
-      "price_change_pct": 8.86,
-      "score": 6.59
+      "price": 38550,
+      "volume_ratio": 3.23,
+      "price_change_pct": 9.99,
+      "score": 8.22
     },
     {
-      "code": "107640",
-      "name": "한중엔시에스",
+      "code": "293490",
+      "name": "카카오게임즈",
       "market": "KOSDAQ",
-      "price": 50400,
-      "volume_ratio": 2.46,
-      "price_change_pct": 5.88,
-      "score": 5.41
+      "price": 10900,
+      "volume_ratio": 4.19,
+      "price_change_pct": 7.18,
+      "score": 7.78
+    },
+    {
+      "code": "354320",
+      "name": "알멕",
+      "market": "KOSDAQ",
+      "price": 70800,
+      "volume_ratio": 2.53,
+      "price_change_pct": 9.09,
+      "score": 7.08
+    },
+    {
+      "code": "290550",
+      "name": "디케이티",
+      "market": "KOSDAQ",
+      "price": 23400,
+      "volume_ratio": 2.14,
+      "price_change_pct": 7.09,
+      "score": 5.69
+    },
+    {
+      "code": "441270",
+      "name": "파인엠텍",
+      "market": "KOSDAQ",
+      "price": 9960,
+      "volume_ratio": 2.92,
+      "price_change_pct": 4.84,
+      "score": 5.34
+    },
+    {
+      "code": "018260",
+      "name": "삼성에스디에스",
+      "market": "KOSPI",
+      "price": 209000,
+      "volume_ratio": 3.03,
+      "price_change_pct": 4.5,
+      "score": 5.28
     }
   ],
   "value_results": [
     {
-      "code": "215200",
-      "name": "메가스터디교육",
+      "code": "035900",
+      "name": "JYP Ent.",
       "market": "KOSDAQ",
       "sector": "우량기업부",
       "is_growth": false,
-      "price": 40500,
-      "volume_ratio": 1.94,
-      "per": 5.04,
-      "pbr": 0.85,
-      "score": 3.85
+      "price": 38050,
+      "volume_ratio": 1.64,
+      "per": 7.86,
+      "pbr": 2.03,
+      "score": 2.09
     },
     {
-      "code": "041510",
-      "name": "에스엠",
+      "code": "171090",
+      "name": "선익시스템",
       "market": "KOSDAQ",
       "sector": "우량기업부",
       "is_growth": false,
-      "price": 86100,
-      "volume_ratio": 1.64,
-      "per": 5.66,
-      "pbr": 1.96,
-      "score": 2.89
+      "price": 80800,
+      "volume_ratio": 1.53,
+      "per": 7.41,
+      "pbr": 4.98,
+      "score": 2.07
     }
   ],
-  "crash_results": [
-    {
-      "code": "214430",
-      "name": "아이쓰리시스템",
-      "market": "KOSDAQ",
-      "price": 65700,
-      "volume_ratio": 2.28,
-      "price_change_pct": -3.24,
-      "score": 3.9
-    }
-  ],
-  "presurge_today_candidates": [
-    {
-      "code": "215200",
-      "name": "메가스터디교육",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 40500,
-      "price_change_pct": 2.92,
-      "volume_ratio": 1.94,
-      "value_ratio": 2.1,
-      "volatility_ratio": 2.48,
-      "pct_from_high": 4.71,
-      "supply_demand_score": 0.0,
-      "composite_score": 15.69,
-      "ai_score": 70.0
-    },
-    {
-      "code": "041510",
-      "name": "에스엠",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 86100,
-      "price_change_pct": 1.65,
-      "volume_ratio": 1.64,
-      "value_ratio": 1.73,
-      "volatility_ratio": 1.23,
-      "pct_from_high": 5.38,
-      "supply_demand_score": 0.0,
-      "composite_score": 13.79,
-      "ai_score": 10.0
-    }
-  ],
-  "presurge_signal": [
-    {
-      "code": "041510",
-      "name": "에스엠",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 86100,
-      "price_change_pct": 1.65,
-      "volume_ratio": 1.64,
-      "value_ratio": 1.73,
-      "volatility_ratio": 1.23,
-      "pct_from_high": 5.38,
-      "supply_demand_score": 0.0,
-      "composite_score": 13.79,
-      "ai_score": 10.0
-    },
-    {
-      "code": "215200",
-      "name": "메가스터디교육",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 40500,
-      "price_change_pct": 2.92,
-      "volume_ratio": 1.94,
-      "value_ratio": 2.1,
-      "volatility_ratio": 2.48,
-      "pct_from_high": 4.71,
-      "supply_demand_score": 0.0,
-      "composite_score": 15.69,
-      "ai_score": 70.0
-    }
-  ],
-  "presurge_volume_explosion": [
-    {
-      "code": "215200",
-      "name": "메가스터디교육",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 40500,
-      "price_change_pct": 2.92,
-      "volume_ratio": 1.94,
-      "value_ratio": 2.1,
-      "volatility_ratio": 2.48,
-      "pct_from_high": 4.71,
-      "supply_demand_score": 0.0,
-      "composite_score": 15.69,
-      "ai_score": 70.0
-    },
-    {
-      "code": "041510",
-      "name": "에스엠",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 86100,
-      "price_change_pct": 1.65,
-      "volume_ratio": 1.64,
-      "value_ratio": 1.73,
-      "volatility_ratio": 1.23,
-      "pct_from_high": 5.38,
-      "supply_demand_score": 0.0,
-      "composite_score": 13.79,
-      "ai_score": 10.0
-    }
-  ],
-  "presurge_breakout_imminent": [
-    {
-      "code": "215200",
-      "name": "메가스터디교육",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 40500,
-      "price_change_pct": 2.92,
-      "volume_ratio": 1.94,
-      "value_ratio": 2.1,
-      "volatility_ratio": 2.48,
-      "pct_from_high": 4.71,
-      "supply_demand_score": 0.0,
-      "composite_score": 15.69,
-      "ai_score": 70.0
-    },
-    {
-      "code": "041510",
-      "name": "에스엠",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 86100,
-      "price_change_pct": 1.65,
-      "volume_ratio": 1.64,
-      "value_ratio": 1.73,
-      "volatility_ratio": 1.23,
-      "pct_from_high": 5.38,
-      "supply_demand_score": 0.0,
-      "composite_score": 13.79,
-      "ai_score": 10.0
-    }
-  ],
-  "presurge_ai_recommended": [
-    {
-      "code": "215200",
-      "name": "메가스터디교육",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 40500,
-      "price_change_pct": 2.92,
-      "volume_ratio": 1.94,
-      "value_ratio": 2.1,
-      "volatility_ratio": 2.48,
-      "pct_from_high": 4.71,
-      "supply_demand_score": 0.0,
-      "composite_score": 15.69,
-      "ai_score": 70.0
-    },
-    {
-      "code": "041510",
-      "name": "에스엠",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 86100,
-      "price_change_pct": 1.65,
-      "volume_ratio": 1.64,
-      "value_ratio": 1.73,
-      "volatility_ratio": 1.23,
-      "pct_from_high": 5.38,
-      "supply_demand_score": 0.0,
-      "composite_score": 13.79,
-      "ai_score": 10.0
-    }
-  ]
+  "crash_results": [],
+  "presurge_today_candidates": [],
+  "presurge_signal": [],
+  "presurge_volume_explosion": [],
+  "presurge_breakout_imminent": [],
+  "presurge_ai_recommended": []
 }

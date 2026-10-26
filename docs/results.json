@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23 12:42:23",
+  "generated_at": "2026-10-26 14:19:38",
   "scanned_count": 400,
   "momentum_conditions": {
     "volume_surge_ratio": 2.0,
@@ -44,173 +44,100 @@
   },
   "momentum_results": [
     {
-      "code": "456160",
-      "name": "지투지바이오",
+      "code": "328130",
+      "name": "루닛",
       "market": "KOSDAQ",
-      "price": 49600,
-      "volume_ratio": 4.48,
-      "price_change_pct": 18.8,
-      "score": 13.88
+      "price": 14690,
+      "volume_ratio": 3.74,
+      "price_change_pct": 30.69,
+      "score": 19.08
     },
+    {
+      "code": "458870",
+      "name": "씨어스",
+      "market": "KOSDAQ",
+      "price": 28000,
+      "volume_ratio": 4.74,
+      "price_change_pct": 18.14,
+      "score": 13.81
+    },
+    {
+      "code": "035900",
+      "name": "JYP Ent.",
+      "market": "KOSDAQ",
+      "price": 42050,
+      "volume_ratio": 4.43,
+      "price_change_pct": 14.11,
+      "score": 11.49
+    },
+    {
+      "code": "108490",
+      "name": "로보티즈",
+      "market": "KOSDAQ",
+      "price": 251500,
+      "volume_ratio": 2.43,
+      "price_change_pct": 11.04,
+      "score": 7.95
+    },
+    {
+      "code": "437730",
+      "name": "삼현",
+      "market": "KOSDAQ",
+      "price": 47600,
+      "volume_ratio": 2.93,
+      "price_change_pct": 8.43,
+      "score": 7.14
+    },
+    {
+      "code": "0009K0",
+      "name": "에임드바이오",
+      "market": "KOSDAQ",
+      "price": 21700,
+      "volume_ratio": 2.96,
+      "price_change_pct": 3.83,
+      "score": 4.88
+    }
+  ],
+  "value_results": [
+    {
+      "code": "035900",
+      "name": "JYP Ent.",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "is_growth": false,
+      "price": 42050,
+      "volume_ratio": 4.43,
+      "per": 7.43,
+      "pbr": 1.92,
+      "score": 5.97
+    },
+    {
+      "code": "101160",
+      "name": "월덱스",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "is_growth": false,
+      "price": 24250,
+      "volume_ratio": 1.55,
+      "per": 9.75,
+      "pbr": 1.15,
+      "score": 1.59
+    }
+  ],
+  "crash_results": [
     {
       "code": "441270",
       "name": "파인엠텍",
       "market": "KOSDAQ",
-      "price": 11370,
-      "volume_ratio": 4.96,
-      "price_change_pct": 14.16,
-      "score": 12.04
-    },
-    {
-      "code": "028050",
-      "name": "삼성E&A",
-      "market": "KOSPI",
-      "price": 59100,
-      "volume_ratio": 6.39,
-      "price_change_pct": 5.35,
-      "score": 9.06
-    },
-    {
-      "code": "290550",
-      "name": "디케이티",
-      "market": "KOSDAQ",
-      "price": 25700,
-      "volume_ratio": 2.49,
-      "price_change_pct": 9.83,
-      "score": 7.4
-    },
-    {
-      "code": "293490",
-      "name": "카카오게임즈",
-      "market": "KOSDAQ",
-      "price": 11610,
-      "volume_ratio": 3.97,
-      "price_change_pct": 6.51,
-      "score": 7.22
-    },
-    {
-      "code": "126340",
-      "name": "비나텍",
-      "market": "KOSDAQ",
-      "price": 117500,
-      "volume_ratio": 2.92,
-      "price_change_pct": 8.1,
-      "score": 6.97
-    },
-    {
-      "code": "200470",
-      "name": "에이팩트",
-      "market": "KOSDAQ",
-      "price": 9130,
-      "volume_ratio": 2.56,
-      "price_change_pct": 5.06,
-      "score": 5.09
-    },
-    {
-      "code": "326030",
-      "name": "SK바이오팜",
-      "market": "KOSPI",
-      "price": 76700,
-      "volume_ratio": 2.14,
-      "price_change_pct": 3.65,
-      "score": 3.97
+      "price": 9540,
+      "volume_ratio": 2.68,
+      "price_change_pct": -16.09,
+      "score": 10.73
     }
   ],
-  "value_results": [],
-  "crash_results": [
-    {
-      "code": "420770",
-      "name": "기가비스",
-      "market": "KOSDAQ",
-      "price": 99900,
-      "volume_ratio": 2.09,
-      "price_change_pct": -4.22,
-      "score": 4.2
-    }
-  ],
-  "presurge_today_candidates": [
-    {
-      "code": "089890",
-      "name": "코세스",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 39500,
-      "price_change_pct": 2.46,
-      "volume_ratio": 2.82,
-      "value_ratio": 3.36,
-      "volatility_ratio": 1.27,
-      "pct_from_high": 3.42,
-      "supply_demand_score": 0.0,
-      "composite_score": 21.4,
-      "ai_score": 0.0
-    }
-  ],
-  "presurge_signal": [
-    {
-      "code": "089890",
-      "name": "코세스",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 39500,
-      "price_change_pct": 2.46,
-      "volume_ratio": 2.82,
-      "value_ratio": 3.36,
-      "volatility_ratio": 1.27,
-      "pct_from_high": 3.42,
-      "supply_demand_score": 0.0,
-      "composite_score": 21.4,
-      "ai_score": 0.0
-    }
-  ],
-  "presurge_volume_explosion": [
-    {
-      "code": "089890",
-      "name": "코세스",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 39500,
-      "price_change_pct": 2.46,
-      "volume_ratio": 2.82,
-      "value_ratio": 3.36,
-      "volatility_ratio": 1.27,
-      "pct_from_high": 3.42,
-      "supply_demand_score": 0.0,
-      "composite_score": 21.4,
-      "ai_score": 0.0
-    }
-  ],
-  "presurge_breakout_imminent": [
-    {
-      "code": "089890",
-      "name": "코세스",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 39500,
-      "price_change_pct": 2.46,
-      "volume_ratio": 2.82,
-      "value_ratio": 3.36,
-      "volatility_ratio": 1.27,
-      "pct_from_high": 3.42,
-      "supply_demand_score": 0.0,
-      "composite_score": 21.4,
-      "ai_score": 0.0
-    }
-  ],
-  "presurge_ai_recommended": [
-    {
-      "code": "089890",
-      "name": "코세스",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 39500,
-      "price_change_pct": 2.46,
-      "volume_ratio": 2.82,
-      "value_ratio": 3.36,
-      "volatility_ratio": 1.27,
-      "pct_from_high": 3.42,
-      "supply_demand_score": 0.0,
-      "composite_score": 21.4,
-      "ai_score": 0.0
-    }
-  ]
+  "presurge_today_candidates": [],
+  "presurge_signal": [],
+  "presurge_volume_explosion": [],
+  "presurge_breakout_imminent": [],
+  "presurge_ai_recommended": []
 }

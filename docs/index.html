@@ -117,6 +117,28 @@
   .primary.green { color: #4ade80; }
   .metrics .sub { font-size: 12px; color: #8a8f98; margin-top: 2px; }
   .empty { text-align: center; color: #8a8f98; padding: 24px 0; font-size: 13px; }
+  .pf-actions { display: flex; gap: 8px; margin-top: 8px; }
+  .pf-btn {
+    background: #2a2d35; color: #e8e8ea; border: none; border-radius: 8px;
+    padding: 8px 12px; font-size: 13px;
+  }
+  .pf-btn.primary { background: #1f6f43; }
+  .pf-editor {
+    background: #1a1d24; border-radius: 10px; padding: 12px; margin-top: 10px;
+  }
+  .pf-row {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 10px; padding: 6px 0; border-bottom: 1px solid #2a2d35;
+  }
+  .pf-row:last-of-type { border-bottom: none; }
+  .pf-row label { font-size: 14px; flex: 1; }
+  .pf-row .pf-sub { font-size: 11px; color: #8a8f98; display: block; }
+  .pf-input {
+    width: 110px; background: #0f1115; color: #e8e8ea; border: 1px solid #2a2d35;
+    border-radius: 8px; padding: 8px; font-size: 14px; text-align: right;
+  }
+  .pf-editor-footer { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .pf-note { font-size: 11px; color: #8a8f98; margin-top: 8px; line-height: 1.5; }
   .treemap-container {
     position: relative;
     width: 100%;
@@ -212,6 +234,10 @@
 
   <div class="group-header">📊 내 포트폴리오 시장지도</div>
   <div class="group-desc" id="portfolio-desc"></div>
+  <div class="pf-actions">
+    <button class="pf-btn" id="pf-edit-toggle" onclick="togglePortfolioEditor()">✏️ 보유 수량 수정</button>
+  </div>
+  <div id="portfolio-editor" class="pf-editor" style="display:none;"></div>
   <div id="portfolio-treemap" class="treemap-container"></div>
 
   <button class="refresh" onclick="load(document.getElementById('date-picker').value); loadPortfolio();">새로고침</button>
@@ -485,9 +511,145 @@ function changeColor(pct) {
   }
 }
 
-async function loadPortfolio() {
+const PF_STORAGE_KEY = 'tomorrow_stock_portfolio_qty';
+let portfolioData = null;
+
+function loadQtyOverrides() {
+  try {
+    const raw = localStorage.getItem(PF_STORAGE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch (e) {
+    return {};
+  }
+}
+
+function saveQtyOverrides(map) {
+  try {
+    localStorage.setItem(PF_STORAGE_KEY, JSON.stringify(map));
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+function effectiveQty(item, overrides) {
+  const o = overrides[item.symbol];
+  return (o !== undefined && o !== null && !isNaN(o)) ? Number(o) : Number(item.qty);
+}
+
+function formatQty(q) {
+  return Number(q).toLocaleString('ko-KR', { maximumFractionDigits: 8 });
+}
+
+function togglePortfolioEditor() {
+  const editor = document.getElementById('portfolio-editor');
+  const open = editor.style.display === 'none';
+  editor.style.display = open ? 'block' : 'none';
+  document.getElementById('pf-edit-toggle').textContent = open ? '✖ 닫기' : '✏️ 보유 수량 수정';
+  if (open) renderPortfolioEditor();
+}
+
+function renderPortfolioEditor() {
+  const editor = document.getElementById('portfolio-editor');
+  if (!portfolioData) {
+    editor.innerHTML = '<div class="empty">포트폴리오 데이터를 불러온 뒤 수정할 수 있습니다.</div>';
+    return;
+  }
+  const overrides = loadQtyOverrides();
+  const rows = portfolioData.items.map(it => `
+    <div class="pf-row">
+      <label for="pf-qty-${it.symbol}">${it.name}
+        <span class="pf-sub">${it.symbol} · 현재가 ${formatPrice(it.price)}${it.type === 'crypto' ? '' : '원'}</span>
+      </label>
+      <input class="pf-input" id="pf-qty-${it.symbol}" data-symbol="${it.symbol}"
+             type="number" inputmode="decimal" min="0" step="any"
+             value="${effectiveQty(it, overrides)}">
+    </div>`).join('');
+
+  editor.innerHTML = rows + `
+    <div class="pf-editor-footer">
+      <button class="pf-btn primary" onclick="savePortfolioEditor()">저장</button>
+      <button class="pf-btn" onclick="resetPortfolioEditor()">기본값으로 초기화</button>
+    </div>
+    <div class="pf-note">
+      수정한 수량은 이 기기의 이 브라우저(홈 화면 앱 포함)에만 저장됩니다.
+      다른 기기에서는 기본값이 보이고, 0을 입력하면 지도에서 제외됩니다.
+      새 종목을 추가하려면 portfolio.py의 보유 목록을 수정해야 합니다.
+    </div>`;
+}
+
+function savePortfolioEditor() {
+  const overrides = {};
+  document.querySelectorAll('#portfolio-editor .pf-input').forEach(inp => {
+    const v = parseFloat(inp.value);
+    if (!isNaN(v) && v >= 0) overrides[inp.dataset.symbol] = v;
+  });
+  const ok = saveQtyOverrides(overrides);
+  renderPortfolioMap();
+  if (!ok) {
+    document.getElementById('portfolio-desc').textContent =
+      '⚠️ 브라우저 저장소를 사용할 수 없어 이번 화면에만 반영됩니다.';
+  }
+}
+
+function resetPortfolioEditor() {
+  try { localStorage.removeItem(PF_STORAGE_KEY); } catch (e) {}
+  renderPortfolioEditor();
+  renderPortfolioMap();
+}
+
+function renderPortfolioMap() {
   const container = document.getElementById('portfolio-treemap');
   const descEl = document.getElementById('portfolio-desc');
+  if (!portfolioData) return;
+
+  const overrides = loadQtyOverrides();
+  const items = portfolioData.items
+    .map(it => {
+      const qty = effectiveQty(it, overrides);
+      return { ...it, qty, value: Number(it.price) * qty };
+    })
+    .filter(it => it.value > 0);
+
+  const total = items.reduce((s, it) => s + it.value, 0);
+  descEl.textContent =
+    `업데이트: ${portfolioData.generated_at} · 총 평가금액 ${formatPrice(Math.round(total))}원 (보유 비중대로 박스 크기가 정해집니다)`;
+
+  if (items.length === 0) {
+    container.innerHTML = '<div class="empty">표시할 보유 종목이 없습니다. 수량을 입력해주세요.</div>';
+    return;
+  }
+
+  const rect = container.getBoundingClientRect();
+  const W = rect.width || container.offsetWidth || 340;
+  const H = rect.height || 420;
+
+  const sorted = items.slice().sort((a, b) => b.value - a.value);
+  const tiles = buildTreemap(sorted, 0, 0, W, H, W >= H);
+
+  container.innerHTML = '';
+  tiles.forEach(t => {
+    const el = document.createElement('div');
+    el.className = 'treemap-tile';
+    el.style.left = t.x + 'px';
+    el.style.top = t.y + 'px';
+    el.style.width = t.w + 'px';
+    el.style.height = t.h + 'px';
+    el.style.background = changeColor(t.item.change_pct);
+
+    const showDetails = t.w > 60 && t.h > 36;
+    el.innerHTML = showDetails ? `
+      <div class="t-symbol">${t.item.name}</div>
+      <div class="t-change">${t.item.change_pct >= 0 ? '+' : ''}${t.item.change_pct}%</div>
+      <div class="t-price">${formatPrice(t.item.price)}${t.item.type === 'crypto' ? '' : '원'} · ${formatQty(t.item.qty)}${t.item.type === 'crypto' ? '개' : '주'}</div>
+    ` : `<div class="t-symbol" style="font-size:11px;">${t.item.name}</div>`;
+
+    container.appendChild(el);
+  });
+}
+
+async function loadPortfolio() {
+  const container = document.getElementById('portfolio-treemap');
   try {
     const res = await fetch('portfolio.json?t=' + Date.now());
     if (!res.ok) throw new Error('no data');
@@ -498,34 +660,11 @@ async function loadPortfolio() {
       return;
     }
 
-    descEl.textContent = `업데이트: ${data.generated_at} · 총 평가금액 ${formatPrice(data.total_value)}원 (보유 비중대로 박스 크기가 정해집니다)`;
-
-    const rect = container.getBoundingClientRect();
-    const W = rect.width || container.offsetWidth || 340;
-    const H = rect.height || 420;
-
-    const sorted = data.items.slice().sort((a, b) => b.value - a.value);
-    const tiles = buildTreemap(sorted, 0, 0, W, H, W >= H);
-
-    container.innerHTML = '';
-    tiles.forEach(t => {
-      const el = document.createElement('div');
-      el.className = 'treemap-tile';
-      el.style.left = t.x + 'px';
-      el.style.top = t.y + 'px';
-      el.style.width = t.w + 'px';
-      el.style.height = t.h + 'px';
-      el.style.background = changeColor(t.item.change_pct);
-
-      const showDetails = t.w > 60 && t.h > 36;
-      el.innerHTML = showDetails ? `
-        <div class="t-symbol">${t.item.name}</div>
-        <div class="t-change">${t.item.change_pct >= 0 ? '+' : ''}${t.item.change_pct}%</div>
-        <div class="t-price">${formatPrice(t.item.price)}${t.item.type === 'crypto' ? '' : '원'}</div>
-      ` : `<div class="t-symbol" style="font-size:11px;">${t.item.name}</div>`;
-
-      container.appendChild(el);
-    });
+    portfolioData = data;
+    renderPortfolioMap();
+    if (document.getElementById('portfolio-editor').style.display !== 'none') {
+      renderPortfolioEditor();
+    }
   } catch (e) {
     container.innerHTML = '<div class="empty">포트폴리오 데이터를 아직 불러올 수 없습니다.</div>';
   }

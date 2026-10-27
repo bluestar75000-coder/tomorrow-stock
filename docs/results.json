@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-26 14:19:38",
+  "generated_at": "2026-10-27 11:23:57",
   "scanned_count": 400,
   "momentum_conditions": {
     "volume_surge_ratio": 2.0,
@@ -44,58 +44,76 @@
   },
   "momentum_results": [
     {
-      "code": "328130",
-      "name": "루닛",
+      "code": "425420",
+      "name": "티에프이",
       "market": "KOSDAQ",
-      "price": 14690,
-      "volume_ratio": 3.74,
-      "price_change_pct": 30.69,
-      "score": 19.08
+      "price": 76200,
+      "volume_ratio": 3.19,
+      "price_change_pct": 22.9,
+      "score": 14.64
     },
     {
-      "code": "458870",
-      "name": "씨어스",
+      "code": "253590",
+      "name": "네오셈",
       "market": "KOSDAQ",
-      "price": 28000,
-      "volume_ratio": 4.74,
-      "price_change_pct": 18.14,
-      "score": 13.81
+      "price": 17540,
+      "volume_ratio": 3.84,
+      "price_change_pct": 14.27,
+      "score": 10.97
     },
     {
-      "code": "035900",
-      "name": "JYP Ent.",
+      "code": "187660",
+      "name": "페니트리움바이오",
       "market": "KOSDAQ",
-      "price": 42050,
-      "volume_ratio": 4.43,
-      "price_change_pct": 14.11,
-      "score": 11.49
+      "price": 6450,
+      "volume_ratio": 2.13,
+      "price_change_pct": 15.59,
+      "score": 9.93
     },
     {
-      "code": "108490",
-      "name": "로보티즈",
-      "market": "KOSDAQ",
-      "price": 251500,
-      "volume_ratio": 2.43,
-      "price_change_pct": 11.04,
-      "score": 7.95
+      "code": "138930",
+      "name": "BNK금융지주",
+      "market": "KOSPI",
+      "price": 12690,
+      "volume_ratio": 4.49,
+      "price_change_pct": 8.37,
+      "score": 8.67
     },
     {
-      "code": "437730",
-      "name": "삼현",
+      "code": "354320",
+      "name": "알멕",
       "market": "KOSDAQ",
-      "price": 47600,
-      "volume_ratio": 2.93,
-      "price_change_pct": 8.43,
-      "score": 7.14
+      "price": 61500,
+      "volume_ratio": 2.69,
+      "price_change_pct": 10.22,
+      "score": 7.8
     },
     {
-      "code": "0009K0",
-      "name": "에임드바이오",
+      "code": "031330",
+      "name": "에스에이엠티",
       "market": "KOSDAQ",
-      "price": 21700,
-      "volume_ratio": 2.96,
-      "price_change_pct": 3.83,
-      "score": 4.88
+      "price": 7050,
+      "volume_ratio": 2.89,
+      "price_change_pct": 7.14,
+      "score": 6.46
+    },
+    {
+      "code": "294870",
+      "name": "IPARK현대산업개발",
+      "market": "KOSPI",
+      "price": 23900,
+      "volume_ratio": 2.45,
+      "price_change_pct": 6.94,
+      "score": 5.91
+    },
+    {
+      "code": "095340",
+      "name": "ISC",
+      "market": "KOSDAQ",
+      "price": 151700,
+      "volume_ratio": 2.14,
+      "price_change_pct": 7.44,
+      "score": 5.85
     }
   ],
   "value_results": [
@@ -105,34 +123,61 @@
       "market": "KOSDAQ",
       "sector": "우량기업부",
       "is_growth": false,
-      "price": 42050,
-      "volume_ratio": 4.43,
-      "per": 7.43,
-      "pbr": 1.92,
-      "score": 5.97
+      "price": 37800,
+      "volume_ratio": 9.03,
+      "per": 7.93,
+      "pbr": 2.05,
+      "score": 11.39
     },
     {
-      "code": "101160",
-      "name": "월덱스",
+      "code": "067160",
+      "name": "SOOP",
       "market": "KOSDAQ",
       "sector": "우량기업부",
       "is_growth": false,
-      "price": 24250,
-      "volume_ratio": 1.55,
-      "per": 9.75,
-      "pbr": 1.15,
-      "score": 1.59
+      "price": 37600,
+      "volume_ratio": 2.12,
+      "per": 3.94,
+      "pbr": 0.86,
+      "score": 5.37
     }
   ],
   "crash_results": [
     {
-      "code": "441270",
-      "name": "파인엠텍",
+      "code": "035900",
+      "name": "JYP Ent.",
       "market": "KOSDAQ",
-      "price": 9540,
-      "volume_ratio": 2.68,
-      "price_change_pct": -16.09,
-      "score": 10.73
+      "price": 37800,
+      "volume_ratio": 9.03,
+      "price_change_pct": -10.11,
+      "score": 14.09
+    },
+    {
+      "code": "456160",
+      "name": "지투지바이오",
+      "market": "KOSDAQ",
+      "price": 39450,
+      "volume_ratio": 2.76,
+      "price_change_pct": -14.24,
+      "score": 9.88
+    },
+    {
+      "code": "237690",
+      "name": "에스티팜",
+      "market": "KOSDAQ",
+      "price": 81200,
+      "volume_ratio": 3.22,
+      "price_change_pct": -7.52,
+      "score": 6.98
+    },
+    {
+      "code": "327260",
+      "name": "RF머트리얼즈",
+      "market": "KOSDAQ",
+      "price": 35050,
+      "volume_ratio": 3.85,
+      "price_change_pct": -3.18,
+      "score": 5.43
     }
   ],
   "presurge_today_candidates": [],

@@ -100,8 +100,21 @@ def _to_item(row, extra: dict = None):
     return item
 
 
+def _normalize_marcap_column(universe: pd.DataFrame) -> pd.DataFrame:
+    """FinanceDataReader 버전에 따라 시가총액 컬럼명이 다를 수 있어 'Marcap'으로 통일한다."""
+    df = universe.copy()
+    if "Marcap" in df.columns:
+        return df
+    for candidate in ["MarketCap", "marcap", "시가총액"]:
+        if candidate in df.columns:
+            df["Marcap"] = df[candidate]
+            return df
+    raise ValueError(f"시가총액 컬럼을 찾지 못했습니다. 사용 가능한 컬럼: {list(df.columns)}")
+
+
 def build_market_maps(universe: pd.DataFrame) -> dict:
-    """universe: Code, Name, Market, Marcap 컬럼을 가진 코스피+코스닥 종목 리스트."""
+    """universe: Code, Name, Market, 시가총액 컬럼을 가진 코스피+코스닥 종목 리스트."""
+    universe = _normalize_marcap_column(universe)
     ranked = universe.dropna(subset=["Marcap"]).sort_values("Marcap", ascending=False)
     ranked = ranked.drop_duplicates(subset=["Code"]).reset_index(drop=True)
 
@@ -115,7 +128,11 @@ def build_market_maps(universe: pd.DataFrame) -> dict:
     # 2) 시총 상위 200 중 외국인 보유비중 상위 10
     top_foreign = []
     foreign_note = ""
-    foreign_map = get_foreign_ratio_map()
+    try:
+        foreign_map = get_foreign_ratio_map()
+    except Exception as e:
+        print(f"[경고] 외국인 보유비중 처리 중 오류: {e}")
+        foreign_map = {}
     if not foreign_map:
         foreign_note = "외국인 보유비중 데이터를 가져오지 못했습니다 (KRX 로그인 정보 확인 필요)."
     else:

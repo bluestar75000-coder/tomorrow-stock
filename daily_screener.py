@@ -335,6 +335,32 @@ def update_history_index(history_dir: str) -> list:
     return dates
 
 
+def save_market_maps(universe) -> None:
+    """시장지도 데이터를 docs/market_map.json 으로 저장한다.
+    생성에 실패해도 파일은 항상 만들고 'error' 필드에 사유를 남겨서,
+    화면에서 원인을 바로 확인할 수 있게 한다."""
+    print("\n시장지도(시총 상위 10 / 외국인 보유비중 상위 10) 데이터 생성 중...")
+    map_path = os.path.join(OUTPUT_DIR, "market_map.json")
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+    try:
+        map_output = build_market_maps(universe)
+    except Exception as e:
+        print(f"[경고] 시장지도 데이터 생성 실패: {type(e).__name__}: {e}")
+        map_output = {
+            "top_marcap": [],
+            "top_foreign": [],
+            "foreign_note": "",
+            "error": f"{type(e).__name__}: {e}",
+        }
+
+    map_output["generated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    with open(map_path, "w", encoding="utf-8") as f:
+        json.dump(sanitize_for_json(map_output), f, ensure_ascii=False, indent=2)
+    print(f"시장지도 데이터를 {map_path} 에 저장했습니다. "
+          f"(시총 상위 {len(map_output['top_marcap'])}개, 외국인 보유비중 상위 {len(map_output['top_foreign'])}개)")
+
+
 def main():
     print(f"코스피/코스닥 시가총액 상위 {N_PER_MARKET}개씩 유니버스 조회 중...")
     universe = get_combined_universe(N_PER_MARKET)
@@ -482,17 +508,7 @@ def main():
             f"history/presurge_{today_str}.csv", index=False, encoding="utf-8-sig"
         )
 
-    print("\n시장지도(시총 상위 10 / 외국인 보유비중 상위 10) 데이터 생성 중...")
-    try:
-        map_output = build_market_maps(universe)
-        map_output["generated_at"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        map_path = os.path.join(OUTPUT_DIR, "market_map.json")
-        with open(map_path, "w", encoding="utf-8") as f:
-            json.dump(sanitize_for_json(map_output), f, ensure_ascii=False, indent=2)
-        print(f"시장지도 데이터를 {map_path} 에 저장했습니다. "
-              f"(시총 상위 {len(map_output['top_marcap'])}개, 외국인 보유비중 상위 {len(map_output['top_foreign'])}개)")
-    except Exception as e:
-        print(f"[경고] 시장지도 데이터 생성 실패: {e}")
+    save_market_maps(universe)
 
 
 if __name__ == "__main__":

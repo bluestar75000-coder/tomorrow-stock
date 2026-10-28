@@ -1,0 +1,208 @@
+{
+  "generated_at": "2026-10-28 14:06:17",
+  "scanned_count": 400,
+  "momentum_conditions": {
+    "volume_surge_ratio": 2.0,
+    "price_change_min_pct": 3.0
+  },
+  "value_conditions": {
+    "volume_ratio_min": 1.5,
+    "per_max_default": 10.0,
+    "per_max_growth": 20.0,
+    "top_n_per_sector": 2,
+    "growth_sector_keywords": [
+      "반도체",
+      "전자",
+      "IT",
+      "소프트웨어",
+      "인터넷",
+      "게임",
+      "바이오",
+      "제약",
+      "생물",
+      "2차전지",
+      "전지",
+      "로봇",
+      "통신장비",
+      "우주항공"
+    ]
+  },
+  "crash_conditions": {
+    "volume_surge_ratio": 2.0,
+    "price_drop_min_pct": 3.0
+  },
+  "presurge_conditions": {
+    "price_change_max_pct": 3.0,
+    "volume_ratio_min": 1.5,
+    "value_ratio_min": 1.5,
+    "volatility_ratio_range": [
+      1.2,
+      3.0
+    ],
+    "high_proximity_max_pct": 10.0,
+    "note": "AI 추천 종목은 실제 ML 모델이 아니라 정규화된 지표의 가중합(규칙 기반) 점수입니다. 백테스트 결과 당일/익일 단타보다 3~5일 관점에서 유효했습니다."
+  },
+  "momentum_results": [
+    {
+      "code": "079940",
+      "name": "가비아",
+      "market": "KOSDAQ",
+      "price": 50500,
+      "volume_ratio": 11.5,
+      "price_change_pct": 24.08,
+      "score": 23.54
+    },
+    {
+      "code": "046890",
+      "name": "서울반도체",
+      "market": "KOSDAQ",
+      "price": 10630,
+      "volume_ratio": 4.76,
+      "price_change_pct": 27.61,
+      "score": 18.56
+    },
+    {
+      "code": "071970",
+      "name": "HD현대마린엔진",
+      "market": "KOSPI",
+      "price": 40600,
+      "volume_ratio": 8.73,
+      "price_change_pct": 13.41,
+      "score": 15.44
+    },
+    {
+      "code": "030530",
+      "name": "원익홀딩스",
+      "market": "KOSDAQ",
+      "price": 28050,
+      "volume_ratio": 6.72,
+      "price_change_pct": 15.43,
+      "score": 14.44
+    },
+    {
+      "code": "053800",
+      "name": "안랩",
+      "market": "KOSDAQ",
+      "price": 111600,
+      "volume_ratio": 5.02,
+      "price_change_pct": 17.85,
+      "score": 13.94
+    },
+    {
+      "code": "069540",
+      "name": "빛과전자",
+      "market": "KOSDAQ",
+      "price": 4195,
+      "volume_ratio": 3.48,
+      "price_change_pct": 20.89,
+      "score": 13.93
+    },
+    {
+      "code": "059090",
+      "name": "미코",
+      "market": "KOSDAQ",
+      "price": 26000,
+      "volume_ratio": 2.61,
+      "price_change_pct": 17.91,
+      "score": 11.56
+    },
+    {
+      "code": "356680",
+      "name": "엑스게이트",
+      "market": "KOSDAQ",
+      "price": 17670,
+      "volume_ratio": 2.83,
+      "price_change_pct": 14.52,
+      "score": 10.09
+    },
+    {
+      "code": "491000",
+      "name": "리브스메드",
+      "market": "KOSDAQ",
+      "price": 43100,
+      "volume_ratio": 2.82,
+      "price_change_pct": 14.48,
+      "score": 10.06
+    },
+    {
+      "code": "277810",
+      "name": "레인보우로보틱스",
+      "market": "KOSDAQ",
+      "price": 407500,
+      "volume_ratio": 2.56,
+      "price_change_pct": 14.15,
+      "score": 9.63
+    },
+    {
+      "code": "425420",
+      "name": "티에프이",
+      "market": "KOSDAQ",
+      "price": 84800,
+      "volume_ratio": 3.49,
+      "price_change_pct": 11.29,
+      "score": 9.14
+    },
+    {
+      "code": "080580",
+      "name": "오킨스전자",
+      "market": "KOSDAQ",
+      "price": 30000,
+      "volume_ratio": 2.97,
+      "price_change_pct": 11.52,
+      "score": 8.73
+    },
+    {
+      "code": "098120",
+      "name": "마이크로컨텍솔",
+      "market": "KOSDAQ",
+      "price": 54200,
+      "volume_ratio": 2.0,
+      "price_change_pct": 13.27,
+      "score": 8.64
+    },
+    {
+      "code": "253590",
+      "name": "네오셈",
+      "market": "KOSDAQ",
+      "price": 18890,
+      "volume_ratio": 2.87,
+      "price_change_pct": 7.7,
+      "score": 6.72
+    },
+    {
+      "code": "108490",
+      "name": "로보티즈",
+      "market": "KOSDAQ",
+      "price": 274500,
+      "volume_ratio": 2.01,
+      "price_change_pct": 8.5,
+      "score": 6.26
+    }
+  ],
+  "value_results": [],
+  "crash_results": [
+    {
+      "code": "237690",
+      "name": "에스티팜",
+      "market": "KOSDAQ",
+      "price": 76700,
+      "volume_ratio": 4.0,
+      "price_change_pct": -5.54,
+      "score": 6.78
+    },
+    {
+      "code": "420770",
+      "name": "기가비스",
+      "market": "KOSDAQ",
+      "price": 108600,
+      "volume_ratio": 2.54,
+      "price_change_pct": -3.81,
+      "score": 4.44
+    }
+  ],
+  "presurge_today_candidates": [],
+  "presurge_signal": [],
+  "presurge_volume_explosion": [],
+  "presurge_breakout_imminent": [],
+  "presurge_ai_recommended": []
+}

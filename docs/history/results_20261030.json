@@ -1,0 +1,180 @@
+{
+  "generated_at": "2026-10-30 14:11:17",
+  "scanned_count": 400,
+  "momentum_conditions": {
+    "volume_surge_ratio": 2.0,
+    "price_change_min_pct": 3.0
+  },
+  "value_conditions": {
+    "volume_ratio_min": 1.5,
+    "per_max_default": 10.0,
+    "per_max_growth": 20.0,
+    "top_n_per_sector": 2,
+    "growth_sector_keywords": [
+      "반도체",
+      "전자",
+      "IT",
+      "소프트웨어",
+      "인터넷",
+      "게임",
+      "바이오",
+      "제약",
+      "생물",
+      "2차전지",
+      "전지",
+      "로봇",
+      "통신장비",
+      "우주항공"
+    ]
+  },
+  "crash_conditions": {
+    "volume_surge_ratio": 2.0,
+    "price_drop_min_pct": 3.0
+  },
+  "presurge_conditions": {
+    "price_change_max_pct": 3.0,
+    "volume_ratio_min": 1.5,
+    "value_ratio_min": 1.5,
+    "volatility_ratio_range": [
+      1.2,
+      3.0
+    ],
+    "high_proximity_max_pct": 10.0,
+    "note": "AI 추천 종목은 실제 ML 모델이 아니라 정규화된 지표의 가중합(규칙 기반) 점수입니다. 백테스트 결과 당일/익일 단타보다 3~5일 관점에서 유효했습니다."
+  },
+  "momentum_results": [
+    {
+      "code": "053800",
+      "name": "안랩",
+      "market": "KOSDAQ",
+      "price": 121100,
+      "volume_ratio": 4.14,
+      "price_change_pct": 22.32,
+      "score": 15.3
+    },
+    {
+      "code": "002790",
+      "name": "아모레퍼시픽홀딩스",
+      "market": "KOSPI",
+      "price": 25200,
+      "volume_ratio": 2.04,
+      "price_change_pct": 6.55,
+      "score": 5.32
+    },
+    {
+      "code": "090430",
+      "name": "아모레퍼시픽",
+      "market": "KOSPI",
+      "price": 128200,
+      "volume_ratio": 2.09,
+      "price_change_pct": 4.14,
+      "score": 4.16
+    }
+  ],
+  "value_results": [],
+  "crash_results": [
+    {
+      "code": "445680",
+      "name": "큐리옥스바이오시스템즈",
+      "market": "KOSDAQ",
+      "price": 51000,
+      "volume_ratio": 3.0,
+      "price_change_pct": -15.42,
+      "score": 10.71
+    },
+    {
+      "code": "099320",
+      "name": "쎄트렉아이",
+      "market": "KOSDAQ",
+      "price": 54800,
+      "volume_ratio": 2.5,
+      "price_change_pct": -3.01,
+      "score": 4.0
+    }
+  ],
+  "presurge_today_candidates": [
+    {
+      "code": "121600",
+      "name": "나노신소재",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 61100,
+      "price_change_pct": 1.83,
+      "volume_ratio": 1.92,
+      "value_ratio": 1.96,
+      "volatility_ratio": 1.43,
+      "pct_from_high": 7.7,
+      "supply_demand_score": 0.0,
+      "composite_score": 12.67,
+      "ai_score": 0.0
+    }
+  ],
+  "presurge_signal": [
+    {
+      "code": "121600",
+      "name": "나노신소재",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 61100,
+      "price_change_pct": 1.83,
+      "volume_ratio": 1.92,
+      "value_ratio": 1.96,
+      "volatility_ratio": 1.43,
+      "pct_from_high": 7.7,
+      "supply_demand_score": 0.0,
+      "composite_score": 12.67,
+      "ai_score": 0.0
+    }
+  ],
+  "presurge_volume_explosion": [
+    {
+      "code": "121600",
+      "name": "나노신소재",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 61100,
+      "price_change_pct": 1.83,
+      "volume_ratio": 1.92,
+      "value_ratio": 1.96,
+      "volatility_ratio": 1.43,
+      "pct_from_high": 7.7,
+      "supply_demand_score": 0.0,
+      "composite_score": 12.67,
+      "ai_score": 0.0
+    }
+  ],
+  "presurge_breakout_imminent": [
+    {
+      "code": "121600",
+      "name": "나노신소재",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 61100,
+      "price_change_pct": 1.83,
+      "volume_ratio": 1.92,
+      "value_ratio": 1.96,
+      "volatility_ratio": 1.43,
+      "pct_from_high": 7.7,
+      "supply_demand_score": 0.0,
+      "composite_score": 12.67,
+      "ai_score": 0.0
+    }
+  ],
+  "presurge_ai_recommended": [
+    {
+      "code": "121600",
+      "name": "나노신소재",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 61100,
+      "price_change_pct": 1.83,
+      "volume_ratio": 1.92,
+      "value_ratio": 1.96,
+      "volatility_ratio": 1.43,
+      "pct_from_high": 7.7,
+      "supply_demand_score": 0.0,
+      "composite_score": 12.67,
+      "ai_score": 0.0
+    }
+  ]
+}

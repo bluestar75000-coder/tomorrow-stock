@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30 14:11:17",
+  "generated_at": "2026-11-02 17:08:44",
   "scanned_count": 400,
   "momentum_conditions": {
     "volume_surge_ratio": 2.0,
@@ -44,137 +44,142 @@
   },
   "momentum_results": [
     {
-      "code": "053800",
-      "name": "안랩",
+      "code": "180640",
+      "name": "한진칼",
+      "market": "KOSPI",
+      "price": 144100,
+      "volume_ratio": 8.28,
+      "price_change_pct": 17.25,
+      "score": 16.9
+    },
+    {
+      "code": "030530",
+      "name": "원익홀딩스",
       "market": "KOSDAQ",
-      "price": 121100,
-      "volume_ratio": 4.14,
-      "price_change_pct": 22.32,
-      "score": 15.3
+      "price": 32650,
+      "volume_ratio": 5.29,
+      "price_change_pct": 13.17,
+      "score": 11.87
     },
     {
-      "code": "002790",
-      "name": "아모레퍼시픽홀딩스",
-      "market": "KOSPI",
-      "price": 25200,
-      "volume_ratio": 2.04,
-      "price_change_pct": 6.55,
-      "score": 5.32
+      "code": "023160",
+      "name": "태광",
+      "market": "KOSDAQ",
+      "price": 30000,
+      "volume_ratio": 2.88,
+      "price_change_pct": 17.65,
+      "score": 11.7
     },
     {
-      "code": "090430",
-      "name": "아모레퍼시픽",
+      "code": "014620",
+      "name": "성광벤드",
+      "market": "KOSDAQ",
+      "price": 29950,
+      "volume_ratio": 2.74,
+      "price_change_pct": 14.1,
+      "score": 9.78
+    },
+    {
+      "code": "004020",
+      "name": "현대제철",
       "market": "KOSPI",
-      "price": 128200,
-      "volume_ratio": 2.09,
-      "price_change_pct": 4.14,
-      "score": 4.16
+      "price": 28850,
+      "volume_ratio": 2.43,
+      "price_change_pct": 13.14,
+      "score": 9.0
+    },
+    {
+      "code": "086280",
+      "name": "현대글로비스",
+      "market": "KOSPI",
+      "price": 202500,
+      "volume_ratio": 2.68,
+      "price_change_pct": 11.69,
+      "score": 8.53
+    },
+    {
+      "code": "121600",
+      "name": "나노신소재",
+      "market": "KOSDAQ",
+      "price": 67800,
+      "volume_ratio": 2.69,
+      "price_change_pct": 10.97,
+      "score": 8.17
+    },
+    {
+      "code": "020560",
+      "name": "아시아나항공",
+      "market": "KOSPI",
+      "price": 7640,
+      "volume_ratio": 2.11,
+      "price_change_pct": 7.91,
+      "score": 6.07
+    },
+    {
+      "code": "035890",
+      "name": "서희건설",
+      "market": "KOSDAQ",
+      "price": 2015,
+      "volume_ratio": 2.89,
+      "price_change_pct": 5.0,
+      "score": 5.4
+    },
+    {
+      "code": "092190",
+      "name": "서울바이오시스",
+      "market": "KOSDAQ",
+      "price": 8730,
+      "volume_ratio": 2.89,
+      "price_change_pct": 4.55,
+      "score": 5.17
     }
   ],
-  "value_results": [],
+  "value_results": [
+    {
+      "code": "035890",
+      "name": "서희건설",
+      "market": "KOSDAQ",
+      "sector": "중견기업부",
+      "is_growth": false,
+      "price": 2015,
+      "volume_ratio": 2.89,
+      "per": 3.03,
+      "pbr": 0.34,
+      "score": 9.55
+    }
+  ],
   "crash_results": [
     {
-      "code": "445680",
-      "name": "큐리옥스바이오시스템즈",
+      "code": "214370",
+      "name": "케어젠",
       "market": "KOSDAQ",
-      "price": 51000,
-      "volume_ratio": 3.0,
-      "price_change_pct": -15.42,
-      "score": 10.71
+      "price": 27400,
+      "volume_ratio": 9.72,
+      "price_change_pct": -16.59,
+      "score": 18.02
     },
     {
-      "code": "099320",
-      "name": "쎄트렉아이",
+      "code": "263750",
+      "name": "펄어비스",
       "market": "KOSDAQ",
-      "price": 54800,
-      "volume_ratio": 2.5,
-      "price_change_pct": -3.01,
-      "score": 4.0
+      "price": 32450,
+      "volume_ratio": 2.27,
+      "price_change_pct": -7.02,
+      "score": 5.78
+    },
+    {
+      "code": "395400",
+      "name": "SK리츠",
+      "market": "KOSPI",
+      "price": 4915,
+      "volume_ratio": 2.17,
+      "price_change_pct": -6.74,
+      "score": 5.54
     }
   ],
-  "presurge_today_candidates": [
-    {
-      "code": "121600",
-      "name": "나노신소재",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 61100,
-      "price_change_pct": 1.83,
-      "volume_ratio": 1.92,
-      "value_ratio": 1.96,
-      "volatility_ratio": 1.43,
-      "pct_from_high": 7.7,
-      "supply_demand_score": 0.0,
-      "composite_score": 12.67,
-      "ai_score": 0.0
-    }
-  ],
-  "presurge_signal": [
-    {
-      "code": "121600",
-      "name": "나노신소재",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 61100,
-      "price_change_pct": 1.83,
-      "volume_ratio": 1.92,
-      "value_ratio": 1.96,
-      "volatility_ratio": 1.43,
-      "pct_from_high": 7.7,
-      "supply_demand_score": 0.0,
-      "composite_score": 12.67,
-      "ai_score": 0.0
-    }
-  ],
-  "presurge_volume_explosion": [
-    {
-      "code": "121600",
-      "name": "나노신소재",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 61100,
-      "price_change_pct": 1.83,
-      "volume_ratio": 1.92,
-      "value_ratio": 1.96,
-      "volatility_ratio": 1.43,
-      "pct_from_high": 7.7,
-      "supply_demand_score": 0.0,
-      "composite_score": 12.67,
-      "ai_score": 0.0
-    }
-  ],
-  "presurge_breakout_imminent": [
-    {
-      "code": "121600",
-      "name": "나노신소재",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 61100,
-      "price_change_pct": 1.83,
-      "volume_ratio": 1.92,
-      "value_ratio": 1.96,
-      "volatility_ratio": 1.43,
-      "pct_from_high": 7.7,
-      "supply_demand_score": 0.0,
-      "composite_score": 12.67,
-      "ai_score": 0.0
-    }
-  ],
-  "presurge_ai_recommended": [
-    {
-      "code": "121600",
-      "name": "나노신소재",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 61100,
-      "price_change_pct": 1.83,
-      "volume_ratio": 1.92,
-      "value_ratio": 1.96,
-      "volatility_ratio": 1.43,
-      "pct_from_high": 7.7,
-      "supply_demand_score": 0.0,
-      "composite_score": 12.67,
-      "ai_score": 0.0
-    }
-  ]
+  "presurge_today_candidates": [],
+  "presurge_signal": [],
+  "presurge_volume_explosion": [],
+  "presurge_breakout_imminent": [],
+  "presurge_ai_recommended": []
 }

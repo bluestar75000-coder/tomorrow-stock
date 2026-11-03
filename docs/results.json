@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02 17:08:44",
+  "generated_at": "2026-11-03 15:12:49",
   "scanned_count": 400,
   "momentum_conditions": {
     "volume_surge_ratio": 2.0,
@@ -47,134 +47,89 @@
       "code": "180640",
       "name": "한진칼",
       "market": "KOSPI",
-      "price": 144100,
-      "volume_ratio": 8.28,
-      "price_change_pct": 17.25,
-      "score": 16.9
+      "price": 175200,
+      "volume_ratio": 12.42,
+      "price_change_pct": 21.58,
+      "score": 23.21
     },
     {
-      "code": "030530",
-      "name": "원익홀딩스",
+      "code": "099190",
+      "name": "아이센스",
       "market": "KOSDAQ",
-      "price": 32650,
-      "volume_ratio": 5.29,
-      "price_change_pct": 13.17,
-      "score": 11.87
-    },
-    {
-      "code": "023160",
-      "name": "태광",
-      "market": "KOSDAQ",
-      "price": 30000,
-      "volume_ratio": 2.88,
-      "price_change_pct": 17.65,
-      "score": 11.7
-    },
-    {
-      "code": "014620",
-      "name": "성광벤드",
-      "market": "KOSDAQ",
-      "price": 29950,
-      "volume_ratio": 2.74,
-      "price_change_pct": 14.1,
-      "score": 9.78
-    },
-    {
-      "code": "004020",
-      "name": "현대제철",
-      "market": "KOSPI",
-      "price": 28850,
-      "volume_ratio": 2.43,
-      "price_change_pct": 13.14,
-      "score": 9.0
-    },
-    {
-      "code": "086280",
-      "name": "현대글로비스",
-      "market": "KOSPI",
-      "price": 202500,
-      "volume_ratio": 2.68,
-      "price_change_pct": 11.69,
-      "score": 8.53
-    },
-    {
-      "code": "121600",
-      "name": "나노신소재",
-      "market": "KOSDAQ",
-      "price": 67800,
-      "volume_ratio": 2.69,
-      "price_change_pct": 10.97,
-      "score": 8.17
+      "price": 17650,
+      "volume_ratio": 3.02,
+      "price_change_pct": 4.75,
+      "score": 5.39
     },
     {
       "code": "020560",
       "name": "아시아나항공",
       "market": "KOSPI",
-      "price": 7640,
-      "volume_ratio": 2.11,
-      "price_change_pct": 7.91,
-      "score": 6.07
+      "price": 7900,
+      "volume_ratio": 2.67,
+      "price_change_pct": 3.4,
+      "score": 4.37
     },
     {
-      "code": "035890",
-      "name": "서희건설",
-      "market": "KOSDAQ",
-      "price": 2015,
-      "volume_ratio": 2.89,
-      "price_change_pct": 5.0,
-      "score": 5.4
-    },
-    {
-      "code": "092190",
-      "name": "서울바이오시스",
-      "market": "KOSDAQ",
-      "price": 8730,
-      "volume_ratio": 2.89,
-      "price_change_pct": 4.55,
-      "score": 5.17
+      "code": "089860",
+      "name": "롯데렌탈",
+      "market": "KOSPI",
+      "price": 52800,
+      "volume_ratio": 2.03,
+      "price_change_pct": 3.33,
+      "score": 3.7
     }
   ],
   "value_results": [
     {
-      "code": "035890",
-      "name": "서희건설",
+      "code": "006730",
+      "name": "서부T&D",
       "market": "KOSDAQ",
-      "sector": "중견기업부",
+      "sector": "우량기업부",
       "is_growth": false,
-      "price": 2015,
-      "volume_ratio": 2.89,
-      "per": 3.03,
-      "pbr": 0.34,
-      "score": 9.55
+      "price": 11620,
+      "volume_ratio": 1.6,
+      "per": 9.27,
+      "pbr": 0.69,
+      "score": 1.72
     }
   ],
   "crash_results": [
     {
-      "code": "214370",
-      "name": "케어젠",
+      "code": "388210",
+      "name": "씨엠티엑스",
       "market": "KOSDAQ",
-      "price": 27400,
-      "volume_ratio": 9.72,
-      "price_change_pct": -16.59,
-      "score": 18.02
+      "price": 42700,
+      "volume_ratio": 5.5,
+      "price_change_pct": -17.25,
+      "score": 14.12
     },
     {
-      "code": "263750",
-      "name": "펄어비스",
+      "code": "046890",
+      "name": "서울반도체",
       "market": "KOSDAQ",
-      "price": 32450,
-      "volume_ratio": 2.27,
-      "price_change_pct": -7.02,
-      "score": 5.78
+      "price": 10430,
+      "volume_ratio": 3.05,
+      "price_change_pct": -8.67,
+      "score": 7.39
     },
     {
-      "code": "395400",
-      "name": "SK리츠",
-      "market": "KOSPI",
-      "price": 4915,
-      "volume_ratio": 2.17,
-      "price_change_pct": -6.74,
-      "score": 5.54
+      "code": "358570",
+      "name": "지아이이노베이션",
+      "market": "KOSDAQ",
+      "price": 6330,
+      "volume_ratio": 2.02,
+      "price_change_pct": -6.91,
+      "score": 5.48
+    },
+    {
+      "code": "121600",
+      "name": "나노신소재",
+      "market": "KOSDAQ",
+      "price": 65000,
+      "volume_ratio": 2.44,
+      "price_change_pct": -4.13,
+      "score": 4.51
     }
   ],
   "presurge_today_candidates": [],

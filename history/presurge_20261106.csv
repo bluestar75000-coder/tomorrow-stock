@@ -1,0 +1,4 @@
+﻿code,name,market,sector,price,price_change_pct,volume_ratio,value_ratio,volatility_ratio,pct_from_high,supply_demand_score,composite_score,ai_score
+035760,CJ ENM,KOSDAQ,중견기업부,46050,2.56,1.62,1.85,1.73,3.36,0.0,16.53,31.2
+468530,프로티나,KOSDAQ,기술성장기업부,53600,0.75,2.71,3.12,1.94,8.06,0.0,16.46,56.7
+069080,웹젠,KOSDAQ,우량기업부,12500,2.38,1.5,1.57,2.08,1.42,0.0,17.44,20.0

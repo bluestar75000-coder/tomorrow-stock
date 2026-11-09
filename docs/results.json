@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06 15:06:27",
+  "generated_at": "2026-11-09 17:34:05",
   "scanned_count": 400,
   "momentum_conditions": {
     "volume_surge_ratio": 2.0,
@@ -44,483 +44,111 @@
   },
   "momentum_results": [
     {
-      "code": "089860",
-      "name": "롯데렌탈",
+      "code": "302440",
+      "name": "SK바이오사이언스",
       "market": "KOSPI",
-      "price": 58500,
-      "volume_ratio": 18.45,
-      "price_change_pct": 10.17,
-      "score": 23.53
+      "price": 40800,
+      "volume_ratio": 5.66,
+      "price_change_pct": 6.39,
+      "score": 8.85
     },
     {
-      "code": "181710",
-      "name": "NHN",
-      "market": "KOSPI",
-      "price": 57800,
-      "volume_ratio": 7.01,
-      "price_change_pct": 13.11,
-      "score": 13.56
-    },
-    {
-      "code": "187660",
-      "name": "페니트리움바이오",
+      "code": "218410",
+      "name": "RFHIC",
       "market": "KOSDAQ",
-      "price": 6470,
-      "volume_ratio": 2.65,
-      "price_change_pct": 15.12,
-      "score": 10.22
-    },
-    {
-      "code": "119850",
-      "name": "지엔씨에너지",
-      "market": "KOSDAQ",
-      "price": 35250,
-      "volume_ratio": 3.04,
-      "price_change_pct": 11.37,
-      "score": 8.72
+      "price": 42350,
+      "volume_ratio": 2.28,
+      "price_change_pct": 10.0,
+      "score": 7.28
     },
     {
       "code": "180640",
       "name": "한진칼",
       "market": "KOSPI",
-      "price": 196700,
-      "volume_ratio": 4.61,
-      "price_change_pct": 7.66,
-      "score": 8.45
+      "price": 216000,
+      "volume_ratio": 2.27,
+      "price_change_pct": 9.81,
+      "score": 7.18
     },
     {
-      "code": "121440",
-      "name": "골프존홀딩스",
+      "code": "181710",
+      "name": "NHN",
+      "market": "KOSPI",
+      "price": 60800,
+      "volume_ratio": 3.68,
+      "price_change_pct": 5.19,
+      "score": 6.27
+    },
+    {
+      "code": "119850",
+      "name": "지엔씨에너지",
       "market": "KOSDAQ",
-      "price": 8790,
-      "volume_ratio": 3.62,
-      "price_change_pct": 6.93,
-      "score": 7.09
-    },
-    {
-      "code": "018260",
-      "name": "삼성에스디에스",
-      "market": "KOSPI",
-      "price": 215000,
-      "volume_ratio": 2.43,
-      "price_change_pct": 4.88,
-      "score": 4.86
-    },
-    {
-      "code": "006360",
-      "name": "GS건설",
-      "market": "KOSPI",
-      "price": 29800,
-      "volume_ratio": 2.45,
-      "price_change_pct": 4.75,
-      "score": 4.82
-    },
-    {
-      "code": "032640",
-      "name": "LG유플러스",
-      "market": "KOSPI",
-      "price": 16520,
-      "volume_ratio": 2.97,
-      "price_change_pct": 3.64,
-      "score": 4.79
-    },
-    {
-      "code": "204270",
-      "name": "제이앤티씨",
-      "market": "KOSDAQ",
-      "price": 16060,
-      "volume_ratio": 2.55,
-      "price_change_pct": 4.35,
-      "score": 4.72
-    },
-    {
-      "code": "302440",
-      "name": "SK바이오사이언스",
-      "market": "KOSPI",
-      "price": 38350,
-      "volume_ratio": 2.47,
-      "price_change_pct": 4.35,
-      "score": 4.65
-    },
-    {
-      "code": "122870",
-      "name": "와이지엔터테인먼트",
-      "market": "KOSDAQ",
-      "price": 42900,
-      "volume_ratio": 2.08,
-      "price_change_pct": 4.38,
-      "score": 4.27
+      "price": 36600,
+      "volume_ratio": 2.54,
+      "price_change_pct": 3.83,
+      "score": 4.46
     }
   ],
-  "value_results": [
-    {
-      "code": "015750",
-      "name": "성우하이텍",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "is_growth": false,
-      "price": 5160,
-      "volume_ratio": 2.34,
-      "per": 2.43,
-      "pbr": 0.24,
-      "score": 9.64
-    },
-    {
-      "code": "032190",
-      "name": "다우데이타",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "is_growth": false,
-      "price": 16060,
-      "volume_ratio": 2.38,
-      "per": 2.76,
-      "pbr": 0.37,
-      "score": 8.64
-    }
-  ],
+  "value_results": [],
   "crash_results": [
     {
-      "code": "458870",
-      "name": "씨어스",
+      "code": "196170",
+      "name": "알테오젠",
       "market": "KOSDAQ",
-      "price": 14500,
-      "volume_ratio": 4.82,
-      "price_change_pct": -30.12,
-      "score": 19.88
+      "price": 166900,
+      "volume_ratio": 8.61,
+      "price_change_pct": -16.97,
+      "score": 17.09
     },
     {
-      "code": "041830",
-      "name": "인바디",
+      "code": "096530",
+      "name": "씨젠",
       "market": "KOSDAQ",
-      "price": 41550,
-      "volume_ratio": 6.64,
-      "price_change_pct": -26.33,
-      "score": 19.81
+      "price": 24650,
+      "volume_ratio": 4.47,
+      "price_change_pct": -14.71,
+      "score": 11.82
+    },
+    {
+      "code": "241710",
+      "name": "코스메카코리아",
+      "market": "KOSDAQ",
+      "price": 85600,
+      "volume_ratio": 3.49,
+      "price_change_pct": -11.3,
+      "score": 9.14
     },
     {
       "code": "014620",
       "name": "성광벤드",
       "market": "KOSDAQ",
-      "price": 22300,
-      "volume_ratio": 6.94,
-      "price_change_pct": -21.06,
-      "score": 17.47
+      "price": 19790,
+      "volume_ratio": 2.64,
+      "price_change_pct": -11.26,
+      "score": 8.27
     },
     {
-      "code": "023160",
-      "name": "태광",
+      "code": "458870",
+      "name": "씨어스",
       "market": "KOSDAQ",
-      "price": 22450,
-      "volume_ratio": 5.18,
-      "price_change_pct": -17.16,
-      "score": 13.76
-    },
-    {
-      "code": "099190",
-      "name": "아이센스",
-      "market": "KOSDAQ",
-      "price": 12550,
-      "volume_ratio": 3.75,
-      "price_change_pct": -12.36,
-      "score": 9.93
-    },
-    {
-      "code": "084370",
-      "name": "유진테크",
-      "market": "KOSDAQ",
-      "price": 76500,
-      "volume_ratio": 2.23,
-      "price_change_pct": -11.05,
-      "score": 7.75
-    },
-    {
-      "code": "140860",
-      "name": "파크시스템스",
-      "market": "KOSDAQ",
-      "price": 192600,
-      "volume_ratio": 2.46,
-      "price_change_pct": -10.42,
+      "price": 13090,
+      "volume_ratio": 2.8,
+      "price_change_pct": -9.72,
       "score": 7.67
     },
     {
-      "code": "213420",
-      "name": "덕산네오룩스",
+      "code": "100790",
+      "name": "미래에셋벤처투자",
       "market": "KOSDAQ",
-      "price": 20650,
-      "volume_ratio": 3.12,
-      "price_change_pct": -8.63,
-      "score": 7.44
-    },
-    {
-      "code": "095610",
-      "name": "테스",
-      "market": "KOSDAQ",
-      "price": 80300,
-      "volume_ratio": 2.03,
-      "price_change_pct": -9.06,
-      "score": 6.56
-    },
-    {
-      "code": "383310",
-      "name": "에코프로에이치엔",
-      "market": "KOSDAQ",
-      "price": 23900,
-      "volume_ratio": 2.09,
-      "price_change_pct": -8.43,
-      "score": 6.31
-    },
-    {
-      "code": "060250",
-      "name": "NHN KCP",
-      "market": "KOSDAQ",
-      "price": 11350,
-      "volume_ratio": 3.83,
-      "price_change_pct": -4.46,
-      "score": 6.06
-    },
-    {
-      "code": "124500",
-      "name": "아이티센글로벌",
-      "market": "KOSDAQ",
-      "price": 20350,
-      "volume_ratio": 2.23,
-      "price_change_pct": -3.55,
-      "score": 4.01
+      "price": 10810,
+      "volume_ratio": 2.71,
+      "price_change_pct": -3.14,
+      "score": 4.28
     }
   ],
-  "presurge_today_candidates": [
-    {
-      "code": "069080",
-      "name": "웹젠",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 12500,
-      "price_change_pct": 2.38,
-      "volume_ratio": 1.5,
-      "value_ratio": 1.57,
-      "volatility_ratio": 2.08,
-      "pct_from_high": 1.42,
-      "supply_demand_score": 0.0,
-      "composite_score": 17.44,
-      "ai_score": 20.0
-    },
-    {
-      "code": "035760",
-      "name": "CJ ENM",
-      "market": "KOSDAQ",
-      "sector": "중견기업부",
-      "price": 46050,
-      "price_change_pct": 2.56,
-      "volume_ratio": 1.62,
-      "value_ratio": 1.85,
-      "volatility_ratio": 1.73,
-      "pct_from_high": 3.36,
-      "supply_demand_score": 0.0,
-      "composite_score": 16.53,
-      "ai_score": 31.2
-    },
-    {
-      "code": "468530",
-      "name": "프로티나",
-      "market": "KOSDAQ",
-      "sector": "기술성장기업부",
-      "price": 53600,
-      "price_change_pct": 0.75,
-      "volume_ratio": 2.71,
-      "value_ratio": 3.12,
-      "volatility_ratio": 1.94,
-      "pct_from_high": 8.06,
-      "supply_demand_score": 0.0,
-      "composite_score": 16.46,
-      "ai_score": 56.7
-    }
-  ],
-  "presurge_signal": [
-    {
-      "code": "035760",
-      "name": "CJ ENM",
-      "market": "KOSDAQ",
-      "sector": "중견기업부",
-      "price": 46050,
-      "price_change_pct": 2.56,
-      "volume_ratio": 1.62,
-      "value_ratio": 1.85,
-      "volatility_ratio": 1.73,
-      "pct_from_high": 3.36,
-      "supply_demand_score": 0.0,
-      "composite_score": 16.53,
-      "ai_score": 31.2
-    },
-    {
-      "code": "468530",
-      "name": "프로티나",
-      "market": "KOSDAQ",
-      "sector": "기술성장기업부",
-      "price": 53600,
-      "price_change_pct": 0.75,
-      "volume_ratio": 2.71,
-      "value_ratio": 3.12,
-      "volatility_ratio": 1.94,
-      "pct_from_high": 8.06,
-      "supply_demand_score": 0.0,
-      "composite_score": 16.46,
-      "ai_score": 56.7
-    },
-    {
-      "code": "069080",
-      "name": "웹젠",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 12500,
-      "price_change_pct": 2.38,
-      "volume_ratio": 1.5,
-      "value_ratio": 1.57,
-      "volatility_ratio": 2.08,
-      "pct_from_high": 1.42,
-      "supply_demand_score": 0.0,
-      "composite_score": 17.44,
-      "ai_score": 20.0
-    }
-  ],
-  "presurge_volume_explosion": [
-    {
-      "code": "468530",
-      "name": "프로티나",
-      "market": "KOSDAQ",
-      "sector": "기술성장기업부",
-      "price": 53600,
-      "price_change_pct": 0.75,
-      "volume_ratio": 2.71,
-      "value_ratio": 3.12,
-      "volatility_ratio": 1.94,
-      "pct_from_high": 8.06,
-      "supply_demand_score": 0.0,
-      "composite_score": 16.46,
-      "ai_score": 56.7
-    },
-    {
-      "code": "035760",
-      "name": "CJ ENM",
-      "market": "KOSDAQ",
-      "sector": "중견기업부",
-      "price": 46050,
-      "price_change_pct": 2.56,
-      "volume_ratio": 1.62,
-      "value_ratio": 1.85,
-      "volatility_ratio": 1.73,
-      "pct_from_high": 3.36,
-      "supply_demand_score": 0.0,
-      "composite_score": 16.53,
-      "ai_score": 31.2
-    },
-    {
-      "code": "069080",
-      "name": "웹젠",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 12500,
-      "price_change_pct": 2.38,
-      "volume_ratio": 1.5,
-      "value_ratio": 1.57,
-      "volatility_ratio": 2.08,
-      "pct_from_high": 1.42,
-      "supply_demand_score": 0.0,
-      "composite_score": 17.44,
-      "ai_score": 20.0
-    }
-  ],
-  "presurge_breakout_imminent": [
-    {
-      "code": "069080",
-      "name": "웹젠",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 12500,
-      "price_change_pct": 2.38,
-      "volume_ratio": 1.5,
-      "value_ratio": 1.57,
-      "volatility_ratio": 2.08,
-      "pct_from_high": 1.42,
-      "supply_demand_score": 0.0,
-      "composite_score": 17.44,
-      "ai_score": 20.0
-    },
-    {
-      "code": "035760",
-      "name": "CJ ENM",
-      "market": "KOSDAQ",
-      "sector": "중견기업부",
-      "price": 46050,
-      "price_change_pct": 2.56,
-      "volume_ratio": 1.62,
-      "value_ratio": 1.85,
-      "volatility_ratio": 1.73,
-      "pct_from_high": 3.36,
-      "supply_demand_score": 0.0,
-      "composite_score": 16.53,
-      "ai_score": 31.2
-    },
-    {
-      "code": "468530",
-      "name": "프로티나",
-      "market": "KOSDAQ",
-      "sector": "기술성장기업부",
-      "price": 53600,
-      "price_change_pct": 0.75,
-      "volume_ratio": 2.71,
-      "value_ratio": 3.12,
-      "volatility_ratio": 1.94,
-      "pct_from_high": 8.06,
-      "supply_demand_score": 0.0,
-      "composite_score": 16.46,
-      "ai_score": 56.7
-    }
-  ],
-  "presurge_ai_recommended": [
-    {
-      "code": "468530",
-      "name": "프로티나",
-      "market": "KOSDAQ",
-      "sector": "기술성장기업부",
-      "price": 53600,
-      "price_change_pct": 0.75,
-      "volume_ratio": 2.71,
-      "value_ratio": 3.12,
-      "volatility_ratio": 1.94,
-      "pct_from_high": 8.06,
-      "supply_demand_score": 0.0,
-      "composite_score": 16.46,
-      "ai_score": 56.7
-    },
-    {
-      "code": "035760",
-      "name": "CJ ENM",
-      "market": "KOSDAQ",
-      "sector": "중견기업부",
-      "price": 46050,
-      "price_change_pct": 2.56,
-      "volume_ratio": 1.62,
-      "value_ratio": 1.85,
-      "volatility_ratio": 1.73,
-      "pct_from_high": 3.36,
-      "supply_demand_score": 0.0,
-      "composite_score": 16.53,
-      "ai_score": 31.2
-    },
-    {
-      "code": "069080",
-      "name": "웹젠",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 12500,
-      "price_change_pct": 2.38,
-      "volume_ratio": 1.5,
-      "value_ratio": 1.57,
-      "volatility_ratio": 2.08,
-      "pct_from_high": 1.42,
-      "supply_demand_score": 0.0,
-      "composite_score": 17.44,
-      "ai_score": 20.0
-    }
-  ]
+  "presurge_today_candidates": [],
+  "presurge_signal": [],
+  "presurge_volume_explosion": [],
+  "presurge_breakout_imminent": [],
+  "presurge_ai_recommended": []
 }

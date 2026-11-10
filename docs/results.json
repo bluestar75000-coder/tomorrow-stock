@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09 17:34:05",
+  "generated_at": "2026-11-10 15:40:49",
   "scanned_count": 400,
   "momentum_conditions": {
     "volume_surge_ratio": 2.0,
@@ -44,106 +44,158 @@
   },
   "momentum_results": [
     {
-      "code": "302440",
-      "name": "SK바이오사이언스",
+      "code": "181710",
+      "name": "NHN",
       "market": "KOSPI",
-      "price": 40800,
-      "volume_ratio": 5.66,
-      "price_change_pct": 6.39,
-      "score": 8.85
+      "price": 77400,
+      "volume_ratio": 7.9,
+      "price_change_pct": 27.3,
+      "score": 21.55
+    },
+    {
+      "code": "009420",
+      "name": "한올바이오파마",
+      "market": "KOSPI",
+      "price": 46550,
+      "volume_ratio": 4.7,
+      "price_change_pct": 22.99,
+      "score": 16.19
+    },
+    {
+      "code": "020560",
+      "name": "아시아나항공",
+      "market": "KOSPI",
+      "price": 8770,
+      "volume_ratio": 9.06,
+      "price_change_pct": 12.29,
+      "score": 15.2
+    },
+    {
+      "code": "086900",
+      "name": "메디톡스",
+      "market": "KOSDAQ",
+      "price": 70400,
+      "volume_ratio": 7.1,
+      "price_change_pct": 11.39,
+      "score": 12.8
     },
     {
       "code": "218410",
       "name": "RFHIC",
       "market": "KOSDAQ",
-      "price": 42350,
-      "volume_ratio": 2.28,
-      "price_change_pct": 10.0,
-      "score": 7.28
+      "price": 50400,
+      "volume_ratio": 2.34,
+      "price_change_pct": 19.01,
+      "score": 11.84
+    },
+    {
+      "code": "003490",
+      "name": "대한항공",
+      "market": "KOSPI",
+      "price": 32600,
+      "volume_ratio": 3.33,
+      "price_change_pct": 11.84,
+      "score": 9.25
+    },
+    {
+      "code": "036540",
+      "name": "SFA반도체",
+      "market": "KOSDAQ",
+      "price": 7700,
+      "volume_ratio": 2.26,
+      "price_change_pct": 13.24,
+      "score": 8.88
     },
     {
       "code": "180640",
       "name": "한진칼",
       "market": "KOSPI",
-      "price": 216000,
-      "volume_ratio": 2.27,
-      "price_change_pct": 9.81,
-      "score": 7.18
+      "price": 236500,
+      "volume_ratio": 3.18,
+      "price_change_pct": 9.49,
+      "score": 7.92
     },
     {
-      "code": "181710",
-      "name": "NHN",
+      "code": "298020",
+      "name": "효성티앤씨",
       "market": "KOSPI",
-      "price": 60800,
-      "volume_ratio": 3.68,
-      "price_change_pct": 5.19,
-      "score": 6.27
+      "price": 313500,
+      "volume_ratio": 2.23,
+      "price_change_pct": 9.04,
+      "score": 6.75
     },
     {
-      "code": "119850",
-      "name": "지엔씨에너지",
+      "code": "000150",
+      "name": "두산",
+      "market": "KOSPI",
+      "price": 626000,
+      "volume_ratio": 2.09,
+      "price_change_pct": 5.21,
+      "score": 4.7
+    },
+    {
+      "code": "000240",
+      "name": "한국앤컴퍼니",
+      "market": "KOSPI",
+      "price": 22500,
+      "volume_ratio": 2.6,
+      "price_change_pct": 3.45,
+      "score": 4.33
+    },
+    {
+      "code": "060250",
+      "name": "NHN KCP",
       "market": "KOSDAQ",
-      "price": 36600,
-      "volume_ratio": 2.54,
-      "price_change_pct": 3.83,
-      "score": 4.46
+      "price": 11810,
+      "volume_ratio": 2.04,
+      "price_change_pct": 3.69,
+      "score": 3.88
     }
   ],
-  "value_results": [],
+  "value_results": [
+    {
+      "code": "215200",
+      "name": "메가스터디교육",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "is_growth": false,
+      "price": 40850,
+      "volume_ratio": 1.57,
+      "per": 5.11,
+      "pbr": 0.86,
+      "score": 3.07
+    },
+    {
+      "code": "060250",
+      "name": "NHN KCP",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "is_growth": false,
+      "price": 11810,
+      "volume_ratio": 2.04,
+      "per": 9.82,
+      "pbr": 1.5,
+      "score": 2.08
+    }
+  ],
   "crash_results": [
     {
-      "code": "196170",
-      "name": "알테오젠",
+      "code": "491000",
+      "name": "리브스메드",
       "market": "KOSDAQ",
-      "price": 166900,
-      "volume_ratio": 8.61,
-      "price_change_pct": -16.97,
-      "score": 17.09
+      "price": 33200,
+      "volume_ratio": 2.51,
+      "price_change_pct": -8.54,
+      "score": 6.78
     },
     {
-      "code": "096530",
-      "name": "씨젠",
+      "code": "007390",
+      "name": "네이처셀",
       "market": "KOSDAQ",
-      "price": 24650,
-      "volume_ratio": 4.47,
-      "price_change_pct": -14.71,
-      "score": 11.82
-    },
-    {
-      "code": "241710",
-      "name": "코스메카코리아",
-      "market": "KOSDAQ",
-      "price": 85600,
-      "volume_ratio": 3.49,
-      "price_change_pct": -11.3,
-      "score": 9.14
-    },
-    {
-      "code": "014620",
-      "name": "성광벤드",
-      "market": "KOSDAQ",
-      "price": 19790,
-      "volume_ratio": 2.64,
-      "price_change_pct": -11.26,
-      "score": 8.27
-    },
-    {
-      "code": "458870",
-      "name": "씨어스",
-      "market": "KOSDAQ",
-      "price": 13090,
-      "volume_ratio": 2.8,
-      "price_change_pct": -9.72,
-      "score": 7.67
-    },
-    {
-      "code": "100790",
-      "name": "미래에셋벤처투자",
-      "market": "KOSDAQ",
-      "price": 10810,
-      "volume_ratio": 2.71,
-      "price_change_pct": -3.14,
-      "score": 4.28
+      "price": 21150,
+      "volume_ratio": 2.18,
+      "price_change_pct": -3.2,
+      "score": 3.78
     }
   ],
   "presurge_today_candidates": [],

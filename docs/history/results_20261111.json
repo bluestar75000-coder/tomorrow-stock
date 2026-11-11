@@ -1,0 +1,340 @@
+{
+  "generated_at": "2026-11-11 15:15:45",
+  "scanned_count": 400,
+  "momentum_conditions": {
+    "volume_surge_ratio": 2.0,
+    "price_change_min_pct": 3.0
+  },
+  "value_conditions": {
+    "volume_ratio_min": 1.5,
+    "per_max_default": 10.0,
+    "per_max_growth": 20.0,
+    "top_n_per_sector": 2,
+    "growth_sector_keywords": [
+      "반도체",
+      "전자",
+      "IT",
+      "소프트웨어",
+      "인터넷",
+      "게임",
+      "바이오",
+      "제약",
+      "생물",
+      "2차전지",
+      "전지",
+      "로봇",
+      "통신장비",
+      "우주항공"
+    ]
+  },
+  "crash_conditions": {
+    "volume_surge_ratio": 2.0,
+    "price_drop_min_pct": 3.0
+  },
+  "presurge_conditions": {
+    "price_change_max_pct": 3.0,
+    "volume_ratio_min": 1.5,
+    "value_ratio_min": 1.5,
+    "volatility_ratio_range": [
+      1.2,
+      3.0
+    ],
+    "high_proximity_max_pct": 10.0,
+    "note": "AI 추천 종목은 실제 ML 모델이 아니라 정규화된 지표의 가중합(규칙 기반) 점수입니다. 백테스트 결과 당일/익일 단타보다 3~5일 관점에서 유효했습니다."
+  },
+  "momentum_results": [
+    {
+      "code": "356860",
+      "name": "티엘비",
+      "market": "KOSDAQ",
+      "price": 38250,
+      "volume_ratio": 2.09,
+      "price_change_pct": 31.67,
+      "score": 17.93
+    },
+    {
+      "code": "007810",
+      "name": "코리아써키트",
+      "market": "KOSPI",
+      "price": 88200,
+      "volume_ratio": 2.04,
+      "price_change_pct": 29.14,
+      "score": 16.61
+    },
+    {
+      "code": "131290",
+      "name": "티에스이",
+      "market": "KOSDAQ",
+      "price": 232000,
+      "volume_ratio": 2.11,
+      "price_change_pct": 27.61,
+      "score": 15.92
+    },
+    {
+      "code": "437730",
+      "name": "삼현",
+      "market": "KOSDAQ",
+      "price": 43550,
+      "volume_ratio": 4.15,
+      "price_change_pct": 23.02,
+      "score": 15.66
+    },
+    {
+      "code": "252990",
+      "name": "샘씨엔에스",
+      "market": "KOSDAQ",
+      "price": 15800,
+      "volume_ratio": 2.26,
+      "price_change_pct": 24.9,
+      "score": 14.71
+    },
+    {
+      "code": "007660",
+      "name": "이수페타시스",
+      "market": "KOSPI",
+      "price": 83300,
+      "volume_ratio": 2.39,
+      "price_change_pct": 21.78,
+      "score": 13.28
+    },
+    {
+      "code": "290550",
+      "name": "디케이티",
+      "market": "KOSDAQ",
+      "price": 28300,
+      "volume_ratio": 2.55,
+      "price_change_pct": 20.17,
+      "score": 12.63
+    },
+    {
+      "code": "121600",
+      "name": "나노신소재",
+      "market": "KOSDAQ",
+      "price": 75700,
+      "volume_ratio": 2.8,
+      "price_change_pct": 17.91,
+      "score": 11.76
+    },
+    {
+      "code": "103590",
+      "name": "일진전기",
+      "market": "KOSPI",
+      "price": 53000,
+      "volume_ratio": 2.41,
+      "price_change_pct": 15.72,
+      "score": 10.27
+    },
+    {
+      "code": "298380",
+      "name": "에이비엘바이오",
+      "market": "KOSDAQ",
+      "price": 42300,
+      "volume_ratio": 2.33,
+      "price_change_pct": 14.02,
+      "score": 9.34
+    },
+    {
+      "code": "214370",
+      "name": "케어젠",
+      "market": "KOSDAQ",
+      "price": 30300,
+      "volume_ratio": 2.54,
+      "price_change_pct": 12.01,
+      "score": 8.55
+    },
+    {
+      "code": "475960",
+      "name": "토모큐브",
+      "market": "KOSDAQ",
+      "price": 29000,
+      "volume_ratio": 3.41,
+      "price_change_pct": 9.23,
+      "score": 8.02
+    },
+    {
+      "code": "141080",
+      "name": "리가켐바이오",
+      "market": "KOSDAQ",
+      "price": 65800,
+      "volume_ratio": 2.04,
+      "price_change_pct": 11.15,
+      "score": 7.62
+    },
+    {
+      "code": "181710",
+      "name": "NHN",
+      "market": "KOSPI",
+      "price": 80300,
+      "volume_ratio": 5.62,
+      "price_change_pct": 3.75,
+      "score": 7.49
+    },
+    {
+      "code": "192820",
+      "name": "코스맥스",
+      "market": "KOSPI",
+      "price": 262500,
+      "volume_ratio": 3.23,
+      "price_change_pct": 8.25,
+      "score": 7.36
+    },
+    {
+      "code": "160190",
+      "name": "하이젠알앤엠",
+      "market": "KOSDAQ",
+      "price": 14560,
+      "volume_ratio": 3.81,
+      "price_change_pct": 5.89,
+      "score": 6.75
+    },
+    {
+      "code": "009420",
+      "name": "한올바이오파마",
+      "market": "KOSPI",
+      "price": 49650,
+      "volume_ratio": 2.87,
+      "price_change_pct": 6.66,
+      "score": 6.2
+    },
+    {
+      "code": "037460",
+      "name": "삼지전자",
+      "market": "KOSDAQ",
+      "price": 27900,
+      "volume_ratio": 2.47,
+      "price_change_pct": 5.48,
+      "score": 5.21
+    },
+    {
+      "code": "068760",
+      "name": "셀트리온제약",
+      "market": "KOSDAQ",
+      "price": 41500,
+      "volume_ratio": 2.38,
+      "price_change_pct": 3.75,
+      "score": 4.26
+    }
+  ],
+  "value_results": [
+    {
+      "code": "003380",
+      "name": "하림지주",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "is_growth": false,
+      "price": 11710,
+      "volume_ratio": 2.26,
+      "per": 4.91,
+      "pbr": 0.36,
+      "score": 4.6
+    },
+    {
+      "code": "037460",
+      "name": "삼지전자",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "is_growth": false,
+      "price": 27900,
+      "volume_ratio": 2.47,
+      "per": 5.43,
+      "pbr": 0.84,
+      "score": 4.54
+    }
+  ],
+  "crash_results": [
+    {
+      "code": "225570",
+      "name": "넥슨게임즈",
+      "market": "KOSDAQ",
+      "price": 8200,
+      "volume_ratio": 3.48,
+      "price_change_pct": -4.98,
+      "score": 5.98
+    }
+  ],
+  "presurge_today_candidates": [
+    {
+      "code": "003380",
+      "name": "하림지주",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 11710,
+      "price_change_pct": 1.83,
+      "volume_ratio": 2.26,
+      "value_ratio": 2.31,
+      "volatility_ratio": 1.49,
+      "pct_from_high": 6.17,
+      "supply_demand_score": 0.0,
+      "composite_score": 15.67,
+      "ai_score": 0.0
+    }
+  ],
+  "presurge_signal": [
+    {
+      "code": "003380",
+      "name": "하림지주",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 11710,
+      "price_change_pct": 1.83,
+      "volume_ratio": 2.26,
+      "value_ratio": 2.31,
+      "volatility_ratio": 1.49,
+      "pct_from_high": 6.17,
+      "supply_demand_score": 0.0,
+      "composite_score": 15.67,
+      "ai_score": 0.0
+    }
+  ],
+  "presurge_volume_explosion": [
+    {
+      "code": "003380",
+      "name": "하림지주",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 11710,
+      "price_change_pct": 1.83,
+      "volume_ratio": 2.26,
+      "value_ratio": 2.31,
+      "volatility_ratio": 1.49,
+      "pct_from_high": 6.17,
+      "supply_demand_score": 0.0,
+      "composite_score": 15.67,
+      "ai_score": 0.0
+    }
+  ],
+  "presurge_breakout_imminent": [
+    {
+      "code": "003380",
+      "name": "하림지주",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 11710,
+      "price_change_pct": 1.83,
+      "volume_ratio": 2.26,
+      "value_ratio": 2.31,
+      "volatility_ratio": 1.49,
+      "pct_from_high": 6.17,
+      "supply_demand_score": 0.0,
+      "composite_score": 15.67,
+      "ai_score": 0.0
+    }
+  ],
+  "presurge_ai_recommended": [
+    {
+      "code": "003380",
+      "name": "하림지주",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "price": 11710,
+      "price_change_pct": 1.83,
+      "volume_ratio": 2.26,
+      "value_ratio": 2.31,
+      "volatility_ratio": 1.49,
+      "pct_from_high": 6.17,
+      "supply_demand_score": 0.0,
+      "composite_score": 15.67,
+      "ai_score": 0.0
+    }
+  ]
+}

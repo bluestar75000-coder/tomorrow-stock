@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11 15:15:45",
+  "generated_at": "2026-11-12 16:03:18",
   "scanned_count": 400,
   "momentum_conditions": {
     "volume_surge_ratio": 2.0,
@@ -44,297 +44,136 @@
   },
   "momentum_results": [
     {
+      "code": "204270",
+      "name": "제이앤티씨",
+      "market": "KOSDAQ",
+      "price": 19710,
+      "volume_ratio": 7.49,
+      "price_change_pct": 11.42,
+      "score": 13.2
+    },
+    {
+      "code": "035900",
+      "name": "JYP Ent.",
+      "market": "KOSDAQ",
+      "price": 45050,
+      "volume_ratio": 5.87,
+      "price_change_pct": 8.29,
+      "score": 10.01
+    },
+    {
       "code": "356860",
       "name": "티엘비",
       "market": "KOSDAQ",
-      "price": 38250,
-      "volume_ratio": 2.09,
-      "price_change_pct": 31.67,
-      "score": 17.93
+      "price": 41400,
+      "volume_ratio": 3.71,
+      "price_change_pct": 8.24,
+      "score": 7.83
     },
     {
-      "code": "007810",
-      "name": "코리아써키트",
+      "code": "036460",
+      "name": "한국가스공사",
       "market": "KOSPI",
-      "price": 88200,
-      "volume_ratio": 2.04,
-      "price_change_pct": 29.14,
-      "score": 16.61
-    },
-    {
-      "code": "131290",
-      "name": "티에스이",
-      "market": "KOSDAQ",
-      "price": 232000,
-      "volume_ratio": 2.11,
-      "price_change_pct": 27.61,
-      "score": 15.92
-    },
-    {
-      "code": "437730",
-      "name": "삼현",
-      "market": "KOSDAQ",
-      "price": 43550,
-      "volume_ratio": 4.15,
-      "price_change_pct": 23.02,
-      "score": 15.66
-    },
-    {
-      "code": "252990",
-      "name": "샘씨엔에스",
-      "market": "KOSDAQ",
-      "price": 15800,
-      "volume_ratio": 2.26,
-      "price_change_pct": 24.9,
-      "score": 14.71
-    },
-    {
-      "code": "007660",
-      "name": "이수페타시스",
-      "market": "KOSPI",
-      "price": 83300,
-      "volume_ratio": 2.39,
-      "price_change_pct": 21.78,
-      "score": 13.28
-    },
-    {
-      "code": "290550",
-      "name": "디케이티",
-      "market": "KOSDAQ",
-      "price": 28300,
-      "volume_ratio": 2.55,
-      "price_change_pct": 20.17,
-      "score": 12.63
-    },
-    {
-      "code": "121600",
-      "name": "나노신소재",
-      "market": "KOSDAQ",
-      "price": 75700,
-      "volume_ratio": 2.8,
-      "price_change_pct": 17.91,
-      "score": 11.76
-    },
-    {
-      "code": "103590",
-      "name": "일진전기",
-      "market": "KOSPI",
-      "price": 53000,
-      "volume_ratio": 2.41,
-      "price_change_pct": 15.72,
-      "score": 10.27
-    },
-    {
-      "code": "298380",
-      "name": "에이비엘바이오",
-      "market": "KOSDAQ",
-      "price": 42300,
-      "volume_ratio": 2.33,
-      "price_change_pct": 14.02,
-      "score": 9.34
-    },
-    {
-      "code": "214370",
-      "name": "케어젠",
-      "market": "KOSDAQ",
-      "price": 30300,
-      "volume_ratio": 2.54,
-      "price_change_pct": 12.01,
-      "score": 8.55
-    },
-    {
-      "code": "475960",
-      "name": "토모큐브",
-      "market": "KOSDAQ",
-      "price": 29000,
-      "volume_ratio": 3.41,
-      "price_change_pct": 9.23,
-      "score": 8.02
-    },
-    {
-      "code": "141080",
-      "name": "리가켐바이오",
-      "market": "KOSDAQ",
-      "price": 65800,
-      "volume_ratio": 2.04,
-      "price_change_pct": 11.15,
-      "score": 7.62
-    },
-    {
-      "code": "181710",
-      "name": "NHN",
-      "market": "KOSPI",
-      "price": 80300,
-      "volume_ratio": 5.62,
-      "price_change_pct": 3.75,
-      "score": 7.49
+      "price": 38500,
+      "volume_ratio": 3.44,
+      "price_change_pct": 4.9,
+      "score": 5.89
     },
     {
       "code": "192820",
       "name": "코스맥스",
       "market": "KOSPI",
-      "price": 262500,
-      "volume_ratio": 3.23,
-      "price_change_pct": 8.25,
-      "score": 7.36
-    },
-    {
-      "code": "160190",
-      "name": "하이젠알앤엠",
-      "market": "KOSDAQ",
-      "price": 14560,
-      "volume_ratio": 3.81,
-      "price_change_pct": 5.89,
-      "score": 6.75
-    },
-    {
-      "code": "009420",
-      "name": "한올바이오파마",
-      "market": "KOSPI",
-      "price": 49650,
-      "volume_ratio": 2.87,
-      "price_change_pct": 6.66,
-      "score": 6.2
-    },
-    {
-      "code": "037460",
-      "name": "삼지전자",
-      "market": "KOSDAQ",
-      "price": 27900,
-      "volume_ratio": 2.47,
-      "price_change_pct": 5.48,
-      "score": 5.21
-    },
-    {
-      "code": "068760",
-      "name": "셀트리온제약",
-      "market": "KOSDAQ",
-      "price": 41500,
-      "volume_ratio": 2.38,
-      "price_change_pct": 3.75,
-      "score": 4.26
+      "price": 276500,
+      "volume_ratio": 2.95,
+      "price_change_pct": 5.33,
+      "score": 5.62
     }
   ],
   "value_results": [
     {
-      "code": "003380",
-      "name": "하림지주",
+      "code": "035900",
+      "name": "JYP Ent.",
       "market": "KOSDAQ",
       "sector": "우량기업부",
       "is_growth": false,
-      "price": 11710,
-      "volume_ratio": 2.26,
-      "per": 4.91,
-      "pbr": 0.36,
-      "score": 4.6
+      "price": 45050,
+      "volume_ratio": 5.87,
+      "per": 9.31,
+      "pbr": 2.41,
+      "score": 6.3
     },
     {
-      "code": "037460",
-      "name": "삼지전자",
+      "code": "257720",
+      "name": "실리콘투",
       "market": "KOSDAQ",
       "sector": "우량기업부",
       "is_growth": false,
-      "price": 27900,
-      "volume_ratio": 2.47,
-      "per": 5.43,
-      "pbr": 0.84,
-      "score": 4.54
+      "price": 24550,
+      "volume_ratio": 3.41,
+      "per": 9.03,
+      "pbr": 3.57,
+      "score": 3.78
     }
   ],
   "crash_results": [
     {
-      "code": "225570",
-      "name": "넥슨게임즈",
+      "code": "058610",
+      "name": "에스피지",
       "market": "KOSDAQ",
-      "price": 8200,
-      "volume_ratio": 3.48,
-      "price_change_pct": -4.98,
-      "score": 5.98
+      "price": 65400,
+      "volume_ratio": 3.67,
+      "price_change_pct": -17.11,
+      "score": 12.23
+    },
+    {
+      "code": "124500",
+      "name": "아이티센글로벌",
+      "market": "KOSDAQ",
+      "price": 18490,
+      "volume_ratio": 3.23,
+      "price_change_pct": -13.4,
+      "score": 9.92
+    },
+    {
+      "code": "078350",
+      "name": "한양디지텍",
+      "market": "KOSDAQ",
+      "price": 26900,
+      "volume_ratio": 2.4,
+      "price_change_pct": -14.6,
+      "score": 9.7
+    },
+    {
+      "code": "257720",
+      "name": "실리콘투",
+      "market": "KOSDAQ",
+      "price": 24550,
+      "volume_ratio": 3.41,
+      "price_change_pct": -10.24,
+      "score": 8.53
+    },
+    {
+      "code": "214150",
+      "name": "클래시스",
+      "market": "KOSDAQ",
+      "price": 23300,
+      "volume_ratio": 2.1,
+      "price_change_pct": -8.63,
+      "score": 6.41
+    },
+    {
+      "code": "161580",
+      "name": "필옵틱스",
+      "market": "KOSDAQ",
+      "price": 25600,
+      "volume_ratio": 3.13,
+      "price_change_pct": -3.21,
+      "score": 4.73
     }
   ],
-  "presurge_today_candidates": [
-    {
-      "code": "003380",
-      "name": "하림지주",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 11710,
-      "price_change_pct": 1.83,
-      "volume_ratio": 2.26,
-      "value_ratio": 2.31,
-      "volatility_ratio": 1.49,
-      "pct_from_high": 6.17,
-      "supply_demand_score": 0.0,
-      "composite_score": 15.67,
-      "ai_score": 0.0
-    }
-  ],
-  "presurge_signal": [
-    {
-      "code": "003380",
-      "name": "하림지주",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 11710,
-      "price_change_pct": 1.83,
-      "volume_ratio": 2.26,
-      "value_ratio": 2.31,
-      "volatility_ratio": 1.49,
-      "pct_from_high": 6.17,
-      "supply_demand_score": 0.0,
-      "composite_score": 15.67,
-      "ai_score": 0.0
-    }
-  ],
-  "presurge_volume_explosion": [
-    {
-      "code": "003380",
-      "name": "하림지주",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 11710,
-      "price_change_pct": 1.83,
-      "volume_ratio": 2.26,
-      "value_ratio": 2.31,
-      "volatility_ratio": 1.49,
-      "pct_from_high": 6.17,
-      "supply_demand_score": 0.0,
-      "composite_score": 15.67,
-      "ai_score": 0.0
-    }
-  ],
-  "presurge_breakout_imminent": [
-    {
-      "code": "003380",
-      "name": "하림지주",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 11710,
-      "price_change_pct": 1.83,
-      "volume_ratio": 2.26,
-      "value_ratio": 2.31,
-      "volatility_ratio": 1.49,
-      "pct_from_high": 6.17,
-      "supply_demand_score": 0.0,
-      "composite_score": 15.67,
-      "ai_score": 0.0
-    }
-  ],
-  "presurge_ai_recommended": [
-    {
-      "code": "003380",
-      "name": "하림지주",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "price": 11710,
-      "price_change_pct": 1.83,
-      "volume_ratio": 2.26,
-      "value_ratio": 2.31,
-      "volatility_ratio": 1.49,
-      "pct_from_high": 6.17,
-      "supply_demand_score": 0.0,
-      "composite_score": 15.67,
-      "ai_score": 0.0
-    }
-  ]
+  "presurge_today_candidates": [],
+  "presurge_signal": [],
+  "presurge_volume_explosion": [],
+  "presurge_breakout_imminent": [],
+  "presurge_ai_recommended": []
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12 16:03:18",
+  "generated_at": "2026-11-13 15:26:06",
   "scanned_count": 400,
   "momentum_conditions": {
     "volume_surge_ratio": 2.0,
@@ -44,131 +44,221 @@
   },
   "momentum_results": [
     {
-      "code": "204270",
-      "name": "제이앤티씨",
+      "code": "399720",
+      "name": "가온칩스",
       "market": "KOSDAQ",
-      "price": 19710,
-      "volume_ratio": 7.49,
-      "price_change_pct": 11.42,
-      "score": 13.2
+      "price": 38650,
+      "volume_ratio": 18.22,
+      "price_change_pct": 29.7,
+      "score": 33.07
     },
     {
-      "code": "035900",
-      "name": "JYP Ent.",
+      "code": "100790",
+      "name": "미래에셋벤처투자",
       "market": "KOSDAQ",
-      "price": 45050,
-      "volume_ratio": 5.87,
-      "price_change_pct": 8.29,
-      "score": 10.01
+      "price": 14300,
+      "volume_ratio": 5.55,
+      "price_change_pct": 21.81,
+      "score": 16.45
     },
     {
-      "code": "356860",
-      "name": "티엘비",
+      "code": "074600",
+      "name": "원익QnC",
       "market": "KOSDAQ",
-      "price": 41400,
-      "volume_ratio": 3.71,
-      "price_change_pct": 8.24,
-      "score": 7.83
+      "price": 29300,
+      "volume_ratio": 6.52,
+      "price_change_pct": 19.35,
+      "score": 16.19
     },
     {
-      "code": "036460",
-      "name": "한국가스공사",
+      "code": "053610",
+      "name": "프로텍",
+      "market": "KOSDAQ",
+      "price": 69500,
+      "volume_ratio": 3.63,
+      "price_change_pct": 14.69,
+      "score": 10.98
+    },
+    {
+      "code": "048410",
+      "name": "현대바이오",
+      "market": "KOSDAQ",
+      "price": 6380,
+      "volume_ratio": 3.98,
+      "price_change_pct": 13.73,
+      "score": 10.85
+    },
+    {
+      "code": "064290",
+      "name": "인텍플러스",
+      "market": "KOSDAQ",
+      "price": 55200,
+      "volume_ratio": 2.32,
+      "price_change_pct": 15.97,
+      "score": 10.3
+    },
+    {
+      "code": "340570",
+      "name": "티앤엘",
+      "market": "KOSDAQ",
+      "price": 26250,
+      "volume_ratio": 3.58,
+      "price_change_pct": 13.39,
+      "score": 10.28
+    },
+    {
+      "code": "094170",
+      "name": "동운아나텍",
+      "market": "KOSDAQ",
+      "price": 21900,
+      "volume_ratio": 2.32,
+      "price_change_pct": 13.88,
+      "score": 9.27
+    },
+    {
+      "code": "017800",
+      "name": "현대엘리베이터",
       "market": "KOSPI",
-      "price": 38500,
-      "volume_ratio": 3.44,
-      "price_change_pct": 4.9,
-      "score": 5.89
+      "price": 68600,
+      "volume_ratio": 6.32,
+      "price_change_pct": 3.31,
+      "score": 7.98
     },
     {
-      "code": "192820",
-      "name": "코스맥스",
-      "market": "KOSPI",
-      "price": 276500,
-      "volume_ratio": 2.95,
-      "price_change_pct": 5.33,
-      "score": 5.62
-    }
-  ],
-  "value_results": [
-    {
-      "code": "035900",
-      "name": "JYP Ent.",
+      "code": "277810",
+      "name": "레인보우로보틱스",
       "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "is_growth": false,
-      "price": 45050,
-      "volume_ratio": 5.87,
-      "per": 9.31,
-      "pbr": 2.41,
-      "score": 6.3
+      "price": 378500,
+      "volume_ratio": 2.61,
+      "price_change_pct": 10.35,
+      "score": 7.78
     },
-    {
-      "code": "257720",
-      "name": "실리콘투",
-      "market": "KOSDAQ",
-      "sector": "우량기업부",
-      "is_growth": false,
-      "price": 24550,
-      "volume_ratio": 3.41,
-      "per": 9.03,
-      "pbr": 3.57,
-      "score": 3.78
-    }
-  ],
-  "crash_results": [
     {
       "code": "058610",
       "name": "에스피지",
       "market": "KOSDAQ",
-      "price": 65400,
-      "volume_ratio": 3.67,
-      "price_change_pct": -17.11,
-      "score": 12.23
+      "price": 71600,
+      "volume_ratio": 2.83,
+      "price_change_pct": 9.48,
+      "score": 7.57
     },
     {
-      "code": "124500",
-      "name": "아이티센글로벌",
+      "code": "092870",
+      "name": "엑시콘",
       "market": "KOSDAQ",
-      "price": 18490,
-      "volume_ratio": 3.23,
-      "price_change_pct": -13.4,
-      "score": 9.92
+      "price": 62500,
+      "volume_ratio": 2.15,
+      "price_change_pct": 9.46,
+      "score": 6.87
+    },
+    {
+      "code": "007660",
+      "name": "이수페타시스",
+      "market": "KOSPI",
+      "price": 91000,
+      "volume_ratio": 2.8,
+      "price_change_pct": 7.69,
+      "score": 6.65
+    },
+    {
+      "code": "036540",
+      "name": "SFA반도체",
+      "market": "KOSDAQ",
+      "price": 9220,
+      "volume_ratio": 2.02,
+      "price_change_pct": 7.71,
+      "score": 5.87
+    },
+    {
+      "code": "490470",
+      "name": "세미파이브",
+      "market": "KOSDAQ",
+      "price": 12840,
+      "volume_ratio": 2.25,
+      "price_change_pct": 6.82,
+      "score": 5.66
     },
     {
       "code": "078350",
       "name": "한양디지텍",
       "market": "KOSDAQ",
-      "price": 26900,
-      "volume_ratio": 2.4,
-      "price_change_pct": -14.6,
-      "score": 9.7
+      "price": 28600,
+      "volume_ratio": 2.41,
+      "price_change_pct": 6.32,
+      "score": 5.57
     },
     {
-      "code": "257720",
-      "name": "실리콘투",
-      "market": "KOSDAQ",
-      "price": 24550,
-      "volume_ratio": 3.41,
-      "price_change_pct": -10.24,
-      "score": 8.53
+      "code": "039490",
+      "name": "키움증권",
+      "market": "KOSPI",
+      "price": 205500,
+      "volume_ratio": 2.39,
+      "price_change_pct": 5.76,
+      "score": 5.27
     },
     {
-      "code": "214150",
-      "name": "클래시스",
+      "code": "356860",
+      "name": "티엘비",
       "market": "KOSDAQ",
-      "price": 23300,
-      "volume_ratio": 2.1,
-      "price_change_pct": -8.63,
-      "score": 6.41
+      "price": 43850,
+      "volume_ratio": 2.06,
+      "price_change_pct": 5.92,
+      "score": 5.02
     },
     {
-      "code": "161580",
-      "name": "필옵틱스",
+      "code": "187660",
+      "name": "페니트리움바이오",
       "market": "KOSDAQ",
-      "price": 25600,
-      "volume_ratio": 3.13,
-      "price_change_pct": -3.21,
-      "score": 4.73
+      "price": 6400,
+      "volume_ratio": 2.21,
+      "price_change_pct": 3.23,
+      "score": 3.83
+    }
+  ],
+  "value_results": [
+    {
+      "code": "124500",
+      "name": "아이티센글로벌",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "is_growth": false,
+      "price": 18660,
+      "volume_ratio": 1.51,
+      "per": 9.04,
+      "pbr": 3.36,
+      "score": 1.67
+    },
+    {
+      "code": "035890",
+      "name": "서희건설",
+      "market": "KOSDAQ",
+      "sector": "중견기업부",
+      "is_growth": false,
+      "price": 2050,
+      "volume_ratio": 2.0,
+      "per": 3.33,
+      "pbr": 0.38,
+      "score": 6.02
+    }
+  ],
+  "crash_results": [
+    {
+      "code": "263750",
+      "name": "펄어비스",
+      "market": "KOSDAQ",
+      "price": 27500,
+      "volume_ratio": 2.91,
+      "price_change_pct": -4.51,
+      "score": 5.17
+    },
+    {
+      "code": "035890",
+      "name": "서희건설",
+      "market": "KOSDAQ",
+      "price": 2050,
+      "volume_ratio": 2.0,
+      "price_change_pct": -5.31,
+      "score": 4.66
     }
   ],
   "presurge_today_candidates": [],

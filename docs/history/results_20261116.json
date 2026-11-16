@@ -1,0 +1,191 @@
+{
+  "generated_at": "2026-11-16 17:04:09",
+  "scanned_count": 400,
+  "momentum_conditions": {
+    "volume_surge_ratio": 2.0,
+    "price_change_min_pct": 3.0
+  },
+  "value_conditions": {
+    "volume_ratio_min": 1.5,
+    "per_max_default": 10.0,
+    "per_max_growth": 20.0,
+    "top_n_per_sector": 2,
+    "growth_sector_keywords": [
+      "반도체",
+      "전자",
+      "IT",
+      "소프트웨어",
+      "인터넷",
+      "게임",
+      "바이오",
+      "제약",
+      "생물",
+      "2차전지",
+      "전지",
+      "로봇",
+      "통신장비",
+      "우주항공"
+    ]
+  },
+  "crash_conditions": {
+    "volume_surge_ratio": 2.0,
+    "price_drop_min_pct": 3.0
+  },
+  "presurge_conditions": {
+    "price_change_max_pct": 3.0,
+    "volume_ratio_min": 1.5,
+    "value_ratio_min": 1.5,
+    "volatility_ratio_range": [
+      1.2,
+      3.0
+    ],
+    "high_proximity_max_pct": 10.0,
+    "note": "AI 추천 종목은 실제 ML 모델이 아니라 정규화된 지표의 가중합(규칙 기반) 점수입니다. 백테스트 결과 당일/익일 단타보다 3~5일 관점에서 유효했습니다."
+  },
+  "momentum_results": [
+    {
+      "code": "280360",
+      "name": "롯데웰푸드",
+      "market": "KOSPI",
+      "price": 136300,
+      "volume_ratio": 2.31,
+      "price_change_pct": 7.41,
+      "score": 6.01
+    },
+    {
+      "code": "032500",
+      "name": "케이엠더블유",
+      "market": "KOSDAQ",
+      "price": 19620,
+      "volume_ratio": 2.77,
+      "price_change_pct": 4.42,
+      "score": 4.98
+    }
+  ],
+  "value_results": [
+    {
+      "code": "036830",
+      "name": "솔브레인홀딩스",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "is_growth": false,
+      "price": 35200,
+      "volume_ratio": 2.09,
+      "per": 1.45,
+      "pbr": 0.4,
+      "score": 14.38
+    },
+    {
+      "code": "037460",
+      "name": "삼지전자",
+      "market": "KOSDAQ",
+      "sector": "우량기업부",
+      "is_growth": false,
+      "price": 24700,
+      "volume_ratio": 1.85,
+      "per": 4.96,
+      "pbr": 0.77,
+      "score": 3.72
+    },
+    {
+      "code": "035890",
+      "name": "서희건설",
+      "market": "KOSDAQ",
+      "sector": "중견기업부",
+      "is_growth": false,
+      "price": 1905,
+      "volume_ratio": 4.03,
+      "per": 2.84,
+      "pbr": 0.32,
+      "score": 14.19
+    }
+  ],
+  "crash_results": [
+    {
+      "code": "080580",
+      "name": "오킨스전자",
+      "market": "KOSDAQ",
+      "price": 17580,
+      "volume_ratio": 3.55,
+      "price_change_pct": -29.96,
+      "score": 18.53
+    },
+    {
+      "code": "140860",
+      "name": "파크시스템스",
+      "market": "KOSDAQ",
+      "price": 162100,
+      "volume_ratio": 3.89,
+      "price_change_pct": -22.63,
+      "score": 15.21
+    },
+    {
+      "code": "094170",
+      "name": "동운아나텍",
+      "market": "KOSDAQ",
+      "price": 19240,
+      "volume_ratio": 4.21,
+      "price_change_pct": -12.15,
+      "score": 10.28
+    },
+    {
+      "code": "044490",
+      "name": "태웅",
+      "market": "KOSDAQ",
+      "price": 18240,
+      "volume_ratio": 2.39,
+      "price_change_pct": -15.75,
+      "score": 10.27
+    },
+    {
+      "code": "399720",
+      "name": "가온칩스",
+      "market": "KOSDAQ",
+      "price": 34200,
+      "volume_ratio": 3.52,
+      "price_change_pct": -11.51,
+      "score": 9.28
+    },
+    {
+      "code": "036830",
+      "name": "솔브레인홀딩스",
+      "market": "KOSDAQ",
+      "price": 35200,
+      "volume_ratio": 2.09,
+      "price_change_pct": -12.87,
+      "score": 8.52
+    },
+    {
+      "code": "035890",
+      "name": "서희건설",
+      "market": "KOSDAQ",
+      "price": 1905,
+      "volume_ratio": 4.03,
+      "price_change_pct": -7.07,
+      "score": 7.57
+    },
+    {
+      "code": "086450",
+      "name": "동국제약",
+      "market": "KOSDAQ",
+      "price": 23000,
+      "volume_ratio": 3.61,
+      "price_change_pct": -3.77,
+      "score": 5.49
+    },
+    {
+      "code": "214430",
+      "name": "아이쓰리시스템",
+      "market": "KOSDAQ",
+      "price": 58800,
+      "volume_ratio": 2.16,
+      "price_change_pct": -4.39,
+      "score": 4.36
+    }
+  ],
+  "presurge_today_candidates": [],
+  "presurge_signal": [],
+  "presurge_volume_explosion": [],
+  "presurge_breakout_imminent": [],
+  "presurge_ai_recommended": []
+}

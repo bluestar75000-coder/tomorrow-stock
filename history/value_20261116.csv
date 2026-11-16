@@ -1,0 +1,4 @@
+﻿code,name,market,sector,is_growth,price,volume_ratio,per,pbr,score
+036830,솔브레인홀딩스,KOSDAQ,우량기업부,False,35200,2.09,1.45,0.4,14.38
+037460,삼지전자,KOSDAQ,우량기업부,False,24700,1.85,4.96,0.77,3.72
+035890,서희건설,KOSDAQ,중견기업부,False,1905,4.03,2.84,0.32,14.19

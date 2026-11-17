@@ -1,0 +1,336 @@
+{
+  "generated_at": "2026-11-17 16:59:20",
+  "scanned_count": 400,
+  "momentum_conditions": {
+    "volume_surge_ratio": 2.0,
+    "price_change_min_pct": 3.0
+  },
+  "value_conditions": {
+    "volume_ratio_min": 1.5,
+    "per_max_default": 10.0,
+    "per_max_growth": 20.0,
+    "top_n_per_sector": 2,
+    "growth_sector_keywords": [
+      "반도체",
+      "전자",
+      "IT",
+      "소프트웨어",
+      "인터넷",
+      "게임",
+      "바이오",
+      "제약",
+      "생물",
+      "2차전지",
+      "전지",
+      "로봇",
+      "통신장비",
+      "우주항공"
+    ]
+  },
+  "crash_conditions": {
+    "volume_surge_ratio": 2.0,
+    "price_drop_min_pct": 3.0
+  },
+  "presurge_conditions": {
+    "price_change_max_pct": 3.0,
+    "volume_ratio_min": 1.5,
+    "value_ratio_min": 1.5,
+    "volatility_ratio_range": [
+      1.2,
+      3.0
+    ],
+    "high_proximity_max_pct": 10.0,
+    "note": "AI 추천 종목은 실제 ML 모델이 아니라 정규화된 지표의 가중합(규칙 기반) 점수입니다. 백테스트 결과 당일/익일 단타보다 3~5일 관점에서 유효했습니다."
+  },
+  "momentum_results": [
+    {
+      "code": "490470",
+      "name": "세미파이브",
+      "market": "KOSDAQ",
+      "price": 13510,
+      "volume_ratio": 13.7,
+      "price_change_pct": 20.09,
+      "score": 23.74
+    },
+    {
+      "code": "399720",
+      "name": "가온칩스",
+      "market": "KOSDAQ",
+      "price": 37950,
+      "volume_ratio": 16.93,
+      "price_change_pct": 10.96,
+      "score": 22.41
+    },
+    {
+      "code": "025980",
+      "name": "아난티",
+      "market": "KOSDAQ",
+      "price": 4110,
+      "volume_ratio": 10.04,
+      "price_change_pct": 6.61,
+      "score": 13.34
+    },
+    {
+      "code": "069960",
+      "name": "현대백화점",
+      "market": "KOSPI",
+      "price": 96000,
+      "volume_ratio": 2.86,
+      "price_change_pct": 7.38,
+      "score": 6.55
+    },
+    {
+      "code": "140860",
+      "name": "파크시스템스",
+      "market": "KOSDAQ",
+      "price": 175300,
+      "volume_ratio": 2.23,
+      "price_change_pct": 8.14,
+      "score": 6.31
+    },
+    {
+      "code": "232140",
+      "name": "와이씨",
+      "market": "KOSDAQ",
+      "price": 13880,
+      "volume_ratio": 2.31,
+      "price_change_pct": 7.02,
+      "score": 5.82
+    },
+    {
+      "code": "086450",
+      "name": "동국제약",
+      "market": "KOSDAQ",
+      "price": 24550,
+      "volume_ratio": 2.33,
+      "price_change_pct": 6.74,
+      "score": 5.7
+    },
+    {
+      "code": "084370",
+      "name": "유진테크",
+      "market": "KOSDAQ",
+      "price": 71400,
+      "volume_ratio": 2.11,
+      "price_change_pct": 5.31,
+      "score": 4.76
+    }
+  ],
+  "value_results": [],
+  "crash_results": [
+    {
+      "code": "005850",
+      "name": "에스엘",
+      "market": "KOSPI",
+      "price": 39850,
+      "volume_ratio": 2.51,
+      "price_change_pct": -14.12,
+      "score": 9.57
+    },
+    {
+      "code": "295310",
+      "name": "에이치브이엠",
+      "market": "KOSDAQ",
+      "price": 39900,
+      "volume_ratio": 2.21,
+      "price_change_pct": -14.56,
+      "score": 9.49
+    },
+    {
+      "code": "131290",
+      "name": "티에스이",
+      "market": "KOSDAQ",
+      "price": 186200,
+      "volume_ratio": 2.27,
+      "price_change_pct": -12.79,
+      "score": 8.66
+    },
+    {
+      "code": "476060",
+      "name": "온코닉테라퓨틱스",
+      "market": "KOSDAQ",
+      "price": 10490,
+      "volume_ratio": 2.67,
+      "price_change_pct": -11.33,
+      "score": 8.33
+    },
+    {
+      "code": "357780",
+      "name": "솔브레인",
+      "market": "KOSDAQ",
+      "price": 248000,
+      "volume_ratio": 2.33,
+      "price_change_pct": -11.9,
+      "score": 8.28
+    },
+    {
+      "code": "000880",
+      "name": "한화",
+      "market": "KOSPI",
+      "price": 70100,
+      "volume_ratio": 2.38,
+      "price_change_pct": -4.88,
+      "score": 4.82
+    }
+  ],
+  "presurge_today_candidates": [
+    {
+      "code": "032500",
+      "name": "케이엠더블유",
+      "market": "KOSDAQ",
+      "sector": "중견기업부",
+      "price": 19850,
+      "price_change_pct": 1.17,
+      "volume_ratio": 2.36,
+      "value_ratio": 2.61,
+      "volatility_ratio": 1.53,
+      "pct_from_high": 8.31,
+      "supply_demand_score": 0.0,
+      "composite_score": 14.36,
+      "ai_score": 60.0
+    },
+    {
+      "code": "0126Z0",
+      "name": "삼성에피스홀딩스",
+      "market": "KOSPI",
+      "sector": null,
+      "price": 362500,
+      "price_change_pct": 2.11,
+      "volume_ratio": 2.26,
+      "value_ratio": 2.4,
+      "volatility_ratio": 1.38,
+      "pct_from_high": 8.23,
+      "supply_demand_score": 0.0,
+      "composite_score": 13.66,
+      "ai_score": 20.0
+    }
+  ],
+  "presurge_signal": [
+    {
+      "code": "0126Z0",
+      "name": "삼성에피스홀딩스",
+      "market": "KOSPI",
+      "sector": null,
+      "price": 362500,
+      "price_change_pct": 2.11,
+      "volume_ratio": 2.26,
+      "value_ratio": 2.4,
+      "volatility_ratio": 1.38,
+      "pct_from_high": 8.23,
+      "supply_demand_score": 0.0,
+      "composite_score": 13.66,
+      "ai_score": 20.0
+    },
+    {
+      "code": "032500",
+      "name": "케이엠더블유",
+      "market": "KOSDAQ",
+      "sector": "중견기업부",
+      "price": 19850,
+      "price_change_pct": 1.17,
+      "volume_ratio": 2.36,
+      "value_ratio": 2.61,
+      "volatility_ratio": 1.53,
+      "pct_from_high": 8.31,
+      "supply_demand_score": 0.0,
+      "composite_score": 14.36,
+      "ai_score": 60.0
+    }
+  ],
+  "presurge_volume_explosion": [
+    {
+      "code": "032500",
+      "name": "케이엠더블유",
+      "market": "KOSDAQ",
+      "sector": "중견기업부",
+      "price": 19850,
+      "price_change_pct": 1.17,
+      "volume_ratio": 2.36,
+      "value_ratio": 2.61,
+      "volatility_ratio": 1.53,
+      "pct_from_high": 8.31,
+      "supply_demand_score": 0.0,
+      "composite_score": 14.36,
+      "ai_score": 60.0
+    },
+    {
+      "code": "0126Z0",
+      "name": "삼성에피스홀딩스",
+      "market": "KOSPI",
+      "sector": null,
+      "price": 362500,
+      "price_change_pct": 2.11,
+      "volume_ratio": 2.26,
+      "value_ratio": 2.4,
+      "volatility_ratio": 1.38,
+      "pct_from_high": 8.23,
+      "supply_demand_score": 0.0,
+      "composite_score": 13.66,
+      "ai_score": 20.0
+    }
+  ],
+  "presurge_breakout_imminent": [
+    {
+      "code": "0126Z0",
+      "name": "삼성에피스홀딩스",
+      "market": "KOSPI",
+      "sector": null,
+      "price": 362500,
+      "price_change_pct": 2.11,
+      "volume_ratio": 2.26,
+      "value_ratio": 2.4,
+      "volatility_ratio": 1.38,
+      "pct_from_high": 8.23,
+      "supply_demand_score": 0.0,
+      "composite_score": 13.66,
+      "ai_score": 20.0
+    },
+    {
+      "code": "032500",
+      "name": "케이엠더블유",
+      "market": "KOSDAQ",
+      "sector": "중견기업부",
+      "price": 19850,
+      "price_change_pct": 1.17,
+      "volume_ratio": 2.36,
+      "value_ratio": 2.61,
+      "volatility_ratio": 1.53,
+      "pct_from_high": 8.31,
+      "supply_demand_score": 0.0,
+      "composite_score": 14.36,
+      "ai_score": 60.0
+    }
+  ],
+  "presurge_ai_recommended": [
+    {
+      "code": "032500",
+      "name": "케이엠더블유",
+      "market": "KOSDAQ",
+      "sector": "중견기업부",
+      "price": 19850,
+      "price_change_pct": 1.17,
+      "volume_ratio": 2.36,
+      "value_ratio": 2.61,
+      "volatility_ratio": 1.53,
+      "pct_from_high": 8.31,
+      "supply_demand_score": 0.0,
+      "composite_score": 14.36,
+      "ai_score": 60.0
+    },
+    {
+      "code": "0126Z0",
+      "name": "삼성에피스홀딩스",
+      "market": "KOSPI",
+      "sector": null,
+      "price": 362500,
+      "price_change_pct": 2.11,
+      "volume_ratio": 2.26,
+      "value_ratio": 2.4,
+      "volatility_ratio": 1.38,
+      "pct_from_high": 8.23,
+      "supply_demand_score": 0.0,
+      "composite_score": 13.66,
+      "ai_score": 20.0
+    }
+  ]
+}

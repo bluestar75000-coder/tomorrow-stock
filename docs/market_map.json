@@ -4,85 +4,85 @@
       "code": "005930",
       "name": "삼성전자",
       "market": "KOSPI",
-      "price": 189800,
-      "change_pct": -2.67,
-      "marcap": 1111962191241600.0
+      "price": 196400,
+      "change_pct": 3.48,
+      "marcap": 1131254910648000.0
     },
     {
       "code": "000660",
       "name": "SK하이닉스",
       "market": "KOSPI",
-      "price": 1100000,
-      "change_pct": -1.61,
-      "marcap": 774298406381500.0
+      "price": 1164000,
+      "change_pct": 5.82,
+      "marcap": 814939354229000.0
     },
     {
       "code": "005935",
       "name": "삼성전자우",
       "market": "KOSPI",
-      "price": 151700,
-      "change_pct": -5.25,
-      "marcap": 121880185735700.0
+      "price": 159300,
+      "change_pct": 5.01,
+      "marcap": 125490856149200.0
     },
     {
       "code": "402340",
       "name": "SK스퀘어",
       "market": "KOSPI",
-      "price": 675000,
-      "change_pct": -1.03,
-      "marcap": 89444470644000.0
+      "price": 716000,
+      "change_pct": 6.07,
+      "marcap": 94061810574000.0
     },
     {
       "code": "373220",
       "name": "LG에너지솔루션",
       "market": "KOSPI",
-      "price": 304500,
-      "change_pct": -4.25,
-      "marcap": 71370000000000.0
+      "price": 307000,
+      "change_pct": 0.82,
+      "marcap": 71721000000000.0
     },
     {
       "code": "207940",
       "name": "삼성바이오로직스",
       "market": "KOSPI",
-      "price": 1400000,
-      "change_pct": -1.06,
-      "marcap": 65455404714000.0
+      "price": 1378000,
+      "change_pct": -1.57,
+      "marcap": 63696348576000.0
     },
     {
       "code": "009150",
       "name": "삼성전기",
       "market": "KOSPI",
-      "price": 748000,
-      "change_pct": -3.98,
-      "marcap": 55796190912000.0
+      "price": 820000,
+      "change_pct": 9.63,
+      "marcap": 59306794624000.0
     },
     {
       "code": "105560",
       "name": "KB금융",
       "market": "KOSPI",
-      "price": 156100,
-      "change_pct": -3.46,
-      "marcap": 55650505464600.0
+      "price": 156200,
+      "change_pct": 0.06,
+      "marcap": 55083005090200.0
     },
     {
       "code": "005380",
       "name": "현대차",
       "market": "KOSPI",
-      "price": 257000,
-      "change_pct": -2.65,
-      "marcap": 52596088182000.0
+      "price": 268000,
+      "change_pct": 4.28,
+      "marcap": 54834219594000.0
     },
     {
-      "code": "068270",
-      "name": "셀트리온",
+      "code": "032830",
+      "name": "삼성생명",
       "market": "KOSPI",
-      "price": 211000,
-      "change_pct": -1.4,
-      "marcap": 49327452662500.0
+      "price": 254500,
+      "change_pct": 6.04,
+      "marcap": 51000000000000.0
     }
   ],
   "top_foreign": [],
   "foreign_note": "외국인 보유비중 데이터를 가져오지 못했습니다 (KRX 로그인 정보 확인 필요).",
   "foreign_universe_size": 200,
-  "generated_at": "2026-11-17 17:00:00"
+  "generated_at": "2026-11-18 16:34:43"
 }

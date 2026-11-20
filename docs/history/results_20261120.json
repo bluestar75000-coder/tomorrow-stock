@@ -1,0 +1,127 @@
+{
+  "generated_at": "2026-11-20 16:12:23",
+  "scanned_count": 400,
+  "momentum_conditions": {
+    "volume_surge_ratio": 2.0,
+    "price_change_min_pct": 3.0
+  },
+  "value_conditions": {
+    "volume_ratio_min": 1.5,
+    "per_max_default": 10.0,
+    "per_max_growth": 20.0,
+    "top_n_per_sector": 2,
+    "growth_sector_keywords": [
+      "반도체",
+      "전자",
+      "IT",
+      "소프트웨어",
+      "인터넷",
+      "게임",
+      "바이오",
+      "제약",
+      "생물",
+      "2차전지",
+      "전지",
+      "로봇",
+      "통신장비",
+      "우주항공"
+    ]
+  },
+  "crash_conditions": {
+    "volume_surge_ratio": 2.0,
+    "price_drop_min_pct": 3.0
+  },
+  "presurge_conditions": {
+    "price_change_max_pct": 3.0,
+    "volume_ratio_min": 1.5,
+    "value_ratio_min": 1.5,
+    "volatility_ratio_range": [
+      1.2,
+      3.0
+    ],
+    "high_proximity_max_pct": 10.0,
+    "note": "AI 추천 종목은 실제 ML 모델이 아니라 정규화된 지표의 가중합(규칙 기반) 점수입니다. 백테스트 결과 당일/익일 단타보다 3~5일 관점에서 유효했습니다."
+  },
+  "momentum_results": [
+    {
+      "code": "204620",
+      "name": "글로벌텍스프리",
+      "market": "KOSDAQ",
+      "price": 6100,
+      "volume_ratio": 7.24,
+      "price_change_pct": 11.31,
+      "score": 12.89
+    },
+    {
+      "code": "041510",
+      "name": "에스엠",
+      "market": "KOSDAQ",
+      "price": 97300,
+      "volume_ratio": 3.35,
+      "price_change_pct": 4.06,
+      "score": 5.38
+    }
+  ],
+  "value_results": [],
+  "crash_results": [
+    {
+      "code": "007660",
+      "name": "이수페타시스",
+      "market": "KOSPI",
+      "price": 68500,
+      "volume_ratio": 2.11,
+      "price_change_pct": -18.45,
+      "score": 11.33
+    },
+    {
+      "code": "017670",
+      "name": "SK텔레콤",
+      "market": "KOSPI",
+      "price": 69200,
+      "volume_ratio": 2.3,
+      "price_change_pct": -15.82,
+      "score": 10.21
+    },
+    {
+      "code": "115180",
+      "name": "큐리언트",
+      "market": "KOSDAQ",
+      "price": 13020,
+      "volume_ratio": 2.87,
+      "price_change_pct": -7.92,
+      "score": 6.83
+    },
+    {
+      "code": "103140",
+      "name": "풍산",
+      "market": "KOSPI",
+      "price": 46650,
+      "volume_ratio": 2.08,
+      "price_change_pct": -7.62,
+      "score": 5.9
+    },
+    {
+      "code": "187660",
+      "name": "페니트리움바이오",
+      "market": "KOSDAQ",
+      "price": 6520,
+      "volume_ratio": 2.12,
+      "price_change_pct": -6.86,
+      "score": 5.55
+    },
+    {
+      "code": "083450",
+      "name": "GST",
+      "market": "KOSDAQ",
+      "price": 46250,
+      "volume_ratio": 2.27,
+      "price_change_pct": -3.04,
+      "score": 3.79
+    }
+  ],
+  "presurge_today_candidates": [],
+  "presurge_signal": [],
+  "presurge_volume_explosion": [],
+  "presurge_breakout_imminent": [],
+  "presurge_ai_recommended": []
+}

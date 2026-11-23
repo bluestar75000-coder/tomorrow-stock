@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20 16:12:23",
+  "generated_at": "2026-11-23 19:20:35",
   "scanned_count": 400,
   "momentum_conditions": {
     "volume_surge_ratio": 2.0,
@@ -44,84 +44,200 @@
   },
   "momentum_results": [
     {
-      "code": "204620",
-      "name": "글로벌텍스프리",
+      "code": "090710",
+      "name": "휴림로봇",
       "market": "KOSDAQ",
-      "price": 6100,
-      "volume_ratio": 7.24,
-      "price_change_pct": 11.31,
-      "score": 12.89
+      "price": 5720,
+      "volume_ratio": 13.27,
+      "price_change_pct": 30.3,
+      "score": 28.42
     },
     {
-      "code": "041510",
-      "name": "에스엠",
+      "code": "253450",
+      "name": "스튜디오드래곤",
       "market": "KOSDAQ",
-      "price": 97300,
-      "volume_ratio": 3.35,
-      "price_change_pct": 4.06,
-      "score": 5.38
-    }
-  ],
-  "value_results": [],
-  "crash_results": [
-    {
-      "code": "007660",
-      "name": "이수페타시스",
-      "market": "KOSPI",
-      "price": 68500,
-      "volume_ratio": 2.11,
-      "price_change_pct": -18.45,
-      "score": 11.33
-    },
-    {
-      "code": "017670",
-      "name": "SK텔레콤",
-      "market": "KOSPI",
-      "price": 69200,
-      "volume_ratio": 2.3,
-      "price_change_pct": -15.82,
-      "score": 10.21
-    },
-    {
-      "code": "115180",
-      "name": "큐리언트",
-      "market": "KOSDAQ",
-      "price": 13020,
-      "volume_ratio": 2.87,
-      "price_change_pct": -7.92,
-      "score": 6.83
-    },
-    {
-      "code": "103140",
-      "name": "풍산",
-      "market": "KOSPI",
-      "price": 46650,
-      "volume_ratio": 2.08,
-      "price_change_pct": -7.62,
-      "score": 5.9
+      "price": 32450,
+      "volume_ratio": 8.88,
+      "price_change_pct": 6.05,
+      "score": 11.9
     },
     {
       "code": "187660",
       "name": "페니트리움바이오",
       "market": "KOSDAQ",
-      "price": 6520,
-      "volume_ratio": 2.12,
-      "price_change_pct": -6.86,
-      "score": 5.55
+      "price": 7490,
+      "volume_ratio": 2.3,
+      "price_change_pct": 14.88,
+      "score": 9.73
     },
     {
-      "code": "083450",
-      "name": "GST",
+      "code": "036540",
+      "name": "SFA반도체",
       "market": "KOSDAQ",
-      "price": 46250,
-      "volume_ratio": 2.27,
-      "price_change_pct": -3.04,
-      "score": 3.79
+      "price": 9110,
+      "volume_ratio": 2.21,
+      "price_change_pct": 14.16,
+      "score": 9.29
+    },
+    {
+      "code": "950160",
+      "name": "코오롱티슈진",
+      "market": "KOSDAQ",
+      "price": 12830,
+      "volume_ratio": 4.04,
+      "price_change_pct": 9.94,
+      "score": 9.01
+    },
+    {
+      "code": "290550",
+      "name": "디케이티",
+      "market": "KOSDAQ",
+      "price": 32750,
+      "volume_ratio": 2.39,
+      "price_change_pct": 12.16,
+      "score": 8.47
+    },
+    {
+      "code": "001430",
+      "name": "세아베스틸지주",
+      "market": "KOSPI",
+      "price": 32400,
+      "volume_ratio": 2.09,
+      "price_change_pct": 6.93,
+      "score": 5.56
+    },
+    {
+      "code": "094170",
+      "name": "동운아나텍",
+      "market": "KOSDAQ",
+      "price": 17790,
+      "volume_ratio": 2.52,
+      "price_change_pct": 5.52,
+      "score": 5.28
     }
   ],
-  "presurge_today_candidates": [],
-  "presurge_signal": [],
-  "presurge_volume_explosion": [],
-  "presurge_breakout_imminent": [],
-  "presurge_ai_recommended": []
+  "value_results": [],
+  "crash_results": [
+    {
+      "code": "018260",
+      "name": "삼성에스디에스",
+      "market": "KOSPI",
+      "price": 178900,
+      "volume_ratio": 3.26,
+      "price_change_pct": -13.37,
+      "score": 9.94
+    },
+    {
+      "code": "006360",
+      "name": "GS건설",
+      "market": "KOSPI",
+      "price": 25650,
+      "volume_ratio": 2.58,
+      "price_change_pct": -9.2,
+      "score": 7.18
+    },
+    {
+      "code": "078930",
+      "name": "GS",
+      "market": "KOSPI",
+      "price": 70000,
+      "volume_ratio": 2.34,
+      "price_change_pct": -6.79,
+      "score": 5.74
+    },
+    {
+      "code": "103140",
+      "name": "풍산",
+      "market": "KOSPI",
+      "price": 44450,
+      "volume_ratio": 2.12,
+      "price_change_pct": -4.72,
+      "score": 4.48
+    }
+  ],
+  "presurge_today_candidates": [
+    {
+      "code": "035760",
+      "name": "CJ ENM",
+      "market": "KOSDAQ",
+      "sector": "중견기업부",
+      "price": 50400,
+      "price_change_pct": 2.23,
+      "volume_ratio": 2.02,
+      "value_ratio": 2.17,
+      "volatility_ratio": 1.25,
+      "pct_from_high": 7.86,
+      "supply_demand_score": 0.0,
+      "composite_score": 12.97,
+      "ai_score": 0.0
+    }
+  ],
+  "presurge_signal": [
+    {
+      "code": "035760",
+      "name": "CJ ENM",
+      "market": "KOSDAQ",
+      "sector": "중견기업부",
+      "price": 50400,
+      "price_change_pct": 2.23,
+      "volume_ratio": 2.02,
+      "value_ratio": 2.17,
+      "volatility_ratio": 1.25,
+      "pct_from_high": 7.86,
+      "supply_demand_score": 0.0,
+      "composite_score": 12.97,
+      "ai_score": 0.0
+    }
+  ],
+  "presurge_volume_explosion": [
+    {
+      "code": "035760",
+      "name": "CJ ENM",
+      "market": "KOSDAQ",
+      "sector": "중견기업부",
+      "price": 50400,
+      "price_change_pct": 2.23,
+      "volume_ratio": 2.02,
+      "value_ratio": 2.17,
+      "volatility_ratio": 1.25,
+      "pct_from_high": 7.86,
+      "supply_demand_score": 0.0,
+      "composite_score": 12.97,
+      "ai_score": 0.0
+    }
+  ],
+  "presurge_breakout_imminent": [
+    {
+      "code": "035760",
+      "name": "CJ ENM",
+      "market": "KOSDAQ",
+      "sector": "중견기업부",
+      "price": 50400,
+      "price_change_pct": 2.23,
+      "volume_ratio": 2.02,
+      "value_ratio": 2.17,
+      "volatility_ratio": 1.25,
+      "pct_from_high": 7.86,
+      "supply_demand_score": 0.0,
+      "composite_score": 12.97,
+      "ai_score": 0.0
+    }
+  ],
+  "presurge_ai_recommended": [
+    {
+      "code": "035760",
+      "name": "CJ ENM",
+      "market": "KOSDAQ",
+      "sector": "중견기업부",
+      "price": 50400,
+      "price_change_pct": 2.23,
+      "volume_ratio": 2.02,
+      "value_ratio": 2.17,
+      "volatility_ratio": 1.25,
+      "pct_from_high": 7.86,
+      "supply_demand_score": 0.0,
+      "composite_score": 12.97,
+      "ai_score": 0.0
+    }
+  ]
 }

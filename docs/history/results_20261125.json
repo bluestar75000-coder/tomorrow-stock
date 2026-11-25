@@ -1,0 +1,208 @@
+{
+  "generated_at": "2026-11-25 18:04:43",
+  "scanned_count": 400,
+  "momentum_conditions": {
+    "volume_surge_ratio": 2.0,
+    "price_change_min_pct": 3.0
+  },
+  "value_conditions": {
+    "volume_ratio_min": 1.5,
+    "per_max_default": 10.0,
+    "per_max_growth": 20.0,
+    "top_n_per_sector": 2,
+    "growth_sector_keywords": [
+      "반도체",
+      "전자",
+      "IT",
+      "소프트웨어",
+      "인터넷",
+      "게임",
+      "바이오",
+      "제약",
+      "생물",
+      "2차전지",
+      "전지",
+      "로봇",
+      "통신장비",
+      "우주항공"
+    ]
+  },
+  "crash_conditions": {
+    "volume_surge_ratio": 2.0,
+    "price_drop_min_pct": 3.0
+  },
+  "presurge_conditions": {
+    "price_change_max_pct": 3.0,
+    "volume_ratio_min": 1.5,
+    "value_ratio_min": 1.5,
+    "volatility_ratio_range": [
+      1.2,
+      3.0
+    ],
+    "high_proximity_max_pct": 10.0,
+    "note": "AI 추천 종목은 실제 ML 모델이 아니라 정규화된 지표의 가중합(규칙 기반) 점수입니다. 백테스트 결과 당일/익일 단타보다 3~5일 관점에서 유효했습니다."
+  },
+  "momentum_results": [
+    {
+      "code": "053800",
+      "name": "안랩",
+      "market": "KOSDAQ",
+      "price": 157900,
+      "volume_ratio": 2.96,
+      "price_change_pct": 29.96,
+      "score": 17.94
+    },
+    {
+      "code": "263860",
+      "name": "지니언스",
+      "market": "KOSDAQ",
+      "price": 41750,
+      "volume_ratio": 3.29,
+      "price_change_pct": 21.01,
+      "score": 13.8
+    },
+    {
+      "code": "257720",
+      "name": "실리콘투",
+      "market": "KOSDAQ",
+      "price": 28900,
+      "volume_ratio": 3.83,
+      "price_change_pct": 14.91,
+      "score": 11.29
+    },
+    {
+      "code": "358570",
+      "name": "지아이이노베이션",
+      "market": "KOSDAQ",
+      "price": 8400,
+      "volume_ratio": 2.95,
+      "price_change_pct": 14.6,
+      "score": 10.25
+    },
+    {
+      "code": "100790",
+      "name": "미래에셋벤처투자",
+      "market": "KOSDAQ",
+      "price": 15190,
+      "volume_ratio": 3.15,
+      "price_change_pct": 12.94,
+      "score": 9.62
+    },
+    {
+      "code": "290650",
+      "name": "엘앤씨바이오",
+      "market": "KOSDAQ",
+      "price": 22750,
+      "volume_ratio": 3.01,
+      "price_change_pct": 11.52,
+      "score": 8.77
+    },
+    {
+      "code": "278470",
+      "name": "에이피알",
+      "market": "KOSPI",
+      "price": 291500,
+      "volume_ratio": 2.34,
+      "price_change_pct": 11.69,
+      "score": 8.18
+    },
+    {
+      "code": "039200",
+      "name": "오스코텍",
+      "market": "KOSDAQ",
+      "price": 34900,
+      "volume_ratio": 2.39,
+      "price_change_pct": 9.58,
+      "score": 7.18
+    },
+    {
+      "code": "356680",
+      "name": "엑스게이트",
+      "market": "KOSDAQ",
+      "price": 13020,
+      "volume_ratio": 3.85,
+      "price_change_pct": 6.63,
+      "score": 7.17
+    },
+    {
+      "code": "0126Z0",
+      "name": "삼성에피스홀딩스",
+      "market": "KOSPI",
+      "price": 354500,
+      "volume_ratio": 2.06,
+      "price_change_pct": 9.92,
+      "score": 7.02
+    },
+    {
+      "code": "307950",
+      "name": "현대오토에버",
+      "market": "KOSPI",
+      "price": 360000,
+      "volume_ratio": 4.2,
+      "price_change_pct": 3.75,
+      "score": 6.07
+    },
+    {
+      "code": "097950",
+      "name": "CJ제일제당",
+      "market": "KOSPI",
+      "price": 189600,
+      "volume_ratio": 2.23,
+      "price_change_pct": 6.64,
+      "score": 5.55
+    },
+    {
+      "code": "090430",
+      "name": "아모레퍼시픽",
+      "market": "KOSPI",
+      "price": 146700,
+      "volume_ratio": 2.53,
+      "price_change_pct": 5.92,
+      "score": 5.49
+    },
+    {
+      "code": "280360",
+      "name": "롯데웰푸드",
+      "market": "KOSPI",
+      "price": 132900,
+      "volume_ratio": 2.78,
+      "price_change_pct": 3.26,
+      "score": 4.41
+    },
+    {
+      "code": "058610",
+      "name": "에스피지",
+      "market": "KOSDAQ",
+      "price": 89100,
+      "volume_ratio": 2.14,
+      "price_change_pct": 3.97,
+      "score": 4.12
+    },
+    {
+      "code": "069620",
+      "name": "대웅제약",
+      "market": "KOSPI",
+      "price": 95000,
+      "volume_ratio": 2.0,
+      "price_change_pct": 3.83,
+      "score": 3.91
+    }
+  ],
+  "value_results": [],
+  "crash_results": [
+    {
+      "code": "372320",
+      "name": "큐로셀",
+      "market": "KOSDAQ",
+      "price": 23750,
+      "volume_ratio": 2.89,
+      "price_change_pct": -9.0,
+      "score": 7.39
+    }
+  ],
+  "presurge_today_candidates": [],
+  "presurge_signal": [],
+  "presurge_volume_explosion": [],
+  "presurge_breakout_imminent": [],
+  "presurge_ai_recommended": []
+}
